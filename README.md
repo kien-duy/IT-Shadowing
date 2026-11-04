@@ -1,6 +1,6 @@
 # IT-shadowing
 
-Trang luyện shadowing tiếng Nhật cho developer làm chức năng đặt lịch khám của hệ thống
+Trang luyện shadowing tiếng Nhật IT theo đề thi nói cuối kỳ, bối cảnh dự án hệ thống đặt lịch khám
 bệnh viện (診察予約システム). Một file HTML tĩnh, chạy offline, không cần cài gì.
 
 **Bản deploy:** https://nkocvodoi.github.io/IT-Shadowing/
@@ -20,29 +20,43 @@ Phím tắt: `Space` chạy/dừng · `R` nghe lại câu hiện tại · `B` b�
 
 ## Nội dung
 
-| Mục | Tên | Khung câu |
+Xếp theo đề thi nói cuối kỳ: nói chuyện liền mạch với thầy 10–15 phút. Mọi câu nằm trong phạm vi
+ngữ pháp N3, từ vựng IT và văn phòng; bối cảnh là dự án hệ thống đặt lịch khám.
+
+| Mục | Phần thi | Khung câu |
 | --- | --- | --- |
-| ① | Nói kết luận trước | 結論 → 理由 → 提案 |
-| ② | Báo sự cố | 問題 → 原因 → 影響 → 対応 |
-| ③ | Hỏi lại cho chắc | 確認・質問・範囲・詳細・権限・納期 |
-| ④ | Đề xuất kiểu mềm | 柔らか → 提案 → 効果 |
-| ⑤ | Phản đối mà không mất lòng | 共感 → 反対 → 理由 → 提案 |
-| ⑥ | Đổi cách nói theo người nghe | エンジニア・営業・病院様・要約 |
-| ⑦ | Trò chuyện và gỡ bí | 会話・聞き返し・保留・仕切り直し |
+| ① 自己紹介 | Tự giới thiệu (8 ý theo đề cương) | 名前・理由 → 担当 → 仕事の流れ → 大切なこと → 困ること・注意すること → 目標 → チーム・個人 → 一番難しいこと |
+| ② 納期の相談 | Roleplay テーマ1: việc gấp chen vào, sắp trễ hạn | 問題 → 原因 → 影響 → 対応 → 提案 |
+| ③ 仕様の確認 | Roleplay テーマ2: spec có chỗ chưa rõ | 問題 → 原因 → 影響 → 対応 → 提案 |
+| ④ 事故報告 | Roleplay テーマ3: gửi dữ liệu sai | 謝罪 → 状況説明 → 原因 → 対応 → 今後の対策 → 連絡 |
+| ⑤ 意見 | Part 3 テーマA: họp và liên lạc quá nhiều | 意見 → 理由 → 具体例 → 改善案 → まとめ |
+| ⑥ つなぎ・困った時 | Câu nối và gỡ bí khi đang thi | 聞き返し・確認・時間・つなぎ・保留 |
+
+Các mục roleplay có dòng `上司` / `先生` là câu thầy có thể hỏi lại, kèm câu đáp của mình.
+Tên, chức danh và con số ở mục ① là ví dụ, sửa thành thông tin thật trước khi luyện.
 
 Mỗi mục có một thẻ giải nghĩa ngay dưới thanh tab: từ tiếng Nhật đặt tên cho mục nghĩa là gì,
 từng thành phần trong khung câu đảm nhiệm việc gì, và ngữ cảnh nào thì mang khung đó ra dùng.
 
 ## Giọng đọc
 
-Trang dùng Web Speech API của trình duyệt, cần một giọng tiếng Nhật cài sẵn trong máy:
+Trang chỉ dùng hai giọng VOICEVOX, có sẵn dưới dạng file âm thanh trong `audio/`, nên máy nào
+mở trang cũng nghe giống nhau, không phụ thuộc giọng cài trong máy:
 
-- macOS / iOS: đã có sẵn (Kyoko, Otoya).
-- Windows: Settings → Time & language → Language → thêm 日本語 và tải gói Speech.
-- Android: cài Google 音声サービス.
-- Chrome trên Linux thường không có giọng ja-JP; dùng Edge hoặc Safari.
+- **冥鳴ひまり（ノーマル）**: giọng mặc định
+- **ずんだもん（あまあま）**
 
-Nếu không tìm thấy giọng nào, trang sẽ hiện cảnh báo ở đầu và vẫn cho đọc câu bằng mắt.
+Đổi giọng ở ô `Giọng`; lựa chọn được nhớ trong trình duyệt.
+
+Sau khi sửa hoặc thêm câu, mở app [VOICEVOX](https://voicevox.hiroshiba.jp/) rồi chạy:
+
+```
+python3 tools/gen_audio.py
+```
+
+Script chỉ tạo lại câu mới hoặc câu đã sửa, xóa file thừa và ghi lại `audio/manifest.js`.
+Muốn thêm hoặc bớt giọng thì sửa danh sách `VOICES` đầu script
+(id của từng giọng: `curl localhost:50021/speakers`). Câu nào chưa có file âm thanh thì trang bỏ qua.
 
 ## Chạy tại máy
 
