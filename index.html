@@ -144,6 +144,23 @@ ol.lines li.on .l-ja{color:var(--indigo)}
   border-radius:3px;padding:1px 5px;color:var(--ink);
 }
 .warn{background:var(--indigo-soft);border-left:3px solid var(--indigo);padding:11px 13px;font-size:13px;margin-bottom:18px}
+.kit{margin:14px 0 0;padding-top:11px;border-top:1px solid var(--rule)}
+.kit summary{cursor:pointer;font-size:13px;font-weight:600;color:var(--indigo)}
+.kit summary:focus-visible{outline:2px solid var(--indigo);outline-offset:2px}
+ul.pat{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:7px}
+ul.pat li{display:grid;grid-template-columns:auto 1fr;gap:0 12px;align-items:baseline}
+.p-ja{font-size:16px;color:var(--ink);grid-row:1/3}
+.p-ro{font-size:11.5px;color:var(--echo)}
+.p-vi{font-size:12px;color:var(--ink-soft)}
+.kit-h{margin:14px 0 6px;font-size:12px;color:var(--ink-soft);letter-spacing:.04em}
+ul.vocab{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+ul.vocab li{background:var(--indigo-soft);border-radius:3px;padding:4px 9px;display:flex;flex-direction:column;line-height:1.35}
+ul.vocab .jp{font-size:15px;color:var(--ink)}
+.v-ro{font-size:10.5px;color:var(--echo)}
+.v-vi{font-size:11px;color:var(--ink-soft)}
+body.no-ro .p-ro,body.no-ro .v-ro{display:none}
+body.no-vi .p-vi,body.no-vi .v-vi{display:none}
+@media (max-width:520px){ul.pat li{grid-template-columns:1fr}.p-ja{grid-row:auto}}
 [hidden]{display:none !important}
 @media (prefers-reduced-motion: reduce){.bar span{transition:none !important}}
 @media (max-width:520px){
@@ -161,7 +178,7 @@ ol.lines li.on .l-ja{color:var(--indigo)}
 
 <header>
   <h1 class="jp">シャドーイング練習帳</h1>
-  <p>Nội dung xếp theo đề thi nói cuối kỳ (10–15 phút, ngữ pháp N3): tự giới thiệu → ba tình huống báo cáo với cấp trên → nêu ý kiến. Bấm một câu để nghe. Bấm “Chạy shadowing” để máy đọc từng câu rồi chừa khoảng lặng đúng bằng độ dài câu — bạn nói đè lên khoảng lặng đó. Dòng romaji nằm dưới mỗi câu, tắt được khi đã quen.</p>
+  <p>Nội dung xếp theo đề thi nói cuối kỳ (10–15 phút, ngữ pháp N3): tự giới thiệu → ba tình huống báo cáo với cấp trên → nêu ý kiến → hỗ trợ người mới, kèm câu giải thích thuật ngữ IT. Bấm một câu để nghe. Bấm “Chạy shadowing” để máy đọc từng câu rồi chừa khoảng lặng đúng bằng độ dài câu — bạn nói đè lên khoảng lặng đó. Dòng romaji nằm dưới mỗi câu, tắt được khi đã quen.</p>
 </header>
 
 <div class="warn" id="noaudio" hidden>
@@ -228,403 +245,411 @@ ol.lines li.on .l-ja{color:var(--indigo)}
 <script src="audio/manifest.js"></script>
 <script>
 const SETS = [
-{ id:"p1", tab:"① 自己紹介", title:"Phần 1 · Tự giới thiệu",
-  lead:"Phần mở đầu của bài thi, nói liền một mạch khoảng 3–4 phút. Tám ý dưới đây đi đúng thứ tự trong đề cương: tên và lý do → công việc → quy trình → điều quan trọng → khó khăn, lưu ý → mục tiêu → làm nhóm hay cá nhân → điều khó nhất. Tên, chức danh và con số là ví dụ, thay bằng thông tin thật của bạn.",
+{
+  id:"p1",
+  tab:"① 自己紹介",
+  title:"Phần 1 · Tự giới thiệu",
+  lead:"Nói liền 8 ý theo đề cương, mỗi ý một câu ngắn. Cô hỏi sâu ý nào thì lấy mẫu câu và từ vựng bên dưới để nói thêm.",
   terms:[
-    ["名前・理由","namae・riyū","tên, lý do, mục đích","Tên + quê, rồi lý do làm ở công ty Nhật bằng 〜たいと思ったのは〜からです."],
-    ["担当","tantō","công việc hiện tại","Dự án + vị trí: 〜の開発を担当しています。ポジションは〜です."],
-    ["仕事の流れ","shigoto no nagare","trình tự công việc","Kể theo まず → 次に → 〜たら → 最後に: đọc spec → implement → test → review → deploy → báo cáo."],
-    ["大切なこと","taisetsu na koto","điều quan trọng","Chọn một thứ (chất lượng hoặc tốc độ) rồi nói lý do bằng 〜からです."],
-    ["困ること・注意すること","komaru koto・chūi suru koto","khó khăn, điều cần lưu ý","Khó khăn là gì, gặp thì làm sao: 〜ようにしています."],
-    ["目標","mokuhyō","mục tiêu","〜ようになることです + việc đang làm để đạt nó."],
-    ["チーム・個人","chīmu・kojin","làm nhóm hay cá nhân","Nói cách chia việc trong team và mình thấy thế nào."],
-    ["一番難しいこと","ichiban muzukashii koto","điều khó nhất","Một điểm khó + cách mình đang vượt qua. Kết bằng 以上です."]
+    ["名前・理由","namae・riyū","tên, lý do","Tên, quê, vì sao chọn IT Nhật."],
+    ["担当","tantō","công việc","Vị trí và dự án đang làm."],
+    ["仕事の流れ","shigoto no nagare","quy trình","まず → 次に → それから → 最後に."],
+    ["大切なこと","taisetsu na koto","điều quan trọng","Một điều + lý do."],
+    ["困ること","komaru koto","khó khăn, lưu ý","Khó gì + mình làm gì."],
+    ["目標","mokuhyō","mục tiêu","Một câu."],
+    ["チーム","chīmu","nhóm hay cá nhân","Số người + cách chia việc."],
+    ["一番難しいこと","ichiban muzukashii koto","điều khó nhất","Khó gì + đang cố thế nào. Kết bằng 以上です."]
   ],
-  when:"Đầu bài thi, khi thầy nói 自己紹介をお願いします. Nói xong phần này thầy sẽ hỏi tiếp theo từng ý, nên mỗi ý chuẩn bị sẵn thêm một câu ví dụ.",
+  patterns:[
+    ["〇〇と申します。〇〇出身です。","... to mōshimasu. ... shusshin desu.","Tôi tên là… Tôi quê ở…"],
+    ["〜が好きで、〜を選びました。","... ga suki de, ... o erabimashita.","Vì thích… nên tôi đã chọn…"],
+    ["今は〜を担当しています。","Ima wa ... o tantō shite imasu.","Hiện tôi phụ trách…"],
+    ["まず〜。次に〜。それから〜。最後に〜。","Mazu… Tsugi ni… Sorekara… Saigo ni…","Đầu tiên… Tiếp theo… Sau đó… Cuối cùng…"],
+    ["一番大切なのは〜ことです。〜からです。","Ichiban taisetsu na no wa ... koto desu. ... kara desu.","Quan trọng nhất là… Vì…"],
+    ["困ることは〜です。","Komaru koto wa ... desu.","Điều tôi gặp khó là…"],
+    ["〜ようにしています。","... yō ni shite imasu.","Tôi luôn cố gắng…"],
+    ["目標は〜ことです。","Mokuhyō wa ... koto desu.","Mục tiêu là…"],
+    ["以上です。","Ijō desu.","Tôi xin hết."]
+  ],
+  nouns:[
+    ["出身","shusshin","quê"],
+    ["担当","tantō","phụ trách"],
+    ["予約システム","yoyaku shisutemu","hệ thống đặt lịch"],
+    ["機能","kinō","chức năng"],
+    ["医師","ishi","bác sĩ"],
+    ["タスク","tasuku","task"],
+    ["仕様","shiyō","spec"],
+    ["実装","jissō","implement, viết code"],
+    ["テスト","tesuto","test"],
+    ["レビュー","rebyū","review"],
+    ["結果","kekka","kết quả"],
+    ["日報","nippō","báo cáo ngày"],
+    ["会議","kaigi","cuộc họp"],
+    ["目標","mokuhyō","mục tiêu"],
+    ["同僚","dōryō","đồng nghiệp"]
+  ],
+  verbs:[
+    ["選ぶ","erabu","chọn"],
+    ["担当する","tantō suru","phụ trách"],
+    ["作る","tsukuru","làm, tạo"],
+    ["確認する","kakunin suru","xác nhận, hỏi lại"],
+    ["実装する","jissō suru","implement"],
+    ["理解する","rikai suru","hiểu"],
+    ["質問する","shitsumon suru","hỏi"],
+    ["報告する","hōkoku suru","báo cáo"],
+    ["手伝う","tetsudau","giúp"],
+    ["練習する","renshū suru","luyện tập"]
+  ],
+  when:"Đầu bài thi, khi cô nói 自己紹介をお願いします.",
   lines:[
-    {g:"Tên, lý do, mục đích làm việc"},
-    {r:"名前・理由", ja:"はじめまして。グエン・キエンと申します。ベトナムのハノイ出身です。",
-     ro:"Hajimemashite. Guen Kien to mōshimasu. Betonamu no Hanoi shusshin desu.",
-     vi:"Xin chào, tôi là Nguyễn Kiên, người Hà Nội, Việt Nam."},
-    {r:"名前・理由", ja:"日本の会社で働きたいと思ったのは、日本の品質管理の考え方を学びたかったからです。",
-     ro:"Nihon no kaisha de hatarakitai to omotta no wa, Nihon no hinshitsu kanri no kangaekata o manabitakatta kara desu.",
-     vi:"Tôi muốn làm ở công ty Nhật vì muốn học cách nghĩ về quản lý chất lượng của Nhật."},
-    {r:"名前・理由", ja:"将来は、日本とベトナムをつなぐエンジニアになりたいと思っています。",
-     ro:"Shōrai wa, Nihon to Betonamu o tsunagu enjinia ni naritai to omotte imasu.",
-     vi:"Sau này tôi muốn trở thành kỹ sư làm cầu nối giữa Nhật và Việt Nam."},
-    {g:"Công việc hiện tại"},
-    {r:"担当", ja:"現在は、病院の診察予約システムの開発を担当しています。",
-     ro:"Genzai wa, byōin no shinsatsu yoyaku shisutemu no kaihatsu o tantō shite imasu.",
-     vi:"Hiện tôi phụ trách phát triển hệ thống đặt lịch khám của bệnh viện."},
-    {r:"担当", ja:"ポジションはバックエンドエンジニアで、主に予約のエーピーアイを作っています。",
-     ro:"Pojishon wa bakkuendo enjinia de, omo ni yoyaku no ēpīai o tsukutte imasu.",
-     vi:"Vị trí là backend engineer, chủ yếu làm API đặt lịch."},
-    {g:"Trình tự công việc (仕事の流れ)"},
-    {r:"仕事の流れ", ja:"まず、仕様書を読んで、分からない点を上司に確認します。",
-     ro:"Mazu, shiyōsho o yonde, wakaranai ten o jōshi ni kakunin shimasu.",
-     vi:"Đầu tiên tôi đọc spec, chỗ nào không hiểu thì hỏi lại cấp trên."},
-    {r:"仕事の流れ", ja:"次に、機能を実装して、自分でユニットテストを行います。",
-     ro:"Tsugi ni, kinō o jissō shite, jibun de yunitto tesuto o okonaimasu.",
-     vi:"Tiếp theo tôi implement chức năng và tự chạy unit test."},
-    {r:"仕事の流れ", ja:"テストが終わったら、コードレビューを受けてから、検証環境にデプロイします。",
-     ro:"Tesuto ga owattara, kōdo rebyū o ukete kara, kenshō kankyō ni depuroi shimasu.",
-     vi:"Test xong thì nhận code review rồi deploy lên môi trường kiểm thử."},
-    {r:"仕事の流れ", ja:"最後に、作業の結果を上司に報告します。",
-     ro:"Saigo ni, sagyō no kekka o jōshi ni hōkoku shimasu.",
-     vi:"Cuối cùng tôi báo cáo kết quả công việc cho cấp trên."},
-    {g:"Điều quan trọng trong công việc"},
-    {r:"大切なこと", ja:"仕事で一番大切にしていることは、品質です。",
-     ro:"Shigoto de ichiban taisetsu ni shite iru koto wa, hinshitsu desu.",
-     vi:"Điều tôi coi trọng nhất trong công việc là chất lượng."},
-    {r:"大切なこと", ja:"予約のデータが間違っていると、患者さんが病院で長く待つことになってしまうからです。",
-     ro:"Yoyaku no dēta ga machigatte iru to, kanja-san ga byōin de nagaku matsu koto ni natte shimau kara desu.",
-     vi:"Vì nếu dữ liệu lịch hẹn sai, bệnh nhân sẽ phải chờ lâu ở bệnh viện."},
-    {r:"大切なこと", ja:"もちろんスピードも大切なので、遅れそうなときは早めに相談するようにしています。",
-     ro:"Mochiron supīdo mo taisetsu na node, okuresō na toki wa hayame ni sōdan suru yō ni shite imasu.",
-     vi:"Tất nhiên tốc độ cũng quan trọng, nên khi thấy sắp trễ tôi cố gắng báo sớm."},
-    {g:"Khó khăn (困ること) và điều cần lưu ý (注意すること)"},
-    {r:"困ること", ja:"困ることは、仕様書の内容がはっきりしていないときです。",
-     ro:"Komaru koto wa, shiyōsho no naiyō ga hakkiri shite inai toki desu.",
-     vi:"Điều tôi gặp khó là khi nội dung spec không rõ ràng."},
-    {r:"困ること", ja:"そういうときは、自分で決めないで、必ず上司に確認するようにしています。",
-     ro:"Sō iu toki wa, jibun de kimenaide, kanarazu jōshi ni kakunin suru yō ni shite imasu.",
-     vi:"Những lúc đó tôi không tự quyết mà luôn hỏi lại cấp trên."},
-    {r:"注意すること", ja:"注意していることは、本番環境で作業するとき、必ず二人で確認することです。",
-     ro:"Chūi shite iru koto wa, honban kankyō de sagyō suru toki, kanarazu futari de kakunin suru koto desu.",
-     vi:"Điều tôi luôn lưu ý là khi thao tác trên production thì nhất định hai người cùng kiểm tra."},
-    {g:"Mục tiêu sắp tới"},
-    {r:"目標", ja:"今後の目標は、設計からテストまで、一人で担当できるようになることです。",
-     ro:"Kongo no mokuhyō wa, sekkei kara tesuto made, hitori de tantō dekiru yō ni naru koto desu.",
-     vi:"Mục tiêu sắp tới là tự mình đảm nhận được từ thiết kế đến test."},
-    {r:"目標", ja:"そのために、毎日少しずつデータベースの勉強をしています。",
-     ro:"Sono tame ni, mainichi sukoshi zutsu dētabēsu no benkyō o shite imasu.",
-     vi:"Để làm được vậy, mỗi ngày tôi học thêm một chút về database."},
-    {r:"目標", ja:"三年後には、チームリーダーとしてメンバーをサポートしたいと思っています。",
-     ro:"Sannen go ni wa, chīmu rīdā to shite menbā o sapōto shitai to omotte imasu.",
-     vi:"Ba năm nữa, tôi muốn làm team leader để hỗ trợ các thành viên."},
-    {g:"Làm việc cá nhân hay theo team"},
-    {r:"チーム・個人", ja:"普段はチームで仕事をしています。チームは五人で、毎朝十五分のミーティングがあります。",
-     ro:"Fudan wa chīmu de shigoto o shite imasu. Chīmu wa gonin de, maiasa jūgofun no mītingu ga arimasu.",
-     vi:"Bình thường tôi làm theo team. Team có 5 người, mỗi sáng họp 15 phút."},
-    {r:"チーム・個人", ja:"実装は一人で進めますが、レビューやテストはメンバーと協力して行います。",
-     ro:"Jissō wa hitori de susumemasu ga, rebyū ya tesuto wa menbā to kyōryoku shite okonaimasu.",
-     vi:"Implement thì tôi tự làm, còn review và test thì phối hợp với các thành viên."},
-    {r:"チーム・個人", ja:"チームで働くと、問題を早く見つけられるので、いいと思います。",
-     ro:"Chīmu de hataraku to, mondai o hayaku mitsukerareru node, ii to omoimasu.",
-     vi:"Làm theo team thì phát hiện vấn đề sớm hơn nên tôi thấy tốt."},
-    {g:"Điều khó nhất (一番難しいこと)"},
-    {r:"一番難しいこと", ja:"一番難しいことは、日本語で細かい仕様を確認することです。",
-     ro:"Ichiban muzukashii koto wa, Nihongo de komakai shiyō o kakunin suru koto desu.",
-     vi:"Điều khó nhất là xác nhận spec chi tiết bằng tiếng Nhật."},
-    {r:"一番難しいこと", ja:"特に、医療の言葉が分からないことが多いです。",
-     ro:"Toku ni, iryō no kotoba ga wakaranai koto ga ōi desu.",
-     vi:"Đặc biệt là tôi hay không hiểu từ chuyên ngành y."},
-    {r:"一番難しいこと", ja:"分からない言葉はメモしておいて、あとでまとめて質問するようにしています。以上です。",
-     ro:"Wakaranai kotoba wa memo shite oite, ato de matomete shitsumon suru yō ni shite imasu. Ijō desu.",
-     vi:"Từ nào không hiểu tôi ghi lại, sau đó hỏi một lượt. Tôi xin hết."}
-  ]},
+    {"g":"Tự giới thiệu (8 ý, mỗi ý một câu)"},
+    {"r":"名前","ja":"グエン・ズイ・キエンと申します。ハノイ出身です。","ro":"Guen Zui Kien to mōshimasu. Hanoi shusshin desu.","vi":"Tôi là Nguyễn Duy Kiên, quê Hà Nội."},
+    {"r":"理由","ja":"パソコンとアニメが好きで、ITの仕事を選びました。","ro":"Pasokon to anime ga suki de, aitī no shigoto o erabimashita.","vi":"Vì thích máy tính và anime nên tôi chọn nghề IT."},
+    {"r":"担当","ja":"フルスタックエンジニアで、病院の予約システムを作っています。","ro":"Furusutakku enjinia de, byōin no yoyaku shisutemu o tsukutte imasu.","vi":"Tôi là Fullstack Developer, đang làm hệ thống đặt lịch của bệnh viện."},
+    {"r":"仕事の流れ","ja":"タスクを確認して、実装、テスト、レビューの順に進めます。","ro":"Tasuku o kakunin shite, jissō, tesuto, rebyū no jun ni susumemasu.","vi":"Tôi xác nhận task rồi làm theo thứ tự: code, test, review."},
+    {"r":"大切なこと","ja":"一番大切なのは、タスクを正しく理解することです。","ro":"Ichiban taisetsu na no wa, tasuku o tadashiku rikai suru koto desu.","vi":"Quan trọng nhất là hiểu đúng task."},
+    {"r":"困ること","ja":"日本語の会議が難しいので、分からないときはすぐ質問します。","ro":"Nihongo no kaigi ga muzukashii node, wakaranai toki wa sugu shitsumon shimasu.","vi":"Họp bằng tiếng Nhật khó nên không hiểu là tôi hỏi ngay."},
+    {"r":"目標","ja":"目標は、自分のAIアシスタントを作ることです。","ro":"Mokuhyō wa, jibun no ēai ashisutanto o tsukuru koto desu.","vi":"Mục tiêu là tự làm một AI assistant cho mình."},
+    {"r":"チーム","ja":"チームは十六人で、レビューはみんなでします。","ro":"Chīmu wa jūrokunin de, rebyū wa minna de shimasu.","vi":"Team có 16 người, review thì cả team cùng làm."},
+    {"r":"一番難しいこと","ja":"一番難しいのは、日本語で話すことです。以上です。","ro":"Ichiban muzukashii no wa, Nihongo de hanasu koto desu. Ijō desu.","vi":"Khó nhất là nói bằng tiếng Nhật. Tôi xin hết."}
+  ]
+},
 
-{ id:"p2", tab:"② 納期の相談", title:"Tình huống 1 · Sắp trễ hạn",
-  lead:"Đề: 担当している作業の途中で、別の急ぎのタスクが入ってしまいました。このままでは予定の納期に間に合いそうにありません。上司に状況を説明し、期限の延長か担当の調整を相談してください。 Đi theo khung 問題 → 原因 → 影響 → 対応 → 提案, đưa ra hai phương án (延長 hoặc 調整) rồi nói mình chọn cái nào. Dòng 上司 là câu thầy có thể hỏi lại.",
+{
+  id:"p2",
+  tab:"② 納期の相談",
+  title:"Tình huống 1 · Sắp trễ hạn",
+  lead:"Đề: đang làm thì có việc gấp chen vào, sắp trễ hạn. Giải thích với cấp trên, xin gia hạn hoặc nhờ người làm cùng. Khung: 問題 → 原因 → 影響 → 提案.",
   terms:[
-    ["声かけ","koekake","gọi cấp trên","Xin phép trước khi nói: 今、少しよろしいでしょうか。〜についてご相談があります."],
-    ["問題","mondai","vấn đề","Nói kết luận ngay: このままでは〜に間に合わないかもしれません."],
-    ["原因","gen'in","nguyên nhân","Vì sao: 〜が入ったためです / 〜てしまいました."],
-    ["影響","eikyō","ảnh hưởng","Tiến độ bao nhiêu %, trễ mấy ngày, phần nào bị thiếu."],
-    ["対応","taiō","việc đã làm","Mình đã làm gì tới giờ."],
-    ["提案","teian","đề xuất","Hai phương án: 一つ目は〜、二つ目は〜。 Rồi chọn: 私は〜がいいと思いますが、いかがでしょうか."]
+    ["問題","mondai","vấn đề","Nói kết luận ngay."],
+    ["原因","gen'in","nguyên nhân","Vì sao trễ."],
+    ["影響","eikyō","ảnh hưởng","Trễ bao nhiêu."],
+    ["提案","teian","đề xuất","Gia hạn, hoặc nhờ người."]
   ],
-  when:"Phần roleplay với cấp trên. Ngoài đời: khi thấy sắp trễ deadline vì có việc gấp chen vào — báo càng sớm càng tốt.",
+  patterns:[
+    ["〇〇さん、今よろしいでしょうか。","... san, ima yoroshii deshō ka.","Anh/chị …, giờ có tiện không ạ?"],
+    ["〜に間に合わないかもしれません。","... ni maniawanai kamo shiremasen.","Có thể không kịp…"],
+    ["〜が入ったためです。","... ga haitta tame desu.","Vì có … chen vào."],
+    ["今、〜日遅れています。","Ima, ... nichi okurete imasu.","Hiện đang chậm … ngày."],
+    ["〜を延ばしていただけませんか。","... o nobashite itadakemasen ka.","Có thể lùi … giúp em không ạ?"],
+    ["〜さんに手伝っていただけませんか。","... san ni tetsudatte itadakemasen ka.","Có thể nhờ … giúp không ạ?"],
+    ["〜までに報告します。","... made ni hōkoku shimasu.","Em sẽ báo cáo trước…"]
+  ],
+  nouns:[
+    ["納期","nōki","hạn bàn giao"],
+    ["期限","kigen","thời hạn"],
+    ["延長","enchō","gia hạn"],
+    ["担当","tantō","người phụ trách"],
+    ["スケジュール","sukejūru","lịch"],
+    ["急ぎのタスク","isogi no tasuku","việc gấp"],
+    ["バグ修正","bagu shūsei","sửa bug"],
+    ["リリース","rirīsu","release"],
+    ["本番環境","honban kankyō","production"],
+    ["デブワン","debuwan","môi trường dev1"],
+    ["エヌジー","enujī","NG, không đạt"]
+  ],
+  verbs:[
+    ["間に合う","maniau","kịp"],
+    ["遅れる","okureru","trễ"],
+    ["延ばす","nobasu","lùi, kéo dài"],
+    ["相談する","sōdan suru","trao đổi, xin ý kiến"],
+    ["手伝う","tetsudau","giúp"],
+    ["分ける","wakeru","chia"],
+    ["進める","susumeru","tiến hành"],
+    ["デプロイする","depuroi suru","deploy"]
+  ],
+  when:"Roleplay với cấp trên (ミンさん).",
   lines:[
-    {g:"Đề bài: việc gấp chen vào, sắp trễ hạn"},
-    {r:"声かけ", ja:"課長、今少しよろしいでしょうか。予約変更機能のスケジュールについて、ご相談があります。",
-     ro:"Kachō, ima sukoshi yoroshii deshō ka. Yoyaku henkō kinō no sukejūru ni tsuite, go-sōdan ga arimasu.",
-     vi:"Trưởng phòng, giờ anh/chị có chút thời gian không ạ? Tôi muốn trao đổi về lịch của chức năng đổi lịch hẹn."},
-    {r:"問題", ja:"実は、このままでは金曜日の納期に間に合わないかもしれません。",
-     ro:"Jitsu wa, kono mama de wa kin'yōbi no nōki ni maniawanai kamo shiremasen.",
-     vi:"Thật ra cứ thế này thì có thể không kịp hạn thứ Sáu."},
-    {r:"原因", ja:"月曜日に、本番環境の不具合を直すという急ぎのタスクが入ったためです。",
-     ro:"Getsuyōbi ni, honban kankyō no fuguai o naosu to iu isogi no tasuku ga haitta tame desu.",
-     vi:"Vì hôm thứ Hai có việc gấp là sửa bug trên production chen vào."},
-    {r:"原因", ja:"その対応に、二日かかってしまいました。",
-     ro:"Sono taiō ni, futsuka kakatte shimaimashita.",
-     vi:"Việc đó đã mất của tôi hai ngày."},
-    {r:"影響", ja:"今、作業は六十パーセントまで進んでいて、予定より二日遅れています。",
-     ro:"Ima, sagyō wa rokujuppāsento made susunde ite, yotei yori futsuka okurete imasu.",
-     vi:"Hiện công việc mới xong 60%, chậm hai ngày so với kế hoạch."},
-    {r:"影響", ja:"このままだと、テストの時間が足りなくなってしまいます。",
-     ro:"Kono mama da to, tesuto no jikan ga tarinaku natte shimaimasu.",
-     vi:"Cứ thế này thì sẽ không đủ thời gian test."},
-    {r:"対応", ja:"不具合の対応はもう終わりましたので、今日から予約変更機能の作業に戻っています。",
-     ro:"Fuguai no taiō wa mō owarimashita node, kyō kara yoyaku henkō kinō no sagyō ni modotte imasu.",
-     vi:"Việc sửa bug đã xong, từ hôm nay tôi quay lại làm chức năng đổi lịch hẹn."},
-    {r:"提案", ja:"そこで、案が二つあります。一つ目は、納期を来週の火曜日まで延ばしていただくことです。",
-     ro:"Soko de, an ga futatsu arimasu. Hitotsume wa, nōki o raishū no kayōbi made nobashite itadaku koto desu.",
-     vi:"Vì vậy tôi có hai phương án. Một là xin lùi hạn đến thứ Ba tuần sau."},
-    {r:"提案", ja:"二つ目は、画面の部分を佐藤さんに手伝っていただくことです。そうすれば、金曜日に間に合うと思います。",
-     ro:"Futatsume wa, gamen no bubun o Satō-san ni tetsudatte itadaku koto desu. Sō sureba, kin'yōbi ni maniau to omoimasu.",
-     vi:"Hai là nhờ anh/chị Satō làm giúp phần màn hình. Như vậy tôi nghĩ sẽ kịp thứ Sáu."},
-    {r:"提案", ja:"品質を考えると、私は一つ目の案がいいと思いますが、いかがでしょうか。",
-     ro:"Hinshitsu o kangaeru to, watashi wa hitotsume no an ga ii to omoimasu ga, ikaga deshō ka.",
-     vi:"Xét về chất lượng, tôi nghĩ phương án một tốt hơn, anh/chị thấy sao ạ?"},
-    {g:"Thầy hỏi lại → đáp"},
-    {r:"上司", ja:"どうして、もっと早く言わなかったんですか。",
-     ro:"Dōshite, motto hayaku iwanakatta n desu ka.",
-     vi:"(Cấp trên) Sao không nói sớm hơn?"},
-    {r:"自分", ja:"申し訳ありません。もっと早く相談するべきでした。これからは、遅れそうだと分かったら、すぐにご相談します。",
-     ro:"Mōshiwake arimasen. Motto hayaku sōdan suru beki deshita. Kore kara wa, okuresō da to wakattara, sugu ni go-sōdan shimasu.",
-     vi:"Tôi xin lỗi. Lẽ ra tôi phải trao đổi sớm hơn. Từ giờ hễ thấy sắp trễ là tôi sẽ báo ngay."},
-    {r:"上司", ja:"お客様との約束があるので、延長は難しいですね。",
-     ro:"O-kyakusama to no yakusoku ga aru node, enchō wa muzukashii desu ne.",
-     vi:"(Cấp trên) Đã hứa với khách rồi nên lùi hạn thì khó."},
-    {r:"自分", ja:"分かりました。では、佐藤さんと作業を分けて、今日の夕方までに新しいスケジュールをお送りします。",
-     ro:"Wakarimashita. Dewa, Satō-san to sagyō o wakete, kyō no yūgata made ni atarashii sukejūru o o-okuri shimasu.",
-     vi:"Tôi hiểu. Vậy tôi sẽ chia việc với anh/chị Satō và gửi lịch mới trước chiều nay."},
-    {g:"Biến thể: hai việc chồng nhau, xin xếp thứ tự ưu tiên"},
-    {r:"声かけ", ja:"課長、お忙しいところすみません。作業の優先順位について、相談させてください。",
-     ro:"Kachō, o-isogashii tokoro sumimasen. Sagyō no yūsen jun'i ni tsuite, sōdan sasete kudasai.",
-     vi:"Trưởng phòng, xin lỗi lúc anh/chị đang bận. Cho tôi trao đổi về thứ tự ưu tiên công việc."},
-    {r:"問題", ja:"今、予約検索機能と、急ぎの帳票の修正を、同時に担当しています。",
-     ro:"Ima, yoyaku kensaku kinō to, isogi no chōhyō no shūsei o, dōji ni tantō shite imasu.",
-     vi:"Hiện tôi đang cùng lúc làm chức năng tìm lịch hẹn và sửa báo biểu gấp."},
-    {r:"影響", ja:"両方を今週中に終わらせるのは、難しい状況です。",
-     ro:"Ryōhō o konshū-chū ni owaraseru no wa, muzukashii jōkyō desu.",
-     vi:"Làm xong cả hai trong tuần này thì khó."},
-    {r:"提案", ja:"帳票の修正を先に終わらせて、検索機能は来週の月曜日に完成させる、という順番でもよろしいでしょうか。",
-     ro:"Chōhyō no shūsei o saki ni owarasete, kensaku kinō wa raishū no getsuyōbi ni kansei saseru, to iu junban demo yoroshii deshō ka.",
-     vi:"Tôi làm xong phần sửa báo biểu trước, chức năng tìm kiếm hoàn thành thứ Hai tuần sau — thứ tự như vậy có được không ạ?"}
-  ]},
+    {"g":"Việc gấp chen vào, sắp trễ hạn"},
+    {"r":"問題","ja":"ミンさん、金曜日の納期に間に合わないかもしれません。","ro":"Min-san, kin'yōbi no nōki ni maniawanai kamo shiremasen.","vi":"Anh Minh, em có thể không kịp hạn thứ Sáu."},
+    {"r":"原因","ja":"急ぎのバグ修正が入ったためです。","ro":"Isogi no bagu shūsei ga haitta tame desu.","vi":"Vì có việc sửa bug gấp chen vào."},
+    {"r":"影響","ja":"今、一日遅れています。","ro":"Ima, ichinichi okurete imasu.","vi":"Hiện đang chậm một ngày."},
+    {"r":"提案","ja":"一日延ばすか、井原さんに手伝っていただけませんか。","ro":"Ichinichi nobasu ka, Ihara-san ni tetsudatte itadakemasen ka.","vi":"Cho em lùi một ngày, hoặc nhờ Ihara giúp được không ạ?"},
+    {"r":"上司","ja":"延長は難しいですね。","ro":"Enchō wa muzukashii desu ne.","vi":"(Cấp trên) Gia hạn thì khó đấy."},
+    {"r":"自分","ja":"では、井原さんと分けて進めます。","ro":"Dewa, Ihara-san to wakete susumemasu.","vi":"Vậy em chia việc với Ihara để làm."}
+  ]
+},
 
-{ id:"p3", tab:"③ 仕様の確認", title:"Tình huống 2 · Spec chưa rõ",
-  lead:"Đề: 上司からもらった指示書（仕様書）に、一部内容が不明な点を見つけました。作業を止めて確認・相談し、今後の進め方を提案してください。 Ba việc phải làm rõ: chỗ nào không rõ (hiểu được theo hai cách), vì sao phải dừng, và mình đề xuất làm tiếp thế nào trong lúc chờ trả lời.",
+{
+  id:"p3",
+  tab:"③ 仕様の確認",
+  title:"Tình huống 2 · Spec chưa rõ",
+  lead:"Đề: spec có chỗ không rõ. Dừng lại để hỏi, rồi đề xuất cách làm tiếp. Khung: 問題 → 対応 → 提案.",
   terms:[
-    ["問題","mondai","chỗ chưa rõ","Trích đúng câu trong spec: 仕様書に「〜」と書いてありますが、〜が書かれていません."],
-    ["原因","gen'in","vì sao mơ hồ","Hai cách hiểu: 〜なのか、〜なのか、二つの意味に取れます."],
-    ["影響","eikyō","vì sao phải dừng","ここが決まらないと〜が作れないので、今は作業を止めています."],
-    ["対応","taiō","việc đang làm","Trong lúc chờ thì làm phần đã rõ: 先にそちらを進めています."],
-    ["提案","teian","cách làm tiếp","Đưa phương án của mình kèm lý do, rồi xin quyết: 〜でもよろしいでしょうか."]
+    ["問題","mondai","chỗ chưa rõ","Spec không ghi điều gì."],
+    ["対応","taiō","việc đang làm","Làm trước phần đã rõ."],
+    ["提案","teian","đề xuất","Cách của mình."]
   ],
-  when:"Phần roleplay với cấp trên. Ngoài đời: đọc spec thấy chỗ mơ hồ — hỏi trước khi code, đừng tự đoán.",
+  patterns:[
+    ["〜について、確認したいことがあります。","... ni tsuite, kakunin shitai koto ga arimasu.","Em có điều muốn hỏi lại về…"],
+    ["〜が書かれていません。","... ga kakarete imasen.","Không có ghi…"],
+    ["〜か〜か、分かりません。","... ka ... ka, wakarimasen.","Em không rõ là … hay …"],
+    ["決まるまで、〜を止めています。","Kimaru made, ... o tomete imasu.","Đến khi chốt, em tạm dừng…"],
+    ["先に〜を進めます。","Saki ni ... o susumemasu.","Em làm trước…"],
+    ["〜のはどうでしょうか。","... no wa dō deshō ka.","… thì thế nào ạ?"]
+  ],
+  nouns:[
+    ["仕様書","shiyōsho","tài liệu spec"],
+    ["指示書","shijisho","tài liệu chỉ thị"],
+    ["不明な点","fumei na ten","điểm chưa rõ"],
+    ["画面","gamen","màn hình"],
+    ["処理","shori","xử lý"],
+    ["個人情報","kojin jōhō","thông tin cá nhân"],
+    ["進め方","susumekata","cách tiến hành"],
+    ["案","an","phương án"]
+  ],
+  verbs:[
+    ["確認する","kakunin suru","xác nhận"],
+    ["止める","tomeru","dừng"],
+    ["決まる","kimaru","được quyết định"],
+    ["決める","kimeru","quyết định"],
+    ["提案する","teian suru","đề xuất"],
+    ["表示する","hyōji suru","hiển thị"],
+    ["送る","okuru","gửi"]
+  ],
+  when:"Roleplay với cấp trên. Ngoài đời: đọc task thấy chỗ mơ hồ thì hỏi trước khi code.",
   lines:[
-    {g:"Đề bài: spec chức năng hủy lịch thiếu giờ hạn chót"},
-    {r:"声かけ", ja:"課長、今よろしいでしょうか。キャンセル機能の仕様書について、確認したいことがあります。",
-     ro:"Kachō, ima yoroshii deshō ka. Kyanseru kinō no shiyōsho ni tsuite, kakunin shitai koto ga arimasu.",
-     vi:"Trưởng phòng, giờ anh/chị rảnh không ạ? Tôi có điều muốn xác nhận về spec chức năng hủy lịch."},
-    {r:"問題", ja:"仕様書に「予約は前日までキャンセルできる」と書いてありますが、何時までなのかが書かれていません。",
-     ro:"Shiyōsho ni 'yoyaku wa zenjitsu made kyanseru dekiru' to kaite arimasu ga, nanji made na no ka ga kakarete imasen.",
-     vi:"Spec ghi là 'được hủy lịch đến ngày hôm trước', nhưng không ghi đến mấy giờ."},
-    {r:"原因", ja:"前日の夜十二時までなのか、受付が終わる夕方六時までなのか、二つの意味に取れると思います。",
-     ro:"Zenjitsu no yoru jūniji made na no ka, uketsuke ga owaru yūgata rokuji made na no ka, futatsu no imi ni toreru to omoimasu.",
-     vi:"Tôi nghĩ có thể hiểu theo hai cách: đến 12 giờ đêm hôm trước, hay đến 6 giờ chiều lúc quầy tiếp nhận đóng."},
-    {r:"影響", ja:"ここが決まらないと、チェックの処理が作れないので、今は作業を止めています。",
-     ro:"Koko ga kimaranai to, chekku no shori ga tsukurenai node, ima wa sagyō o tomete imasu.",
-     vi:"Chỗ này chưa chốt thì không viết được xử lý kiểm tra, nên tôi đang tạm dừng."},
-    {r:"対応", ja:"ほかの部分は仕様がはっきりしているので、先にそちらを進めています。",
-     ro:"Hoka no bubun wa shiyō ga hakkiri shite iru node, saki ni sochira o susumete imasu.",
-     vi:"Các phần khác spec đã rõ nên tôi đang làm trước."},
-    {r:"提案", ja:"私の案としては、受付が終わる夕方六時までにするのがいいと思います。",
-     ro:"Watashi no an to shite wa, uketsuke ga owaru yūgata rokuji made ni suru no ga ii to omoimasu.",
-     vi:"Theo tôi thì nên đặt hạn là 6 giờ chiều, lúc quầy tiếp nhận đóng."},
-    {r:"提案", ja:"夜遅くキャンセルされると、次の日の朝、病院が空いた枠を使えないからです。",
-     ro:"Yoru osoku kyanseru sareru to, tsugi no hi no asa, byōin ga aita waku o tsukaenai kara desu.",
-     vi:"Vì nếu bị hủy lúc khuya, sáng hôm sau bệnh viện không kịp dùng khung giờ trống đó."},
-    {r:"提案", ja:"もしよろしければ、私が病院様への質問をまとめて、今日中にメールの案を作ります。",
-     ro:"Moshi yoroshikereba, watashi ga byōin-sama e no shitsumon o matomete, kyō-jū ni mēru no an o tsukurimasu.",
-     vi:"Nếu được, tôi sẽ tổng hợp câu hỏi gửi bệnh viện và soạn nháp mail trong hôm nay."},
-    {g:"Thầy hỏi lại → đáp"},
-    {r:"上司", ja:"ほかにも、分からない点はありますか。",
-     ro:"Hoka ni mo, wakaranai ten wa arimasu ka.",
-     vi:"(Cấp trên) Còn chỗ nào chưa rõ nữa không?"},
-    {r:"自分", ja:"はい、もう一点あります。キャンセルされた枠を、すぐにほかの患者さんが予約できるかどうかも、書かれていませんでした。",
-     ro:"Hai, mō itten arimasu. Kyanseru sareta waku o, sugu ni hoka no kanja-san ga yoyaku dekiru ka dō ka mo, kakarete imasen deshita.",
-     vi:"Dạ, còn một điểm. Spec cũng không ghi khung giờ bị hủy có cho bệnh nhân khác đặt ngay không."},
-    {r:"上司", ja:"分かりました。じゃあ、お客様に確認してみましょう。",
-     ro:"Wakarimashita. Jā, o-kyakusama ni kakunin shite mimashō.",
-     vi:"(Cấp trên) Được, vậy hỏi thử khách hàng xem."},
-    {r:"自分", ja:"ありがとうございます。返事が来るまでは、ほかの部分を進めておきます。",
-     ro:"Arigatō gozaimasu. Henji ga kuru made wa, hoka no bubun o susumete okimasu.",
-     vi:"Cảm ơn anh/chị. Trong lúc chờ trả lời, tôi sẽ làm trước các phần khác."},
-    {g:"Biến thể: spec và thiết kế màn hình mâu thuẫn"},
-    {r:"問題", ja:"仕様書と画面設計書で、予約一覧の並び順が違っています。",
-     ro:"Shiyōsho to gamen sekkeisho de, yoyaku ichiran no narabijun ga chigatte imasu.",
-     vi:"Spec và tài liệu thiết kế màn hình ghi thứ tự sắp xếp danh sách lịch hẹn khác nhau."},
-    {r:"原因", ja:"仕様書では日付の順ですが、画面設計書では診療科の順になっています。",
-     ro:"Shiyōsho de wa hizuke no jun desu ga, gamen sekkeisho de wa shinryōka no jun ni natte imasu.",
-     vi:"Spec ghi theo ngày, còn thiết kế màn hình lại theo khoa."},
-    {r:"影響", ja:"どちらに合わせるかによって、検索の処理が変わります。",
-     ro:"Dochira ni awaseru ka ni yotte, kensaku no shori ga kawarimasu.",
-     vi:"Theo bên nào thì xử lý tìm kiếm sẽ khác."},
-    {r:"提案", ja:"受付の方がよく使うのは日付の順なので、日付の順に合わせてはどうでしょうか。",
-     ro:"Uketsuke no kata ga yoku tsukau no wa hizuke no jun na node, hizuke no jun ni awasete wa dō deshō ka.",
-     vi:"Nhân viên tiếp nhận hay dùng thứ tự theo ngày, nên theo ngày có được không ạ?"}
-  ]},
+    {"g":"Spec chưa rõ"},
+    {"r":"問題","ja":"仕様書に、AIが答えられない場合が書かれていません。","ro":"Shiyōsho ni, ēai ga kotaerarenai baai ga kakarete imasen.","vi":"Spec không ghi trường hợp AI không trả lời được."},
+    {"r":"対応","ja":"決まるまで、この部分は止めて、ほかを進めます。","ro":"Kimaru made, kono bubun wa tomete, hoka o susumemasu.","vi":"Đến khi chốt, em dừng phần này và làm phần khác trước."},
+    {"r":"提案","ja":"「分かりません」と表示するのは、どうでしょうか。","ro":"'Wakarimasen' to hyōji suru no wa, dō deshō ka.","vi":"Hiện chữ 'Không biết' thì thế nào ạ?"},
+    {"r":"上司","ja":"ほかにありますか。","ro":"Hoka ni arimasu ka.","vi":"(Cấp trên) Còn gì nữa không?"},
+    {"r":"自分","ja":"個人情報をAIに送ってもいいかも、確認したいです。","ro":"Kojin jōhō o ēai ni okutte mo ii ka mo, kakunin shitai desu.","vi":"Em cũng muốn hỏi có được gửi thông tin cá nhân cho AI không."}
+  ]
+},
 
-{ id:"p4", tab:"④ 事故報告", title:"Tình huống 3 · Báo lỗi do mình",
-  lead:"Đề: 操作ミス（または確認不足）により、提出するデータに誤りがある状態で送ってしまいました。直ちに上司へ事故報告を行い、原因と対応策を伝えてください。 Khung: 謝罪 → 状況説明 (gồm 原因) → 対応 → 今後の対策 → 連絡 (bao giờ, bằng cách nào). Xin lỗi ở câu đầu, và câu cuối phải có mốc giờ cụ thể.",
+{
+  id:"p4",
+  tab:"④ 事故報告",
+  title:"Tình huống 3 · Báo lỗi do mình",
+  lead:"Đề: gửi dữ liệu sai do thao tác sai hoặc kiểm tra không kỹ. Báo ngay cho cấp trên, nói nguyên nhân và cách xử lý. Khung: 謝罪 → 原因 → 対応 → 対策.",
   terms:[
-    ["謝罪","shazai","xin lỗi","Nói ngay câu đầu, nhận lỗi là của mình: 私の確認不足です。申し訳ありません."],
-    ["状況説明","jōkyō setsumei","giải thích tình hình","Chuyện gì, lúc nào, bao nhiêu dữ liệu, ai phát hiện."],
-    ["原因","gen'in","nguyên nhân","原因は、〜ことです — nói thẳng việc mình đã bỏ sót."],
-    ["対応","taiō","đã xử lý gì","Việc đã làm xong và việc sắp làm."],
-    ["今後の対策","kongo no taisaku","biện pháp phòng ngừa","Thay đổi cách làm để không lặp lại: 今後は〜ようにします."],
-    ["連絡","renraku","báo lại","いつまでに + どのように: 三時までに〜して、チャットでご報告します."]
+    ["謝罪","shazai","xin lỗi","Câu đầu tiên."],
+    ["原因","gen'in","nguyên nhân","Mình đã bỏ sót gì."],
+    ["対応","taiō","đã xử lý","Đã sửa gì."],
+    ["対策","taisaku","phòng ngừa","Lần sau làm khác thế nào."]
   ],
-  when:"Phần roleplay với cấp trên, và cả khi báo lỗi cho khách hàng (biến thể cuối dùng kính ngữ cao hơn: 〜ございます, ご迷惑をおかけして).",
+  patterns:[
+    ["申し訳ありません。〜に間違いがありました。","Mōshiwake arimasen. ... ni machigai ga arimashita.","Em xin lỗi. … bị sai."],
+    ["〜のが原因です。","... no ga gen'in desu.","Nguyên nhân là…"],
+    ["〜を直しました。","... o naoshimashita.","Em đã sửa…"],
+    ["今後は、〜ようにします。","Kongo wa, ... yō ni shimasu.","Từ nay em sẽ…"],
+    ["〜までに〜して、〜で報告します。","... made ni ... shite, ... de hōkoku shimasu.","Trước … em sẽ … và báo qua…"],
+    ["ご迷惑をおかけして、申し訳ございません。","Go-meiwaku o okake shite, mōshiwake gozaimasen.","Xin lỗi vì đã gây phiền phức. (với khách)"]
+  ],
+  nouns:[
+    ["間違い","machigai","chỗ sai"],
+    ["確認不足","kakunin busoku","kiểm tra không kỹ"],
+    ["操作ミス","sōsa misu","thao tác sai"],
+    ["原因","gen'in","nguyên nhân"],
+    ["対策","taisaku","biện pháp"],
+    ["データ","dēta","dữ liệu"],
+    ["件数","kensū","số bản ghi"],
+    ["チェックリスト","chekku risuto","checklist"],
+    ["手順書","tejunsho","tài liệu quy trình"]
+  ],
+  verbs:[
+    ["間違える","machigaeru","làm sai"],
+    ["直す","naosu","sửa"],
+    ["作り直す","tsukurinaosu","làm lại"],
+    ["送り直す","okurinaosu","gửi lại"],
+    ["削除する","sakujo suru","xóa"],
+    ["チェックする","chekku suru","kiểm tra"],
+    ["連絡する","renraku suru","liên lạc"]
+  ],
+  when:"Roleplay với cấp trên. Biến thể cuối dùng khi báo lỗi cho khách hàng.",
   lines:[
-    {g:"Đề bài: gửi dữ liệu sai cho bệnh viện vì không kiểm tra"},
-    {r:"謝罪", ja:"課長、申し訳ありません。急いでご報告したいことがあります。",
-     ro:"Kachō, mōshiwake arimasen. Isoide go-hōkoku shitai koto ga arimasu.",
-     vi:"Trưởng phòng, tôi xin lỗi. Tôi có việc cần báo cáo gấp."},
-    {r:"謝罪", ja:"今日の午前中に病院様へ送った予約データに、誤りがありました。私の確認不足です。本当に申し訳ありません。",
-     ro:"Kyō no gozen-chū ni byōin-sama e okutta yoyaku dēta ni, ayamari ga arimashita. Watashi no kakunin busoku desu. Hontō ni mōshiwake arimasen.",
-     vi:"Dữ liệu lịch hẹn tôi gửi bệnh viện sáng nay bị sai. Là do tôi kiểm tra không kỹ. Tôi thật sự xin lỗi."},
-    {r:"状況説明", ja:"十月分のデータを送る予定でしたが、条件を間違えてしまい、九月分のデータが二百件ほど入っていました。",
-     ro:"Jūgatsu-bun no dēta o okuru yotei deshita ga, jōken o machigaete shimai, kugatsu-bun no dēta ga nihyakken hodo haitte imashita.",
-     vi:"Đáng lẽ gửi dữ liệu tháng 10, nhưng tôi đặt sai điều kiện nên lẫn khoảng 200 bản ghi của tháng 9."},
-    {r:"状況説明", ja:"さきほど病院の田中様から連絡があって、間違いが分かりました。",
-     ro:"Sakihodo byōin no Tanaka-sama kara renraku ga atte, machigai ga wakarimashita.",
-     vi:"Vừa nãy anh/chị Tanaka bên bệnh viện liên hệ nên tôi mới biết là sai."},
-    {r:"原因", ja:"原因は、送る前に件数と日付を確認しなかったことです。",
-     ro:"Gen'in wa, okuru mae ni kensū to hizuke o kakunin shinakatta koto desu.",
-     vi:"Nguyên nhân là trước khi gửi tôi đã không kiểm tra số bản ghi và ngày."},
-    {r:"対応", ja:"すでに正しいデータを作り直して、件数も二人でチェックしました。",
-     ro:"Sude ni tadashii dēta o tsukurinaoshite, kensū mo futari de chekku shimashita.",
-     vi:"Tôi đã làm lại dữ liệu đúng và hai người cùng kiểm tra số bản ghi."},
-    {r:"対応", ja:"課長に確認していただいてから、病院様に送り直したいと思います。",
-     ro:"Kachō ni kakunin shite itadaite kara, byōin-sama ni okurinaoshitai to omoimasu.",
-     vi:"Sau khi trưởng phòng kiểm tra giúp, tôi muốn gửi lại cho bệnh viện."},
-    {r:"対応", ja:"また、間違ったデータは削除してもらうように、病院様にお願いします。",
-     ro:"Mata, machigatta dēta wa sakujo shite morau yō ni, byōin-sama ni onegai shimasu.",
-     vi:"Ngoài ra tôi sẽ nhờ bệnh viện xóa dữ liệu sai."},
-    {r:"今後の対策", ja:"今後は、データを送る前に、チェックリストで件数と日付を必ず確認します。",
-     ro:"Kongo wa, dēta o okuru mae ni, chekku risuto de kensū to hizuke o kanarazu kakunin shimasu.",
-     vi:"Từ nay trước khi gửi dữ liệu, tôi sẽ luôn kiểm tra số bản ghi và ngày bằng checklist."},
-    {r:"今後の対策", ja:"そして、提出する前に、チームのだれかにダブルチェックしてもらうようにします。",
-     ro:"Soshite, teishutsu suru mae ni, chīmu no dareka ni daburu chekku shite morau yō ni shimasu.",
-     vi:"Và trước khi nộp, tôi sẽ nhờ một người trong team kiểm tra chéo."},
-    {r:"連絡", ja:"今日の三時までに送り直して、その結果をチャットでご報告します。",
-     ro:"Kyō no sanji made ni okurinaoshite, sono kekka o chatto de go-hōkoku shimasu.",
-     vi:"Tôi sẽ gửi lại trước 3 giờ hôm nay và báo kết quả qua chat."},
-    {r:"連絡", ja:"病院様にも、私からおわびのメールを送ってもよろしいでしょうか。",
-     ro:"Byōin-sama ni mo, watashi kara owabi no mēru o okutte mo yoroshii deshō ka.",
-     vi:"Tôi gửi mail xin lỗi bệnh viện luôn có được không ạ?"},
-    {g:"Thầy hỏi lại → đáp"},
-    {r:"上司", ja:"前に送ったデータにも、同じ間違いはありませんか。",
-     ro:"Mae ni okutta dēta ni mo, onaji machigai wa arimasen ka.",
-     vi:"(Cấp trên) Dữ liệu gửi trước đây có bị sai giống vậy không?"},
-    {r:"自分", ja:"まだ確認できていません。先月より前のデータも今日中に確認して、問題があればすぐにご連絡します。",
-     ro:"Mada kakunin dekite imasen. Sengetsu yori mae no dēta mo kyō-jū ni kakunin shite, mondai ga areba sugu ni go-renraku shimasu.",
-     vi:"Tôi chưa kiểm tra được. Hôm nay tôi sẽ kiểm tra cả dữ liệu các tháng trước, có vấn đề sẽ báo ngay."},
-    {g:"Biến thể: báo lỗi cho khách hàng (bệnh viện)"},
-    {r:"謝罪", ja:"このたびは、ご迷惑をおかけして、大変申し訳ございません。",
-     ro:"Kono tabi wa, go-meiwaku o okake shite, taihen mōshiwake gozaimasen.",
-     vi:"Lần này chúng tôi đã gây phiền phức, thành thật xin lỗi."},
-    {r:"状況説明", ja:"昨日の夜、システムを更新したとき、私の操作ミスで、予約のお知らせメールが二回送られてしまいました。",
-     ro:"Kinō no yoru, shisutemu o kōshin shita toki, watashi no sōsa misu de, yoyaku no o-shirase mēru ga nikai okurarete shimaimashita.",
-     vi:"Tối qua khi cập nhật hệ thống, do tôi thao tác sai nên mail thông báo lịch hẹn bị gửi hai lần."},
-    {r:"対応", ja:"すでに設定を元に戻しましたので、今は正しく送られています。",
-     ro:"Sude ni settei o moto ni modoshimashita node, ima wa tadashiku okurarete imasu.",
-     vi:"Chúng tôi đã khôi phục cấu hình, hiện mail đã gửi đúng."},
-    {r:"今後の対策", ja:"今後は、作業の手順書を作って、二人で確認しながら作業を行います。",
-     ro:"Kongo wa, sagyō no tejunsho o tsukutte, futari de kakunin shinagara sagyō o okonaimasu.",
-     vi:"Từ nay chúng tôi sẽ làm tài liệu thủ tục, vừa làm vừa có hai người kiểm tra."},
-    {r:"連絡", ja:"患者様から質問があった場合の説明文を、今日の五時までにメールでお送りします。",
-     ro:"Kanja-sama kara shitsumon ga atta baai no setsumeibun o, kyō no goji made ni mēru de o-okuri shimasu.",
-     vi:"Trước 5 giờ hôm nay chúng tôi sẽ gửi qua mail đoạn giải thích dùng khi bệnh nhân hỏi."}
-  ]},
+    {"g":"Gửi dữ liệu sai"},
+    {"r":"謝罪","ja":"申し訳ありません。送ったデータに間違いがありました。","ro":"Mōshiwake arimasen. Okutta dēta ni machigai ga arimashita.","vi":"Em xin lỗi. Dữ liệu em gửi bị sai."},
+    {"r":"原因","ja":"送る前に、確認しなかったのが原因です。","ro":"Okuru mae ni, kakunin shinakatta no ga gen'in desu.","vi":"Nguyên nhân là em không kiểm tra trước khi gửi."},
+    {"r":"対応","ja":"正しいデータを作り直して、三時までに送ります。","ro":"Tadashii dēta o tsukurinaoshite, sanji made ni okurimasu.","vi":"Em làm lại dữ liệu đúng và gửi trước 3 giờ."},
+    {"r":"対策","ja":"今後は、送る前に二人でチェックします。","ro":"Kongo wa, okuru mae ni futari de chekku shimasu.","vi":"Từ nay trước khi gửi sẽ có hai người kiểm tra."}
+  ]
+},
 
-{ id:"p5", tab:"⑤ 意見", title:"Chủ đề A · Nêu ý kiến",
-  lead:"Part 3 trong đề là câu hỏi ý kiến. テーマA (作業効率・環境改善): チーム内の会議や連絡が多くて、自分の作業時間が削られていると感じる場合、どう改善すべきだと思いますか。理由も一緒に教えてください。 Khung: 意見 → 理由 → 具体例 → 改善案 → まとめ. Ảnh đề chỉ thấy tới テーマA; có thêm chủ đề khác thì cứ đi theo đúng khung này.",
+{
+  id:"p5",
+  tab:"⑤ 意見",
+  title:"Chủ đề A · Nêu ý kiến",
+  lead:"Đề: họp và liên lạc nhiều quá, mất thời gian làm việc. Nên cải thiện thế nào, vì sao? Khung: 意見 → 理由 → 改善案 → まとめ.",
   terms:[
-    ["意見","iken","ý kiến","Nói kết luận trước: 私は、〜べきだと思います."],
-    ["理由","riyū","lý do","理由は、〜からです."],
-    ["具体例","gutairei","ví dụ cụ thể","例えば、〜 — dùng con số trong team mình cho thật."],
-    ["改善案","kaizen'an","cách cải thiện","Hai ba ý, nối bằng まず → 次に → それから."],
-    ["まとめ","matome","chốt lại","こうすれば、〜ながら〜できると思います."]
+    ["意見","iken","ý kiến","Kết luận trước."],
+    ["理由","riyū","lý do","〜からです."],
+    ["改善案","kaizen'an","cách cải thiện","1–2 cách."],
+    ["まとめ","matome","chốt lại","そうすれば〜."]
   ],
-  when:"Phần cuối bài thi. Thầy hay hỏi vặn lại (でも〜じゃないですか), nên phần cuối có sẵn một câu đáp: công nhận trước bằng 確かに, rồi thêm điều kiện.",
+  patterns:[
+    ["私は、〜べきだと思います。","Watashi wa, ... beki da to omoimasu.","Em nghĩ nên…"],
+    ["〜からです。","... kara desu.","Vì…"],
+    ["例えば、〜。","Tatoeba, ...","Ví dụ…"],
+    ["〜たらいいと思います。","... tara ii to omoimasu.","Em nghĩ … thì tốt."],
+    ["そうすれば、〜と思います。","Sō sureba, ... to omoimasu.","Làm vậy thì em nghĩ…"],
+    ["確かにそうですね。ですから、〜。","Tashika ni sō desu ne. Desukara, ...","Đúng vậy ạ. Vì thế…"]
+  ],
+  nouns:[
+    ["作業時間","sagyō jikan","thời gian làm việc"],
+    ["効率","kōritsu","hiệu suất"],
+    ["改善","kaizen","cải thiện"],
+    ["集中","shūchū","tập trung"],
+    ["朝会","asakai","họp sáng"],
+    ["ルール","rūru","quy tắc"],
+    ["連絡","renraku","liên lạc"],
+    ["返事","henji","trả lời"]
+  ],
+  verbs:[
+    ["減らす","herasu","giảm"],
+    ["増える","fueru","tăng"],
+    ["まとめる","matomeru","gom lại"],
+    ["決める","kimeru","quyết định"],
+    ["集中する","shūchū suru","tập trung"],
+    ["改善する","kaizen suru","cải thiện"],
+    ["守る","mamoru","giữ"]
+  ],
+  when:"Phần cuối bài thi. Cô hay hỏi vặn lại, có sẵn câu đáp ở cuối.",
   lines:[
-    {g:"Câu hỏi của thầy (nghe cho quen)"},
-    {r:"先生", ja:"チーム内の会議や連絡が多くて、自分の作業時間が削られていると感じる場合、どう改善すべきだと思いますか。",
-     ro:"Chīmu-nai no kaigi ya renraku ga ōkute, jibun no sagyō jikan ga kezurarete iru to kanjiru baai, dō kaizen subeki da to omoimasu ka.",
-     vi:"(Thầy) Khi thấy họp và liên lạc trong team nhiều làm mất thời gian làm việc của mình, em nghĩ nên cải thiện thế nào?"},
-    {g:"Trả lời"},
-    {r:"意見", ja:"私は、会議の数を減らして、連絡のルールを決めるべきだと思います。",
-     ro:"Watashi wa, kaigi no kazu o herashite, renraku no rūru o kimeru beki da to omoimasu.",
-     vi:"Tôi nghĩ nên giảm số cuộc họp và đặt quy tắc liên lạc."},
-    {r:"理由", ja:"理由は、作業の途中で何度も止められると、集中できなくて、ミスが増えるからです。",
-     ro:"Riyū wa, sagyō no tochū de nando mo tomerareru to, shūchū dekinakute, misu ga fueru kara desu.",
-     vi:"Lý do là đang làm mà bị ngắt nhiều lần thì không tập trung được, lỗi sẽ tăng."},
-    {r:"具体例", ja:"例えば、私のチームでは、一日に会議が三つあって、チャットも一時間に十回以上来ます。",
-     ro:"Tatoeba, watashi no chīmu de wa, ichinichi ni kaigi ga mittsu atte, chatto mo ichijikan ni jukkai ijō kimasu.",
-     vi:"Ví dụ team tôi một ngày có ba cuộc họp, chat cũng đến hơn mười lần một tiếng."},
-    {r:"具体例", ja:"そのため、実装の時間が二時間ぐらいしか取れない日もあります。",
-     ro:"Sono tame, jissō no jikan ga nijikan gurai shika torenai hi mo arimasu.",
-     vi:"Vì vậy có ngày tôi chỉ có khoảng hai tiếng để code."},
-    {r:"改善案", ja:"まず、毎日の会議は朝の十五分だけにして、話すことがない会議はやめたらいいと思います。",
-     ro:"Mazu, mainichi no kaigi wa asa no jūgofun dake ni shite, hanasu koto ga nai kaigi wa yametara ii to omoimasu.",
-     vi:"Trước hết, họp hằng ngày chỉ 15 phút buổi sáng, cuộc họp nào không có nội dung thì bỏ."},
-    {r:"改善案", ja:"次に、急ぎではない連絡はチャットにまとめて、返事は一日二回にする、というルールを作ります。",
-     ro:"Tsugi ni, isogi de wa nai renraku wa chatto ni matomete, henji wa ichinichi nikai ni suru, to iu rūru o tsukurimasu.",
-     vi:"Tiếp theo, đặt quy tắc: liên lạc không gấp thì gom vào chat, mỗi ngày trả lời hai lần."},
-    {r:"改善案", ja:"それから、午後二時から四時までは、会議を入れない集中タイムにします。",
-     ro:"Sorekara, gogo niji kara yoji made wa, kaigi o irenai shūchū taimu ni shimasu.",
-     vi:"Thêm nữa, từ 2 đến 4 giờ chiều là giờ tập trung, không xếp họp."},
-    {r:"まとめ", ja:"こうすれば、情報の共有を続けながら、作業の時間も守れると思います。",
-     ro:"Kō sureba, jōhō no kyōyū o tsuzukenagara, sagyō no jikan mo mamoreru to omoimasu.",
-     vi:"Làm vậy thì vừa giữ được việc chia sẻ thông tin, vừa giữ được thời gian làm việc."},
-    {g:"Thầy hỏi vặn → đáp"},
-    {r:"先生", ja:"でも、返事が遅くなると、困る人もいるんじゃないですか。",
-     ro:"Demo, henji ga osoku naru to, komaru hito mo iru n ja nai desu ka.",
-     vi:"(Thầy) Nhưng trả lời chậm thì có người sẽ khó xử chứ?"},
-    {r:"自分", ja:"確かにそうですね。ですから、本当に急ぎのときだけは、電話で連絡する、というルールにすればいいと思います。",
-     ro:"Tashika ni sō desu ne. Desukara, hontō ni isogi no toki dake wa, denwa de renraku suru, to iu rūru ni sureba ii to omoimasu.",
-     vi:"Đúng vậy ạ. Vì thế tôi nghĩ nên có quy tắc: chỉ khi thật sự gấp thì gọi điện."}
-  ]},
+    {"r":"先生","ja":"会議や連絡が多くて、作業時間が足りないとき、どう改善しますか。","ro":"Kaigi ya renraku ga ōkute, sagyō jikan ga tarinai toki, dō kaizen shimasu ka.","vi":"(Cô) Họp và liên lạc nhiều làm thiếu thời gian làm việc, em cải thiện thế nào?"},
+    {"r":"意見","ja":"会議を減らすべきだと思います。","ro":"Kaigi o herasu beki da to omoimasu.","vi":"Em nghĩ nên giảm số cuộc họp."},
+    {"r":"理由","ja":"作業が止まると、集中できないからです。","ro":"Sagyō ga tomaru to, shūchū dekinai kara desu.","vi":"Vì công việc bị ngắt thì không tập trung được."},
+    {"r":"改善案","ja":"朝会は十五分にして、連絡はチャットにまとめます。","ro":"Asakai wa jūgofun ni shite, renraku wa chatto ni matomemasu.","vi":"Họp sáng 15 phút, liên lạc thì gom vào chat."},
+    {"r":"まとめ","ja":"そうすれば、作業時間が増えると思います。","ro":"Sō sureba, sagyō jikan ga fueru to omoimasu.","vi":"Làm vậy thì thời gian làm việc sẽ tăng."}
+  ]
+},
 
-{ id:"p6", tab:"⑥ つなぎ・困った時", title:"Câu nối và gỡ bí",
-  lead:"Bài thi là nói chuyện liền mạch 10–15 phút, nên cần vài câu để chuyển ý, xin nhắc lại, và kéo giờ khi chưa nghĩ ra. Nói một câu trong số này vẫn tốt hơn im lặng.",
+{
+  id:"p6",
+  tab:"⑥ 新人のサポート",
+  title:"Chủ đề · Hỗ trợ người mới",
+  lead:"Tình huống thêm: có bạn người Việt mới vào, ra trường được một năm, bạn là mentor. (a) trả lời câu cô hỏi, khả năng ra thi cao; (b) roleplay nói với người mới.",
   terms:[
-    ["聞き返し","kikikaeshi","xin nhắc lại","Không nghe kịp thì hỏi lại ngay, đừng gật đại."],
-    ["確認","kakunin","xác nhận câu hỏi","Nhắc lại câu hỏi bằng lời mình: 〜ということでしょうか."],
-    ["時間","jikan","xin vài giây","少し考えてもいいですか."],
-    ["つなぎ","tsunagi","chuyển ý","それから / そのため / つまり để nối câu thành mạch."],
-    ["保留","horyū","khất lại","確認してから、あとでご連絡します."]
+    ["意見","iken","sẽ làm gì","Vai trò mentor."],
+    ["理由","riyū","lý do","Trải nghiệm của mình."],
+    ["具体例","gutairei","việc cụ thể","Công cụ → tài liệu → task nhỏ → review → small talk."],
+    ["自分 ↔ 新人","jibun ↔ shinjin","roleplay","Nói thân thiện, thêm ね, よ."]
   ],
-  when:"Bất cứ lúc nào trong bài thi: nghe không kịp, hết từ, hay cần chuyển sang ý tiếp theo.",
+  patterns:[
+    ["メンターとして、〜ように手伝います。","Mentā to shite, ... yō ni tetsudaimasu.","Với vai trò mentor, em giúp để…"],
+    ["私も最初は〜だったからです。","Watashi mo saisho wa ... datta kara desu.","Vì lúc đầu em cũng…"],
+    ["〜を任せます。","... o makasemasu.","Em giao … cho bạn ấy."],
+    ["〜てくださいね。","... te kudasai ne.","Bạn hãy … nhé."],
+    ["〜ておくといいですよ。","... te oku to ii desu yo.","Bạn nên … trước nhé."],
+    ["〜のような人です。","... no yō na hito desu.","Là người giống như…"]
+  ],
+  nouns:[
+    ["メンター","mentā","mentor"],
+    ["新人","shinjin","người mới"],
+    ["ツール","tsūru","công cụ"],
+    ["資料","shiryō","tài liệu"],
+    ["小さいタスク","chiisai tasuku","task nhỏ"],
+    ["趣味","shumi","sở thích"],
+    ["食べ物","tabemono","đồ ăn"],
+    ["定例会議","teirei kaigi","họp định kỳ"],
+    ["日報","nippō","báo cáo ngày"]
+  ],
+  verbs:[
+    ["慣れる","nareru","quen"],
+    ["教える","oshieru","dạy"],
+    ["渡す","watasu","đưa"],
+    ["任せる","makaseru","giao phó"],
+    ["準備する","junbi suru","chuẩn bị"],
+    ["メモする","memo suru","ghi chú"],
+    ["緊張する","kinchō suru","hồi hộp"]
+  ],
+  when:"Khi cô hỏi 新しいメンバーが入ったら、何をしますか.",
   lines:[
-    {g:"Nghe không kịp"},
-    {r:"聞き返し", ja:"すみません、もう一度言っていただけますか。",
-     ro:"Sumimasen, mō ichido itte itadakemasu ka.",
-     vi:"Xin lỗi, thầy nói lại một lần nữa được không ạ?"},
-    {r:"聞き返し", ja:"すみません、もう少しゆっくり話していただけますか。",
-     ro:"Sumimasen, mō sukoshi yukkuri hanashite itadakemasu ka.",
-     vi:"Xin lỗi, thầy nói chậm hơn một chút được không ạ?"},
-    {r:"確認", ja:"つまり、会議を減らす方法について聞いていらっしゃる、ということでしょうか。",
-     ro:"Tsumari, kaigi o herasu hōhō ni tsuite kiite irassharu, to iu koto deshō ka.",
-     vi:"Tức là thầy đang hỏi về cách giảm số cuộc họp, phải không ạ?"},
-    {g:"Cần thời gian / hết từ"},
-    {r:"時間", ja:"そうですね…。少し考えてもいいですか。",
-     ro:"Sō desu ne…. Sukoshi kangaete mo ii desu ka.",
-     vi:"Để tôi xem… Cho tôi nghĩ một chút được không ạ?"},
-    {r:"時間", ja:"日本語でうまく言えないのですが、簡単に言うと、テストが足りないということです。",
-     ro:"Nihongo de umaku ienai no desu ga, kantan ni iu to, tesuto ga tarinai to iu koto desu.",
-     vi:"Tôi không diễn đạt khéo bằng tiếng Nhật được, nói đơn giản là test chưa đủ."},
-    {g:"Chuyển ý, nối mạch"},
-    {r:"つなぎ", ja:"結論から言いますと、納期を延ばしていただきたいです。",
-     ro:"Ketsuron kara iimasu to, nōki o nobashite itadakitai desu.",
-     vi:"Nói kết luận trước thì tôi muốn xin lùi hạn."},
-    {r:"つなぎ", ja:"つまり、品質を守るために、時間が必要だということです。",
-     ro:"Tsumari, hinshitsu o mamoru tame ni, jikan ga hitsuyō da to iu koto desu.",
-     vi:"Tóm lại là cần thời gian để giữ chất lượng."},
-    {r:"つなぎ", ja:"それから、もう一つお伝えしたいことがあります。",
-     ro:"Sorekara, mō hitotsu o-tsutae shitai koto ga arimasu.",
-     vi:"Ngoài ra tôi còn một điều muốn nói."},
-    {g:"Chưa trả lời được"},
-    {r:"保留", ja:"今は分からないので、確認してから、あとでご連絡します。",
-     ro:"Ima wa wakaranai node, kakunin shite kara, ato de go-renraku shimasu.",
-     vi:"Giờ tôi chưa rõ, để tôi kiểm tra rồi liên hệ lại sau."}
-  ]}
+    {"g":"(a) Trả lời câu hỏi của cô"},
+    {"r":"先生","ja":"新しいメンバーが入ったら、何をしますか。","ro":"Atarashii menbā ga haittara, nani o shimasu ka.","vi":"(Cô) Khi có thành viên mới, em sẽ làm gì?"},
+    {"r":"意見","ja":"メンターとして、早く慣れるように手伝います。","ro":"Mentā to shite, hayaku nareru yō ni tetsudaimasu.","vi":"Với vai trò mentor, em giúp bạn ấy sớm quen việc."},
+    {"r":"具体例","ja":"まず、ツールの準備と資料の説明をします。","ro":"Mazu, tsūru no junbi to shiryō no setsumei o shimasu.","vi":"Đầu tiên em chuẩn bị công cụ và giải thích tài liệu."},
+    {"r":"具体例","ja":"次に、小さいタスクを任せて、レビューします。","ro":"Tsugi ni, chiisai tasuku o makasete, rebyū shimasu.","vi":"Tiếp theo em giao task nhỏ rồi review."},
+    {"r":"具体例","ja":"お昼には、食べ物や趣味の話もします。","ro":"O-hiru ni wa, tabemono ya shumi no hanashi mo shimasu.","vi":"Giờ trưa em cũng nói chuyện đồ ăn, sở thích."},
+    {"g":"(b) Nói với người mới"},
+    {"r":"自分","ja":"分からないことは、何でも聞いてくださいね。","ro":"Wakaranai koto wa, nan demo kiite kudasai ne.","vi":"Có gì không hiểu cứ hỏi mình nhé."},
+    {"r":"自分","ja":"会議の前に、話すことをメモしておくといいですよ。","ro":"Kaigi no mae ni, hanasu koto o memo shite oku to ii desu yo.","vi":"Trước họp bạn nên ghi sẵn điều sẽ nói."}
+  ]
+},
+
+{
+  id:"p7",
+  tab:"⑦ 用語の説明",
+  title:"Giải thích thuật ngữ IT",
+  lead:"Cô không làm IT, nên có thể hỏi lại 「〇〇って何ですか」. Trả lời một câu theo mẫu 〇〇は、〜ことです.",
+  terms:[
+    ["説明","setsumei","giải thích","〇〇は、〜ことです."],
+    ["たとえ","tatoe","so sánh","〜と同じです."]
+  ],
+  patterns:[
+    ["すみません、簡単に説明しますね。","Sumimasen, kantan ni setsumei shimasu ne.","Xin lỗi, em giải thích đơn giản nhé."],
+    ["〇〇は、〜ことです。","... wa, ... koto desu.","… là việc…"],
+    ["〇〇は、〜という意味です。","... wa, ... to iu imi desu.","… nghĩa là…"],
+    ["〜と同じです。","... to onaji desu.","Giống như…"],
+    ["簡単に言うと、〜。","Kantan ni iu to, ...","Nói đơn giản thì…"]
+  ],
+  nouns:[
+    ["専門用語","senmon yōgo","thuật ngữ chuyên môn"],
+    ["説明書","setsumeisho","bản hướng dẫn"],
+    ["土台","dodai","nền móng"],
+    ["テスト用","tesuto-yō","dùng để test"],
+    ["プログラム","puroguramu","chương trình"],
+    ["サービス","sābisu","dịch vụ"]
+  ],
+  verbs:[
+    ["説明する","setsumei suru","giải thích"],
+    ["置く","oku","đặt"],
+    ["公開する","kōkai suru","công bố"],
+    ["まとめる","matomeru","gộp lại"],
+    ["動く","ugoku","chạy, hoạt động"],
+    ["使う","tsukau","dùng"]
+  ],
+  when:"Bất cứ lúc nào cô hỏi lại một từ.",
+  lines:[
+    {"r":"説明","ja":"すみません、簡単に説明しますね。","ro":"Sumimasen, kantan ni setsumei shimasu ne.","vi":"Xin lỗi, em giải thích đơn giản nhé."},
+    {"r":"デプロイ","ja":"デプロイは、作ったものを使える場所に置くことです。","ro":"Depuroi wa, tsukutta mono o tsukaeru basho ni oku koto desu.","vi":"Deploy là đặt thứ mình làm vào chỗ dùng được."},
+    {"r":"リリース","ja":"リリースは、新しい機能を公開することです。","ro":"Rirīsu wa, atarashii kinō o kōkai suru koto desu.","vi":"Release là công bố chức năng mới."},
+    {"r":"本番環境","ja":"本番環境は、お医者さんが使っているシステムです。","ro":"Honban kankyō wa, o-isha-san ga tsukatte iru shisutemu desu.","vi":"Production là hệ thống bác sĩ đang dùng."},
+    {"r":"エヌジー","ja":"エヌジーは、テストがだめだった、という意味です。","ro":"Enujī wa, tesuto ga dame datta, to iu imi desu.","vi":"NG nghĩa là test không đạt."},
+    {"r":"レビュー","ja":"レビューは、ほかの人にチェックしてもらうことです。","ro":"Rebyū wa, hoka no hito ni chekku shite morau koto desu.","vi":"Review là nhờ người khác kiểm tra."},
+    {"r":"仕様書","ja":"仕様書は、作るものの説明書です。","ro":"Shiyōsho wa, tsukuru mono no setsumeisho desu.","vi":"Spec là bản hướng dẫn về thứ sẽ làm."},
+    {"r":"フルスタック","ja":"フルスタックは、全部を担当できるエンジニアです。","ro":"Furusutakku wa, zenbu o tantō dekiru enjinia desu.","vi":"Fullstack là kỹ sư làm được mọi phần."}
+  ]
+},
+
+{
+  id:"p8",
+  tab:"⑧ つなぎ・困った時",
+  title:"Câu nối và gỡ bí",
+  lead:"Câu ngắn để xin nhắc lại, xin thời gian, chuyển ý. Nói một câu trong số này vẫn tốt hơn im lặng.",
+  terms:[
+    ["聞き返し","kikikaeshi","xin nhắc lại","Đừng gật đại."],
+    ["時間","jikan","xin vài giây","Khi chưa nghĩ ra."],
+    ["つなぎ","tsunagi","chuyển ý","Nối câu thành mạch."]
+  ],
+  patterns:[
+    ["もう一度お願いします。","Mō ichido onegai shimasu.","Xin nói lại một lần nữa."],
+    ["〜ということですか。","... to iu koto desu ka.","Ý cô là… phải không ạ?"],
+    ["少し考えてもいいですか。","Sukoshi kangaete mo ii desu ka.","Cho em nghĩ một chút được không ạ?"],
+    ["簡単に言うと、〜。","Kantan ni iu to, ...","Nói đơn giản thì…"],
+    ["結論から言うと、〜。","Ketsuron kara iu to, ...","Nói kết luận trước thì…"],
+    ["確認して、あとで連絡します。","Kakunin shite, ato de renraku shimasu.","Em kiểm tra rồi báo lại sau."]
+  ],
+  nouns:[
+    ["結論","ketsuron","kết luận"],
+    ["意味","imi","ý nghĩa"],
+    ["質問","shitsumon","câu hỏi"]
+  ],
+  verbs:[
+    ["言う","iu","nói"],
+    ["考える","kangaeru","suy nghĩ"],
+    ["聞く","kiku","nghe, hỏi"]
+  ],
+  when:"Bất cứ lúc nào trong bài thi.",
+  lines:[
+    {"r":"聞き返し","ja":"すみません、もう一度お願いします。","ro":"Sumimasen, mō ichido onegai shimasu.","vi":"Xin lỗi, cô nói lại giúp em ạ."},
+    {"r":"聞き返し","ja":"もう少し、ゆっくりお願いします。","ro":"Mō sukoshi, yukkuri onegai shimasu.","vi":"Cô nói chậm hơn chút giúp em ạ."},
+    {"r":"時間","ja":"少し考えてもいいですか。","ro":"Sukoshi kangaete mo ii desu ka.","vi":"Cho em nghĩ một chút được không ạ?"},
+    {"r":"つなぎ","ja":"簡単に言うと、テストが足りません。","ro":"Kantan ni iu to, tesuto ga tarimasen.","vi":"Nói đơn giản là test chưa đủ."},
+    {"r":"保留","ja":"確認して、あとで連絡します。","ro":"Kakunin shite, ato de renraku shimasu.","vi":"Em kiểm tra rồi báo lại sau."}
+  ]
+}
 ];
 
 const $ = id => document.getElementById(id);
@@ -720,10 +745,39 @@ function renderAbout(){
     dl.appendChild(dt); dl.appendChild(dd);
   });
   aboutEl.appendChild(dl);
+  aboutEl.appendChild(renderKit(s));
   const w=document.createElement("p"); w.className="when";
   const lb=document.createElement("b"); lb.textContent="Dùng khi: ";
   w.appendChild(lb); mixed(w, s.when);
   aboutEl.appendChild(w);
+}
+/* Bo hoc thuoc: mau cau co cho trong + danh tu + dong tu */
+function renderKit(s){
+  const d=document.createElement("details"); d.className="kit";
+  try{ d.open = localStorage.getItem("shadow.kit")!=="0"; }catch(e){ d.open=true; }
+  d.addEventListener("toggle", ()=>{ try{ localStorage.setItem("shadow.kit", d.open?"1":"0"); }catch(e){} });
+  const sm=document.createElement("summary");
+  sm.textContent="Mẫu câu & từ vựng cần thuộc ("+(s.patterns||[]).length+" mẫu · "+((s.nouns||[]).length+(s.verbs||[]).length)+" từ)";
+  d.appendChild(sm);
+  const pl=document.createElement("ul"); pl.className="pat";
+  (s.patterns||[]).forEach(([ja,ro,vi])=>{
+    const li=document.createElement("li");
+    li.appendChild(span("jp p-ja", ja)); li.appendChild(span("p-ro", ro)); li.appendChild(span("p-vi", vi));
+    pl.appendChild(li);
+  });
+  d.appendChild(pl);
+  [["Danh từ", s.nouns],["Động từ", s.verbs]].forEach(([label, arr])=>{
+    if(!arr||!arr.length) return;
+    const h=document.createElement("p"); h.className="kit-h"; h.textContent=label; d.appendChild(h);
+    const ul=document.createElement("ul"); ul.className="vocab";
+    arr.forEach(([ja,ro,vi])=>{
+      const li=document.createElement("li");
+      li.appendChild(span("jp", ja)); li.appendChild(span("v-ro", ro)); li.appendChild(span("v-vi", vi));
+      ul.appendChild(li);
+    });
+    d.appendChild(ul);
+  });
+  return d;
 }
 function speakable(){ return SETS[current].lines.map((l,i)=>({...l,i})).filter(l=>l.ja); }
 function span(cls, text){
@@ -780,12 +834,14 @@ function applyRo(){
   roBtn.textContent="Romaji: "+(showRo?"bật":"tắt");
   document.querySelectorAll(".l-ro").forEach(e=>e.classList.toggle("hidden", !showRo));
   nowRo.classList.toggle("hidden", !showRo);
+  document.body.classList.toggle("no-ro", !showRo);
 }
 function applyVi(){
   viBtn.setAttribute("aria-pressed", showVi?"true":"false");
   viBtn.textContent="Nghĩa Việt: "+(showVi?"bật":"tắt");
   document.querySelectorAll(".l-vi").forEach(e=>e.classList.toggle("hidden", !showVi));
   nowVi.classList.toggle("hidden", !showVi);
+  document.body.classList.toggle("no-vi", !showVi);
 }
 
 /* ---------- speech ---------- */

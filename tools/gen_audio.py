@@ -45,7 +45,8 @@ def synth(text, speaker, out):
 
 def main():
     html = open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
-    texts = list(dict.fromkeys(re.findall(r'\bja:"([^"]+)"', html)))
+    texts = list(dict.fromkeys(json.loads(f'"{t}"') for t in
+                               re.findall(r'"?\bja"?\s*:\s*"((?:[^"\\]|\\.)*)"', html)))
     os.makedirs(AUDIO, exist_ok=True)
 
     voices, used, made = [], set(), 0

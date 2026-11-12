@@ -26,14 +26,21 @@ ngữ pháp N3, từ vựng IT và văn phòng; bối cảnh là dự án hệ t
 | Mục | Phần thi | Khung câu |
 | --- | --- | --- |
 | ① 自己紹介 | Tự giới thiệu (8 ý theo đề cương) | 名前・理由 → 担当 → 仕事の流れ → 大切なこと → 困ること・注意すること → 目標 → チーム・個人 → 一番難しいこと |
-| ② 納期の相談 | Roleplay テーマ1: việc gấp chen vào, sắp trễ hạn | 問題 → 原因 → 影響 → 対応 → 提案 |
-| ③ 仕様の確認 | Roleplay テーマ2: spec có chỗ chưa rõ | 問題 → 原因 → 影響 → 対応 → 提案 |
+| ② 納期の相談 | Roleplay テーマ1: việc gấp chen vào / dev1 NG trước ngày release | 問題 → 原因 → 影響 → 対応 → 提案 → 連絡 |
+| ③ 仕様の確認 | Roleplay テーマ2: spec AI assistant có chỗ chưa rõ | 問題 → 原因 → 影響 → 対応 → 提案 |
 | ④ 事故報告 | Roleplay テーマ3: gửi dữ liệu sai | 謝罪 → 状況説明 → 原因 → 対応 → 今後の対策 → 連絡 |
 | ⑤ 意見 | Part 3 テーマA: họp và liên lạc quá nhiều | 意見 → 理由 → 具体例 → 改善案 → まとめ |
-| ⑥ つなぎ・困った時 | Câu nối và gỡ bí khi đang thi | 聞き返し・確認・時間・つなぎ・保留 |
+| ⑥ 新人のサポート | Làm mentor cho người mới: trả lời câu hỏi của cô + roleplay | 意見 → 理由 → 具体例 → 注意 → まとめ |
+| ⑦ 用語の説明 | Giải thích thuật ngữ IT cho người không làm IT | 〇〇というのは、〜のことです + so sánh đời thường |
+| ⑧ つなぎ・困った時 | Câu nối và gỡ bí khi đang thi | 聞き返し・確認・時間・つなぎ・保留 |
 
-Các mục roleplay có dòng `上司` / `先生` là câu thầy có thể hỏi lại, kèm câu đáp của mình.
-Tên, chức danh và con số ở mục ① là ví dụ, sửa thành thông tin thật trước khi luyện.
+Câu mẫu ngắn, mỗi câu một ý. Mỗi mục có thêm **bộ học thuộc**: mẫu câu có chỗ trống `〜` để tự điền,
+danh từ và động từ hay dùng (mảng `patterns`, `nouns`, `verbs` trong `SETS`), để lúc thi tự ghép câu.
+`mau-cau.html` là bản in của toàn bộ nội dung, kèm bảng tổng hợp từ vựng.
+
+Các mục roleplay có dòng `上司` / `先生` / `新人` là câu người kia có thể nói, kèm câu đáp của mình.
+Nội dung dùng ngữ cảnh thật: Fullstack Developer, dự án quản lý lịch khám, chức năng AI assistant dùng
+Amazon Bedrock, cấp trên ミンさん, đồng nghiệp 桑原さん・井原さん.
 
 Mỗi mục có một thẻ giải nghĩa ngay dưới thanh tab: từ tiếng Nhật đặt tên cho mục nghĩa là gì,
 từng thành phần trong khung câu đảm nhiệm việc gì, và ngữ cảnh nào thì mang khung đó ra dùng.
