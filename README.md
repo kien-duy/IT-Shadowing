@@ -3,7 +3,7 @@
 Trang luyện shadowing tiếng Nhật IT theo đề thi nói cuối kỳ, bối cảnh dự án hệ thống đặt lịch khám
 bệnh viện (診察予約システム). Một file HTML tĩnh, chạy offline, không cần cài gì.
 
-**Bản deploy:** https://nkocvodoi.github.io/IT-Shadowing/
+**Bản deploy:** https://kien-duy.github.io/IT-Shadowing/
 
 ## Cách luyện
 
