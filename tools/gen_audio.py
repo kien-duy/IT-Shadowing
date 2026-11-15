@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Tao file am thanh VOICEVOX cho moi cau trong index.html, cho tung giong trong VOICES.
+"""Tao file am thanh VOICEVOX cho moi cau (ja) va cau co hoi (q) trong index.html, cho tung giong trong VOICES.
 
 Can mo app VOICEVOX truoc (engine chay o localhost:50021).
     python3 tools/gen_audio.py      # chi tao cau moi / cau da sua
@@ -46,7 +46,7 @@ def synth(text, speaker, out):
 def main():
     html = open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
     texts = list(dict.fromkeys(json.loads(f'"{t}"') for t in
-                               re.findall(r'"?\bja"?\s*:\s*"((?:[^"\\]|\\.)*)"', html)))
+                               re.findall(r'"?\b(?:ja|q)"?\s*:\s*"((?:[^"\\]|\\.)*)"', html)))
     os.makedirs(AUDIO, exist_ok=True)
 
     voices, used, made = [], set(), 0

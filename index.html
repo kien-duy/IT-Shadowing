@@ -161,6 +161,24 @@ ul.vocab .jp{font-size:15px;color:var(--ink)}
 body.no-ro .p-ro,body.no-ro .v-ro{display:none}
 body.no-vi .p-vi,body.no-vi .v-vi{display:none}
 @media (max-width:520px){ul.pat li{grid-template-columns:1fr}.p-ja{grid-row:auto}}
+.modes{display:inline-flex;margin-bottom:14px;border:1px solid var(--rule);border-radius:3px;overflow:hidden;max-width:100%}
+.modes button{font:inherit;font-size:13.5px;padding:8px 14px;background:var(--card);border:0;border-left:1px solid var(--rule);color:var(--ink-soft);cursor:pointer;white-space:nowrap}
+.modes button:first-child{border-left:0}
+.modes button[aria-pressed="true"]{background:var(--indigo);color:var(--card);font-weight:600}
+.modes button:focus-visible{outline:2px solid var(--indigo);outline-offset:-2px}
+.d-top{display:flex;justify-content:space-between;gap:12px;font-size:12px;color:var(--ink-soft);margin-bottom:12px}
+.d-cue{font-size:16px;margin:0 0 6px;color:var(--ink);min-height:1.5em}
+.d-cue .jp{font-size:17px}
+.d-ans.masked{color:var(--ink-soft)}
+.d-res{font-size:12px;color:var(--ink-soft);margin-top:4px;min-height:1.2em}
+button.act.ok{background:var(--echo);border-color:var(--echo)}
+.listen{margin:22px 0 0;padding:14px 16px;background:var(--card);border:1px solid var(--rule);border-radius:3px}
+.listen h2{margin:0;font-size:14px;font-weight:600}
+.listen p{margin:6px 0 10px;font-size:12.5px;color:var(--ink-soft);max-width:62ch}
+.listen ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.listen a{display:inline-block;font-size:13px;padding:6px 11px;border:1px solid var(--rule);border-radius:2px;color:var(--indigo);text-decoration:none}
+.listen a:hover{background:var(--indigo-soft)}
+.listen a.all{border-color:var(--indigo);font-weight:600}
 [hidden]{display:none !important}
 @media (prefers-reduced-motion: reduce){.bar span{transition:none !important}}
 @media (max-width:520px){
@@ -189,7 +207,46 @@ body.no-vi .p-vi,body.no-vi .v-vi{display:none}
 
 <section class="about" id="about" aria-live="polite"></section>
 
-<section class="stage" aria-live="polite">
+<div class="modes" role="group" aria-label="Chế độ học">
+  <button type="button" data-mode="shadow" aria-pressed="true">Nghe &amp; nhại</button>
+  <button type="button" data-mode="recall" aria-pressed="false">Nhớ lại</button>
+  <button type="button" data-mode="cue" aria-pressed="false">Cô hỏi</button>
+</div>
+
+<section class="stage drill" id="drill" aria-live="polite" hidden>
+  <div class="d-top"><span id="dProg"></span><span id="dWhere"></span></div>
+  <div class="role jp" id="dRole"></div>
+  <p class="d-cue" id="dCue"></p>
+  <p class="now jp d-ans" id="dAns">—</p>
+  <p class="romaji" id="dRo"></p>
+  <div class="bar" id="dBarBox"><span id="dBar"></span></div>
+  <div class="barlabel" id="dLabel"></div>
+</section>
+
+<div class="controls" id="dCtl" hidden>
+  <button class="act ghost" id="dHint">Gợi ý <small>(H)</small></button>
+  <button class="act" id="dShow">Xem đáp án <small>(Space)</small></button>
+  <button class="act ok" id="dOk" hidden>Nhớ <small>(1)</small></button>
+  <button class="act ghost" id="dNg" hidden>Quên <small>(2)</small></button>
+  <button class="toggle" id="dReplay">Nghe lại <small>(R)</small></button>
+  <label class="opt">Phạm vi
+    <select id="scope">
+      <option value="set">Mục đang chọn</option>
+      <option value="all">Tất cả mục</option>
+      <option value="weak">Chỉ câu chưa thuộc</option>
+    </select>
+  </label>
+  <label class="opt">Chờ trả lời
+    <select id="wait">
+      <option value="4">4 giây</option>
+      <option value="6" selected>6 giây</option>
+      <option value="9">9 giây</option>
+    </select>
+  </label>
+  <button class="toggle" id="dRestart">Học lại từ đầu</button>
+</div>
+
+<section class="stage" id="stage" aria-live="polite">
   <div class="role jp" id="nowRole"></div>
   <p class="now jp" id="nowJa">—</p>
   <p class="romaji" id="nowRo"></p>
@@ -198,7 +255,7 @@ body.no-vi .p-vi,body.no-vi .v-vi{display:none}
   <div class="barlabel" id="barLabel">Sẵn sàng</div>
 </section>
 
-<div class="controls">
+<div class="controls" id="ctl">
   <button class="act" id="run">Chạy shadowing</button>
   <button class="act ghost" id="stop" disabled>Dừng</button>
   <button class="toggle" id="toggleRo" aria-pressed="true">Romaji: bật</button>
@@ -236,13 +293,21 @@ body.no-vi .p-vi,body.no-vi .v-vi{display:none}
 <p class="note">
   Cách luyện hiệu quả nhất: vòng 1 nghe không nói, vòng 2 nói nhỏ theo cùng lúc (không chờ hết câu),
   vòng 3 tắt romaji và nghĩa tiếng Việt rồi nói lại từ trí nhớ. Mỗi ngày một mục là đủ.
-  Phím tắt: <kbd>Space</kbd> chạy/dừng, <kbd>R</kbd> nghe lại câu hiện tại, <kbd>B</kbd> bật tắt romaji, <kbd>V</kbd> bật tắt nghĩa.
+  Muốn thuộc nguyên văn thì sau khi nghe vài vòng, chuyển sang <b>Nhớ lại</b> (nhìn nghĩa Việt, nói câu Nhật) rồi <b>Cô hỏi</b> (nghe câu cô hỏi, trả lời ngay).
+  Ở hai chế độ này: <kbd>Space</kbd> xem đáp án, <kbd>H</kbd> gợi ý, <kbd>1</kbd> nhớ, <kbd>2</kbd> quên, <kbd>R</kbd> nghe lại.
+  Phím tắt khi nghe &amp; nhại: <kbd>Space</kbd> chạy/dừng, <kbd>R</kbd> nghe lại câu hiện tại, <kbd>B</kbd> bật tắt romaji, <kbd>V</kbd> bật tắt nghĩa.
 </p>
+<section class="listen" id="listen" hidden>
+  <h2>Nghe trên điện thoại</h2>
+  <p>Mỗi câu: nghĩa tiếng Việt → khoảng lặng để bạn tự nói câu tiếng Nhật → câu tiếng Nhật → khoảng lặng để nhại theo. Câu của cô và cấp trên chỉ đọc tiếng Nhật. Mở trang này trên điện thoại, bấm một file rồi bỏ máy vào túi.</p>
+  <ul id="listenList"></ul>
+</section>
 <p class="note" id="credit"></p>
 
 </div>
 
 <script src="audio/manifest.js"></script>
+<script src="audio/nghe/list.js"></script>
 <script>
 const SETS = [
 {
@@ -311,13 +376,13 @@ const SETS = [
   when:"Đầu bài thi, khi cô nói 自己紹介をお願いします.",
   lines:[
     {"g":"Tự giới thiệu (mỗi ý một câu)"},
-    {"r":"名前","ja":"グエン・ズイ・キエンと申します。ハノイ出身です。","ro":"Guen Zui Kien to mōshimasu. Hanoi shusshin desu.","vi":"Tôi là Nguyễn Duy Kiên, quê Hà Nội."},
-    {"r":"理由","ja":"パソコンが好きで、ITの仕事を選びました。趣味はバドミントンと、友達や同僚とカフェに行くことです。","ro":"Pasokon ga suki de, aitī no shigoto o erabimashita. Shumi wa badominton to, tomodachi ya dōryō to kafe ni iku koto desu.","vi":"Vì thích máy tính nên tôi chọn nghề IT. Sở thích là cầu lông và đi cà phê với bạn bè, đồng nghiệp."},
-    {"r":"担当","ja":"フルスタックエンジニアで、病院の予約システムを作っています。","ro":"Furusutakku enjinia de, byōin no yoyaku shisutemu o tsukutte imasu.","vi":"Tôi là Fullstack Developer, đang làm hệ thống đặt lịch của bệnh viện."},
-    {"r":"仕事の流れ","ja":"タスクを確認して、実装、テスト、レビューの順に進めます。","ro":"Tasuku o kakunin shite, jissō, tesuto, rebyū no jun ni susumemasu.","vi":"Tôi xác nhận task rồi làm theo thứ tự: code, test, review."},
-    {"r":"大切なこと","ja":"一番大切なのは、タスクを正しく理解することです。","ro":"Ichiban taisetsu na no wa, tasuku o tadashiku rikai suru koto desu.","vi":"Quan trọng nhất là hiểu đúng task."},
-    {"r":"困ること","ja":"日本語の会議は難しいので、分からないことはメモして、あとでベトナム人の上司に聞きます。","ro":"Nihongo no kaigi wa muzukashii node, wakaranai koto wa memo shite, ato de Betonamujin no jōshi ni kikimasu.","vi":"Họp bằng tiếng Nhật khó nên điều không hiểu tôi ghi lại, rồi hỏi cấp trên người Việt."},
-    {"r":"目標","ja":"目標は、ビジネスの考え方を勉強して、品質管理の仕事にもチャレンジすることです。以上です。","ro":"Mokuhyō wa, bijinesu no kangaekata o benkyō shite, hinshitsu kanri no shigoto ni mo charenji suru koto desu. Ijō desu.","vi":"Mục tiêu là học cách tư duy business và thử sức cả với công việc quản lý chất lượng. Tôi xin hết."}
+    {"r":"名前","ja":"グエン・ズイ・キエンと申します。ハノイ出身です。","ro":"Guen Zui Kien to mōshimasu. Hanoi shusshin desu.","vi":"Tôi là Nguyễn Duy Kiên, quê Hà Nội.","q":"では、自己紹介をお願いします。"},
+    {"r":"理由","ja":"パソコンが好きで、ITの仕事を選びました。趣味はバドミントンと、友達や同僚とカフェに行くことです。","ro":"Pasokon ga suki de, aitī no shigoto o erabimashita. Shumi wa badominton to, tomodachi ya dōryō to kafe ni iku koto desu.","vi":"Vì thích máy tính nên tôi chọn nghề IT. Sở thích là cầu lông và đi cà phê với bạn bè, đồng nghiệp.","q":"どうしてITの仕事を選びましたか。"},
+    {"r":"担当","ja":"フルスタックエンジニアで、病院の予約システムを作っています。","ro":"Furusutakku enjinia de, byōin no yoyaku shisutemu o tsukutte imasu.","vi":"Tôi là Fullstack Developer, đang làm hệ thống đặt lịch của bệnh viện.","q":"今、どんな仕事をしていますか。"},
+    {"r":"仕事の流れ","ja":"タスクを確認して、実装、テスト、レビューの順に進めます。","ro":"Tasuku o kakunin shite, jissō, tesuto, rebyū no jun ni susumemasu.","vi":"Tôi xác nhận task rồi làm theo thứ tự: code, test, review.","q":"仕事は、どんな流れで進めますか。"},
+    {"r":"大切なこと","ja":"一番大切なのは、タスクを正しく理解することです。","ro":"Ichiban taisetsu na no wa, tasuku o tadashiku rikai suru koto desu.","vi":"Quan trọng nhất là hiểu đúng task.","q":"仕事で一番大切なことは何ですか。"},
+    {"r":"困ること","ja":"日本語の会議は難しいので、分からないことはメモして、あとでベトナム人の上司に聞きます。","ro":"Nihongo no kaigi wa muzukashii node, wakaranai koto wa memo shite, ato de Betonamujin no jōshi ni kikimasu.","vi":"Họp bằng tiếng Nhật khó nên điều không hiểu tôi ghi lại, rồi hỏi cấp trên người Việt.","q":"仕事で困ることはありますか。"},
+    {"r":"目標","ja":"目標は、ビジネスの考え方を勉強して、品質管理の仕事にもチャレンジすることです。以上です。","ro":"Mokuhyō wa, bijinesu no kangaekata o benkyō shite, hinshitsu kanri no shigoto ni mo charenji suru koto desu. Ijō desu.","vi":"Mục tiêu là học cách tư duy business và thử sức cả với công việc quản lý chất lượng. Tôi xin hết.","q":"これからの目標は何ですか。"}
   ]
 },
 
@@ -367,9 +432,9 @@ const SETS = [
   when:"Roleplay với cấp trên (ミンさん).",
   lines:[
     {"g":"Lỗi bảo mật nhiều, test mới xong 70%"},
-    {"r":"問題","ja":"ミンさん、今よろしいでしょうか。このタスクは、金曜日のリリースに間に合わないかもしれません。","ro":"Min-san, ima yoroshii deshō ka. Kono tasuku wa, kin'yōbi no rirīsu ni maniawanai kamo shiremasen.","vi":"Anh Minh, giờ có tiện không ạ? Task này có thể không kịp release thứ Sáu."},
-    {"r":"原因","ja":"セキュリティのバグの対応が多くて、テストはまだ七十パーセントしか終わっていません。","ro":"Sekyuriti no bagu no taiō ga ōkute, tesuto wa mada nanajuppāsento shika owatte imasen.","vi":"Vì phải xử lý nhiều lỗi bảo mật nên test mới xong được 70%."},
-    {"r":"提案","ja":"このタスクを、次のリリースに延ばしてもよろしいでしょうか。","ro":"Kono tasuku o, tsugi no rirīsu ni nobashite mo yoroshii deshō ka.","vi":"Em lùi task này sang đợt release sau có được không ạ?"},
+    {"r":"問題","ja":"ミンさん、今よろしいでしょうか。このタスクは、金曜日のリリースに間に合わないかもしれません。","ro":"Min-san, ima yoroshii deshō ka. Kono tasuku wa, kin'yōbi no rirīsu ni maniawanai kamo shiremasen.","vi":"Anh Minh, giờ có tiện không ạ? Task này có thể không kịp release thứ Sáu.","q":"はい、どうしましたか。"},
+    {"r":"原因","ja":"セキュリティのバグの対応が多くて、テストはまだ七十パーセントしか終わっていません。","ro":"Sekyuriti no bagu no taiō ga ōkute, tesuto wa mada nanajuppāsento shika owatte imasen.","vi":"Vì phải xử lý nhiều lỗi bảo mật nên test mới xong được 70%.","q":"どうして間に合わないんですか。"},
+    {"r":"提案","ja":"このタスクを、次のリリースに延ばしてもよろしいでしょうか。","ro":"Kono tasuku o, tsugi no rirīsu ni nobashite mo yoroshii deshō ka.","vi":"Em lùi task này sang đợt release sau có được không ạ?","q":"じゃあ、どうしたいですか。"},
     {"r":"上司","ja":"分かりました。次のリリースにしましょう。","ro":"Wakarimashita. Tsugi no rirīsu ni shimashō.","vi":"(Cấp trên) Được, để đợt release sau nhé."},
     {"r":"自分","ja":"ありがとうございます。今日中に、新しいスケジュールを報告します。","ro":"Arigatō gozaimasu. Kyōjū ni, atarashii sukejūru o hōkoku shimasu.","vi":"Cảm ơn anh. Trong hôm nay em sẽ báo lịch mới."}
   ]
@@ -417,9 +482,9 @@ const SETS = [
   when:"Roleplay với cấp trên. Ngoài đời: đọc task thấy chỗ mơ hồ thì hỏi trước khi code.",
   lines:[
     {"g":"Spec không ghi khi nhập sai mật khẩu 5 lần"},
-    {"r":"確認","ja":"ミンさん、ログイン機能について、確認したいことがあります。","ro":"Min-san, roguin kinō ni tsuite, kakunin shitai koto ga arimasu.","vi":"Anh Minh, em có điều muốn hỏi lại về chức năng đăng nhập."},
-    {"r":"問題","ja":"仕様書に、パスワードを五回間違えた場合が書かれていません。","ro":"Shiyōsho ni, pasuwādo o gokai machigaeta baai ga kakarete imasen.","vi":"Spec không ghi trường hợp nhập sai mật khẩu 5 lần."},
-    {"r":"提案","ja":"アカウントを三十分ロックするのは、どうでしょうか。","ro":"Akaunto o sanjuppun rokku suru no wa, dō deshō ka.","vi":"Khóa tài khoản 30 phút thì thế nào ạ?"}
+    {"r":"確認","ja":"ミンさん、ログイン機能について、確認したいことがあります。","ro":"Min-san, roguin kinō ni tsuite, kakunin shitai koto ga arimasu.","vi":"Anh Minh, em có điều muốn hỏi lại về chức năng đăng nhập.","q":"はい、どうしましたか。"},
+    {"r":"問題","ja":"仕様書に、パスワードを五回間違えた場合が書かれていません。","ro":"Shiyōsho ni, pasuwādo o gokai machigaeta baai ga kakarete imasen.","vi":"Spec không ghi trường hợp nhập sai mật khẩu 5 lần.","q":"何が分からないんですか。"},
+    {"r":"提案","ja":"アカウントを三十分ロックするのは、どうでしょうか。","ro":"Akaunto o sanjuppun rokku suru no wa, dō deshō ka.","vi":"Khóa tài khoản 30 phút thì thế nào ạ?","q":"キエンさんは、どうしたらいいと思いますか。"}
   ]
 },
 
@@ -467,10 +532,10 @@ const SETS = [
   when:"Roleplay với cấp trên.",
   lines:[
     {"g":"Không kiểm tra tin nhắn AI soạn trước khi gửi"},
-    {"r":"謝罪","ja":"申し訳ありません。AIが作ったメッセージに、間違いがありました。","ro":"Mōshiwake arimasen. Ēai ga tsukutta messēji ni, machigai ga arimashita.","vi":"Em xin lỗi. Tin nhắn AI soạn bị sai."},
-    {"r":"原因","ja":"送る前に、自分で読んで確認しなかったのが原因です。","ro":"Okuru mae ni, jibun de yonde kakunin shinakatta no ga gen'in desu.","vi":"Nguyên nhân là em không tự đọc lại trước khi gửi."},
-    {"r":"対応","ja":"正しいメッセージを送り直して、三時までにチャットで報告します。","ro":"Tadashii messēji o okurinaoshite, sanji made ni chatto de hōkoku shimasu.","vi":"Em sẽ gửi lại tin đúng và báo qua chat trước 3 giờ."},
-    {"r":"対策","ja":"今後は、AIの文章も、送る前に必ずチェックします。","ro":"Kongo wa, ēai no bunshō mo, okuru mae ni kanarazu chekku shimasu.","vi":"Từ nay văn bản AI soạn em cũng sẽ kiểm tra trước khi gửi."}
+    {"r":"謝罪","ja":"申し訳ありません。AIが作ったメッセージに、間違いがありました。","ro":"Mōshiwake arimasen. Ēai ga tsukutta messēji ni, machigai ga arimashita.","vi":"Em xin lỗi. Tin nhắn AI soạn bị sai.","q":"どうしましたか。"},
+    {"r":"原因","ja":"送る前に、自分で読んで確認しなかったのが原因です。","ro":"Okuru mae ni, jibun de yonde kakunin shinakatta no ga gen'in desu.","vi":"Nguyên nhân là em không tự đọc lại trước khi gửi.","q":"原因は何ですか。"},
+    {"r":"対応","ja":"正しいメッセージを送り直して、三時までにチャットで報告します。","ro":"Tadashii messēji o okurinaoshite, sanji made ni chatto de hōkoku shimasu.","vi":"Em sẽ gửi lại tin đúng và báo qua chat trước 3 giờ.","q":"これから、どう対応しますか。"},
+    {"r":"対策","ja":"今後は、AIの文章も、送る前に必ずチェックします。","ro":"Kongo wa, ēai no bunshō mo, okuru mae ni kanarazu chekku shimasu.","vi":"Từ nay văn bản AI soạn em cũng sẽ kiểm tra trước khi gửi.","q":"今後は、どうしますか。"}
   ]
 },
 
@@ -516,9 +581,9 @@ const SETS = [
   lines:[
     {"r":"先生","ja":"会議や連絡が多くて、作業時間が足りないとき、どう改善しますか。","ro":"Kaigi ya renraku ga ōkute, sagyō jikan ga tarinai toki, dō kaizen shimasu ka.","vi":"(Cô) Họp và liên lạc nhiều làm thiếu thời gian làm việc, em cải thiện thế nào?"},
     {"r":"意見","ja":"会議を減らすべきだと思います。","ro":"Kaigi o herasu beki da to omoimasu.","vi":"Em nghĩ nên giảm số cuộc họp."},
-    {"r":"理由","ja":"作業が止まると、集中できないからです。","ro":"Sagyō ga tomaru to, shūchū dekinai kara desu.","vi":"Vì công việc bị ngắt thì không tập trung được."},
-    {"r":"改善案","ja":"朝会は十五分にして、連絡はチャットにまとめます。","ro":"Asakai wa jūgofun ni shite, renraku wa chatto ni matomemasu.","vi":"Họp sáng 15 phút, liên lạc thì gom vào chat."},
-    {"r":"まとめ","ja":"そうすれば、作業時間が増えると思います。","ro":"Sō sureba, sagyō jikan ga fueru to omoimasu.","vi":"Làm vậy thì thời gian làm việc sẽ tăng."}
+    {"r":"理由","ja":"作業が止まると、集中できないからです。","ro":"Sagyō ga tomaru to, shūchū dekinai kara desu.","vi":"Vì công việc bị ngắt thì không tập trung được.","q":"どうしてですか。"},
+    {"r":"改善案","ja":"朝会は十五分にして、連絡はチャットにまとめます。","ro":"Asakai wa jūgofun ni shite, renraku wa chatto ni matomemasu.","vi":"Họp sáng 15 phút, liên lạc thì gom vào chat.","q":"では、どう改善しますか。"},
+    {"r":"まとめ","ja":"そうすれば、作業時間が増えると思います。","ro":"Sō sureba, sagyō jikan ga fueru to omoimasu.","vi":"Làm vậy thì thời gian làm việc sẽ tăng.","q":"そうすると、どうなりますか。"}
   ]
 },
 
@@ -566,12 +631,12 @@ const SETS = [
     {"g":"(a) Trả lời câu hỏi của cô"},
     {"r":"先生","ja":"新しいメンバーが入ったら、何をしますか。","ro":"Atarashii menbā ga haittara, nani o shimasu ka.","vi":"(Cô) Khi có thành viên mới, em sẽ làm gì?"},
     {"r":"意見","ja":"メンターとして、早く慣れるように手伝います。","ro":"Mentā to shite, hayaku nareru yō ni tetsudaimasu.","vi":"Với vai trò mentor, em giúp bạn ấy sớm quen việc."},
-    {"r":"具体例","ja":"まず、ツールの準備と資料の説明をします。","ro":"Mazu, tsūru no junbi to shiryō no setsumei o shimasu.","vi":"Đầu tiên em chuẩn bị công cụ và giải thích tài liệu."},
-    {"r":"具体例","ja":"次に、小さいタスクを任せて、レビューします。","ro":"Tsugi ni, chiisai tasuku o makasete, rebyū shimasu.","vi":"Tiếp theo em giao task nhỏ rồi review."},
-    {"r":"具体例","ja":"お昼には、食べ物や趣味の話もします。","ro":"O-hiru ni wa, tabemono ya shumi no hanashi mo shimasu.","vi":"Giờ trưa em cũng nói chuyện đồ ăn, sở thích."},
+    {"r":"具体例","ja":"まず、ツールの準備と資料の説明をします。","ro":"Mazu, tsūru no junbi to shiryō no setsumei o shimasu.","vi":"Đầu tiên em chuẩn bị công cụ và giải thích tài liệu.","q":"具体的に、何をしますか。"},
+    {"r":"具体例","ja":"次に、小さいタスクを任せて、レビューします。","ro":"Tsugi ni, chiisai tasuku o makasete, rebyū shimasu.","vi":"Tiếp theo em giao task nhỏ rồi review.","q":"それから、何をしますか。"},
+    {"r":"具体例","ja":"お昼には、食べ物や趣味の話もします。","ro":"O-hiru ni wa, tabemono ya shumi no hanashi mo shimasu.","vi":"Giờ trưa em cũng nói chuyện đồ ăn, sở thích.","q":"仕事のほかに、何かしますか。"},
     {"g":"(b) Nói với người mới"},
-    {"r":"自分","ja":"分からないことは、何でも聞いてくださいね。","ro":"Wakaranai koto wa, nan demo kiite kudasai ne.","vi":"Có gì không hiểu cứ hỏi mình nhé."},
-    {"r":"自分","ja":"会議の前に、話すことをメモしておくといいですよ。","ro":"Kaigi no mae ni, hanasu koto o memo shite oku to ii desu yo.","vi":"Trước họp bạn nên ghi sẵn điều sẽ nói."}
+    {"r":"自分","ja":"分からないことは、何でも聞いてくださいね。","ro":"Wakaranai koto wa, nan demo kiite kudasai ne.","vi":"Có gì không hiểu cứ hỏi mình nhé.","q":"新人に、最初に何と言いますか。"},
+    {"r":"自分","ja":"会議の前に、話すことをメモしておくといいですよ。","ro":"Kaigi no mae ni, hanasu koto o memo shite oku to ii desu yo.","vi":"Trước họp bạn nên ghi sẵn điều sẽ nói.","q":"会議が苦手な新人には、何と言いますか。"}
   ]
 },
 
@@ -609,13 +674,13 @@ const SETS = [
   ],
   when:"Bất cứ lúc nào cô hỏi lại một từ.",
   lines:[
-    {"r":"説明","ja":"すみません、簡単に説明しますね。","ro":"Sumimasen, kantan ni setsumei shimasu ne.","vi":"Xin lỗi, em giải thích đơn giản nhé."},
-    {"r":"デプロイ","ja":"デプロイは、作ったものを、テスターやお客様が使える場所に置くことです。","ro":"Depuroi wa, tsukutta mono o, tesutā ya okyakusama ga tsukaeru basho ni oku koto desu.","vi":"Deploy là đặt thứ mình làm vào nơi tester và khách hàng dùng được."},
-    {"r":"リリース","ja":"リリースは、新しい機能や、バグを直したものを公開することです。","ro":"Rirīsu wa, atarashii kinō ya, bagu o naoshita mono o kōkai suru koto desu.","vi":"Release là công bố chức năng mới hoặc bản đã sửa lỗi."},
-    {"r":"本番環境","ja":"本番環境は、お客様が使っているシステムです。","ro":"Honban kankyō wa, okyakusama ga tsukatte iru shisutemu desu.","vi":"Production là hệ thống khách hàng đang dùng."},
-    {"r":"レビュー","ja":"レビューは、新しいバグが出ないように、ほかの人にチェックしてもらうことです。","ro":"Rebyū wa, atarashii bagu ga denai yō ni, hoka no hito ni chekku shite morau koto desu.","vi":"Review là nhờ người khác kiểm tra để không sinh ra lỗi mới."},
-    {"r":"仕様書","ja":"仕様書は、作るものの説明書です。","ro":"Shiyōsho wa, tsukuru mono no setsumeisho desu.","vi":"Spec là bản hướng dẫn về thứ sẽ làm."},
-    {"r":"フルスタック","ja":"フルスタックは、全部を担当できるエンジニアです。","ro":"Furusutakku wa, zenbu o tantō dekiru enjinia desu.","vi":"Fullstack là kỹ sư làm được mọi phần."}
+    {"r":"説明","ja":"すみません、簡単に説明しますね。","ro":"Sumimasen, kantan ni setsumei shimasu ne.","vi":"Xin lỗi, em giải thích đơn giản nhé.","q":"すみません、専門用語はよく分かりません。"},
+    {"r":"デプロイ","ja":"デプロイは、作ったものを、テスターやお客様が使える場所に置くことです。","ro":"Depuroi wa, tsukutta mono o, tesutā ya okyakusama ga tsukaeru basho ni oku koto desu.","vi":"Deploy là đặt thứ mình làm vào nơi tester và khách hàng dùng được.","q":"デプロイって何ですか。"},
+    {"r":"リリース","ja":"リリースは、新しい機能や、バグを直したものを公開することです。","ro":"Rirīsu wa, atarashii kinō ya, bagu o naoshita mono o kōkai suru koto desu.","vi":"Release là công bố chức năng mới hoặc bản đã sửa lỗi.","q":"リリースって何ですか。"},
+    {"r":"本番環境","ja":"本番環境は、お客様が使っているシステムです。","ro":"Honban kankyō wa, okyakusama ga tsukatte iru shisutemu desu.","vi":"Production là hệ thống khách hàng đang dùng.","q":"本番環境って何ですか。"},
+    {"r":"レビュー","ja":"レビューは、新しいバグが出ないように、ほかの人にチェックしてもらうことです。","ro":"Rebyū wa, atarashii bagu ga denai yō ni, hoka no hito ni chekku shite morau koto desu.","vi":"Review là nhờ người khác kiểm tra để không sinh ra lỗi mới.","q":"レビューって何ですか。"},
+    {"r":"仕様書","ja":"仕様書は、作るものの説明書です。","ro":"Shiyōsho wa, tsukuru mono no setsumeisho desu.","vi":"Spec là bản hướng dẫn về thứ sẽ làm.","q":"仕様書って何ですか。"},
+    {"r":"フルスタック","ja":"フルスタックは、全部を担当できるエンジニアです。","ro":"Furusutakku wa, zenbu o tantō dekiru enjinia desu.","vi":"Fullstack là kỹ sư làm được mọi phần.","q":"フルスタックって何ですか。"}
   ]
 },
 
@@ -651,9 +716,9 @@ const SETS = [
   lines:[
     {"r":"聞き返し","ja":"すみません、もう一度お願いします。","ro":"Sumimasen, mō ichido onegai shimasu.","vi":"Xin lỗi, cô nói lại giúp em ạ."},
     {"r":"聞き返し","ja":"もう少し、ゆっくりお願いします。","ro":"Mō sukoshi, yukkuri onegai shimasu.","vi":"Cô nói chậm hơn chút giúp em ạ."},
-    {"r":"時間","ja":"少し考えてもいいですか。","ro":"Sukoshi kangaete mo ii desu ka.","vi":"Cho em nghĩ một chút được không ạ?"},
-    {"r":"つなぎ","ja":"簡単に言うと、テストが足りません。","ro":"Kantan ni iu to, tesuto ga tarimasen.","vi":"Nói đơn giản là test chưa đủ."},
-    {"r":"保留","ja":"確認して、あとで連絡します。","ro":"Kakunin shite, ato de renraku shimasu.","vi":"Em kiểm tra rồi báo lại sau."}
+    {"r":"時間","ja":"少し考えてもいいですか。","ro":"Sukoshi kangaete mo ii desu ka.","vi":"Cho em nghĩ một chút được không ạ?","q":"AIについて、どう思いますか。"},
+    {"r":"つなぎ","ja":"簡単に言うと、テストが足りません。","ro":"Kantan ni iu to, tesuto ga tarimasen.","vi":"Nói đơn giản là test chưa đủ.","q":"それは、どういう意味ですか。"},
+    {"r":"保留","ja":"確認して、あとで連絡します。","ro":"Kakunin shite, ato de renraku shimasu.","vi":"Em kiểm tra rồi báo lại sau.","q":"それは、いつできますか。"}
   ]
 }
 ];
@@ -666,7 +731,7 @@ const runBtn=$("run"), stopBtn=$("stop");
 const rateSel=$("rate"), repsSel=$("reps"), gapSel=$("gap"), voiceSel=$("voice");
 const roBtn=$("toggleRo"), viBtn=$("toggleVi");
 
-let current=0, idx=-1, running=false, token=0;
+let current=0, idx=-1, running=false, token=0, mode="shadow";
 let showRo=true, showVi=true;
 
 /* ---------- settings ---------- */
@@ -679,6 +744,9 @@ function loadPrefs(){
     if(p.showRo!==undefined) showRo=!!p.showRo;
     if(p.showVi!==undefined) showVi=!!p.showVi;
     if(p.set) { const i=SETS.findIndex(s=>s.id===p.set); if(i>=0) current=i; }
+    if(["shadow","recall","cue"].includes(p.mode)) mode=p.mode;
+    if(p.scope) $("scope").value=p.scope;
+    if(p.wait) $("wait").value=p.wait;
     return p;
   }catch(e){ return {}; }
 }
@@ -686,7 +754,8 @@ function savePrefs(){
   try{
     localStorage.setItem("shadow.prefs", JSON.stringify({
       rate:rateSel.value, reps:repsSel.value, gap:gapSel.value,
-      showRo:showRo, showVi:showVi, set:SETS[current].id, voice4:voiceSel.value
+      showRo:showRo, showVi:showVi, set:SETS[current].id, voice4:voiceSel.value,
+      mode:mode, scope:$("scope").value, wait:$("wait").value
     }));
   }catch(e){}
 }
@@ -696,6 +765,7 @@ const prefs=loadPrefs();
 /* Giong VOICEVOX: file am thanh tao san bang tools/gen_audio.py, danh sach nam trong audio/manifest.js */
 const VOICES = (window.VOICE_FILES && window.VOICE_FILES.voices) || [];
 const player = new Audio();
+let blocked=false;   /* trinh duyet chan tu phat khi chua bam gi tren trang */
 function fillVoices(){
   voiceSel.innerHTML="";
   VOICES.forEach(v=>{
@@ -718,7 +788,7 @@ function renderTabs(){
     b.setAttribute("aria-selected", i===current ? "true":"false");
     b.appendChild(span("jp", s.tab));
     b.appendChild(span("t-name", s.title));
-    b.onclick=()=>{ stop(); current=i; idx=-1; renderTabs(); renderAbout(); renderList(); clearStage(); savePrefs(); };
+    b.onclick=()=>{ stop(); current=i; idx=-1; renderTabs(); renderAbout(); renderList(); clearStage(); savePrefs(); if(mode!=="shadow") startDrill(); };
     tabsEl.appendChild(b);
   });
 }
@@ -860,12 +930,13 @@ function playFile(file){
     player.playbackRate=parseFloat(rateSel.value);
     player.preservesPitch=true;
     player.onended=finish; player.onerror=finish; player.onpause=finish;
-    player.play().catch(finish);
+    blocked=false;
+    player.play().catch(e=>{ if(e && e.name==="NotAllowedError") blocked=true; finish(); });
   });
 }
 function stopAudio(){ player.pause(); }
-function speak(text){
-  const v=curVoice();
+function speak(text, voice){
+  const v=voice||curVoice();
   if(v && v.files[text]) return playFile(v.files[text]);
   return wait(1200).then(()=>0);   /* cau chua co file am thanh: bo qua */
 }
@@ -919,6 +990,147 @@ function stop(){
   cleanup("Đã dừng");
 }
 
+/* ---------- hoc thuoc: Nho lai / Co hoi ----------
+   Moi cau cua minh la mot the. Nho lai: hien nghia Viet, minh noi cau tieng Nhat.
+   Co hoi: may doc cau cua co (truong q, hoac cau cua nguoi kia ngay truoc), minh tra loi.
+   Cham Nho / Quen; cau Quen quay lai sau vai the. Ket qua luu trong localStorage. */
+const OTHER=new Set(["上司","先生","新人"]);
+const CARDS=[];
+SETS.forEach((s,si)=>s.lines.forEach((l,i)=>{
+  if(!l.ja||OTHER.has(l.r)) return;
+  const prev=s.lines[i-1];
+  const cue=l.q || (prev && prev.ja && OTHER.has(prev.r) ? prev.ja : "");
+  CARDS.push({si, i, r:l.r, ja:l.ja, ro:l.ro||"", vi:l.vi||"", cue});
+}));
+let mem={};
+try{ mem=JSON.parse(localStorage.getItem("shadow.mem")||"{}"); }catch(e){}
+const saveMem=()=>{ try{ localStorage.setItem("shadow.mem", JSON.stringify(mem)); }catch(e){} };
+const known=c=>mem[c.ja]&&mem[c.ja].s==="ok";
+
+let queue=[], card=null, revealed=false, hints=0, scopeCards=[], dtok=0;
+const D={prog:$("dProg"), where:$("dWhere"), role:$("dRole"), cue:$("dCue"), ans:$("dAns"), ro:$("dRo"),
+  label:$("dLabel"), hint:$("dHint"), show:$("dShow"), ok:$("dOk"), ng:$("dNg"), replay:$("dReplay")};
+const cueVoice=()=>VOICES.find(v=>v.key!==voiceSel.value)||curVoice();
+
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function startDrill(){
+  dtok++; stopAudio();
+  const sc=$("scope").value;
+  let pool=CARDS.filter(c=>mode!=="cue"||c.cue);
+  if(sc==="set") pool=pool.filter(c=>c.si===current);
+  if(sc==="weak") pool=pool.filter(c=>!known(c));
+  scopeCards=pool;
+  queue=mode==="cue"?shuffle(pool.slice()):pool.slice();
+  nextCard();
+}
+function progress(){
+  const k=scopeCards.filter(known).length;
+  D.prog.textContent=card ? "Còn "+(queue.length+1)+" thẻ · đã thuộc "+k+"/"+scopeCards.length : "";
+}
+/* Goi y: 2 chu dau cua moi cum (ngan boi 、。) */
+function hintOf(ja){
+  return ja.split(/([、。])/).map(t=>/[、。]/.test(t)||t.length<=2 ? t : t.slice(0,2)+"…").join("");
+}
+function setDrillButtons(){
+  D.hint.hidden=revealed; D.show.hidden=revealed;
+  D.ok.hidden=!revealed; D.ng.hidden=!revealed;
+  D.replay.hidden=mode!=="cue" && !revealed;
+}
+function nextCard(){
+  const my=++dtok; stopAudio();
+  card=queue.shift()||null; revealed=false; hints=0;
+  D.ro.textContent=""; setDBar(0);
+  if(!card){
+    const k=scopeCards.filter(known).length;
+    D.role.textContent=""; D.cue.textContent="";
+    D.ans.textContent=scopeCards.length ? "Xong lượt này 🎉" : "Không có câu nào trong phạm vi này.";
+    D.ans.classList.remove("masked");
+    D.label.textContent=scopeCards.length ? "Đã thuộc "+k+"/"+scopeCards.length+" câu. Bấm “Học lại từ đầu” để làm lượt mới." : "";
+    D.prog.textContent=""; D.where.textContent="";
+    [D.hint,D.show,D.ok,D.ng,D.replay].forEach(b=>b.hidden=true);
+    return;
+  }
+  D.where.textContent=SETS[card.si].tab;
+  D.role.textContent=card.r||"";
+  D.ans.textContent="……"; D.ans.classList.add("masked");
+  setDrillButtons(); progress();
+  if(mode==="recall"){
+    D.cue.textContent=card.vi;
+    D.label.textContent="Nói câu tiếng Nhật, rồi bấm Xem đáp án";
+  }else{
+    D.cue.textContent=""; askCue(my);
+  }
+}
+async function askCue(my){
+  D.label.textContent="Cô đang hỏi…"; setDBar(0);
+  await speak(card.cue, cueVoice());
+  if(my!==dtok||revealed) return;
+  if(blocked){ D.label.textContent="Bấm Nghe lại (R) để nghe câu cô hỏi"; return; }
+  const ms=parseFloat($("wait").value)*1000;
+  D.label.textContent="Đến lượt bạn — trả lời";
+  animDBar(ms);
+  await wait(ms);
+  if(my===dtok && !revealed) reveal();
+}
+function hint(){
+  if(!card||revealed) return;
+  hints++;
+  if(mode==="cue" && hints===1){ D.cue.textContent="Cô hỏi: "; D.cue.appendChild(span("jp", card.cue)); D.cue.appendChild(document.createTextNode(" — "+card.vi)); return; }
+  D.ans.textContent=hintOf(card.ja);
+}
+function reveal(){
+  if(!card||revealed) return;
+  revealed=true; dtok++; setDBar(0);
+  if(mode==="cue"){ D.cue.textContent="Cô hỏi: "; D.cue.appendChild(span("jp", card.cue)); }
+  D.ans.textContent=card.ja; D.ans.classList.remove("masked");
+  D.ro.textContent=card.ro; D.ro.classList.toggle("hidden", !showRo);
+  D.label.textContent=hints ? "Đã dùng gợi ý nên tính là Quên — bấm Quên (2)" : "Bạn nói đúng chưa? Nhớ (1) hay Quên (2)";
+  setDrillButtons();
+  speak(card.ja);
+}
+function grade(ok){
+  if(!card||!revealed) return;
+  if(hints) ok=false;
+  const m=mem[card.ja]||{n:0};
+  m.s=ok?"ok":"ng"; m.n++; mem[card.ja]=m; saveMem();
+  if(!ok) queue.splice(Math.min(3, queue.length), 0, card);
+  nextCard();
+}
+function replay(){
+  if(!card) return;
+  if(!revealed && mode==="cue"){ const my=++dtok; askCue(my); }
+  else if(revealed) speak(card.ja);
+}
+function setDBar(p){ const f=$("dBar"); f.style.transition="none"; f.style.width=(p*100)+"%"; $("dBarBox").classList.add("echo"); }
+function animDBar(ms){ const f=$("dBar"); f.style.transition="none"; f.style.width="0%"; void f.offsetWidth; f.style.transition="width "+ms+"ms linear"; f.style.width="100%"; }
+
+function setMode(m){
+  mode=m; stop(); dtok++;
+  document.querySelectorAll(".modes button").forEach(b=>b.setAttribute("aria-pressed", b.dataset.mode===m?"true":"false"));
+  const drill=m!=="shadow";
+  $("stage").hidden=drill; $("ctl").hidden=drill; listEl.hidden=drill;
+  $("drill").hidden=!drill; $("dCtl").hidden=!drill;
+  $("wait").parentElement.hidden=m!=="cue";
+  if(drill) startDrill();
+  savePrefs();
+}
+document.querySelectorAll(".modes button").forEach(b=>b.onclick=()=>setMode(b.dataset.mode));
+D.hint.onclick=hint; D.show.onclick=reveal; D.ok.onclick=()=>grade(true); D.ng.onclick=()=>grade(false);
+D.replay.onclick=replay; $("dRestart").onclick=startDrill;
+$("scope").onchange=()=>{ savePrefs(); startDrill(); };
+$("wait").onchange=savePrefs;
+
+/* File nghe cho dien thoai (tools/gen_listen.py) */
+if(window.LISTEN_FILES && window.LISTEN_FILES.length){
+  const ul=$("listenList");
+  window.LISTEN_FILES.forEach(f=>{
+    const li=document.createElement("li"), a=document.createElement("a");
+    a.href="audio/nghe/"+f.file; a.textContent=f.label+" · "+f.min+" phút"; if(f.all) a.className="all";
+    li.appendChild(a); ul.appendChild(li);
+  });
+  $("listen").hidden=false;
+}
+
 /* ---------- wiring ---------- */
 runBtn.onclick=()=>{ if(!running) run(); };
 stopBtn.onclick=stop;
@@ -926,16 +1138,26 @@ roBtn.onclick=()=>{ showRo=!showRo; applyRo(); savePrefs(); };
 viBtn.onclick=()=>{ showVi=!showVi; applyVi(); savePrefs(); };
 [rateSel,repsSel,gapSel,voiceSel].forEach(el=>el.onchange=savePrefs);
 document.addEventListener("keydown", e=>{
-  if(e.target.tagName==="SELECT"||e.target.tagName==="INPUT"||e.target.tagName==="BUTTON") return;
-  if(e.code==="Space"){ e.preventDefault(); running?stop():run(); }
+  if(e.target.tagName==="SELECT"||e.target.tagName==="INPUT") return;
   const k=e.key.toLowerCase();
+  if(mode!=="shadow"){
+    if(e.code==="Space"||e.key==="Enter"){ e.preventDefault(); if(!revealed) reveal(); return; }
+    if(k==="h") hint();
+    if(k==="1") grade(true);
+    if(k==="2") grade(false);
+    if(k==="r") replay();
+    if(k==="b"){ showRo=!showRo; applyRo(); D.ro.classList.toggle("hidden", !showRo); savePrefs(); }
+    return;
+  }
+  if(e.target.tagName==="BUTTON") return;
+  if(e.code==="Space"){ e.preventDefault(); running?stop():run(); }
   if(k==="r"&&idx>=0){ stop(); playOne(idx); }
   if(k==="b"){ showRo=!showRo; applyRo(); savePrefs(); }
   if(k==="v"){ showVi=!showVi; applyVi(); savePrefs(); }
 });
 window.addEventListener("beforeunload", stopAudio);
 
-renderTabs(); renderAbout(); renderList(); applyRo(); applyVi(); clearStage();
+renderTabs(); renderAbout(); renderList(); applyRo(); applyVi(); clearStage(); setMode(mode);
 </script>
 </body>
 </html>
