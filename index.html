@@ -263,10 +263,12 @@ const SETS = [
   patterns:[
     ["〇〇と申します。〇〇出身です。","... to mōshimasu. ... shusshin desu.","Tôi tên là… Tôi quê ở…"],
     ["〜が好きで、〜を選びました。","... ga suki de, ... o erabimashita.","Vì thích… nên tôi đã chọn…"],
+    ["趣味は〜ことです。","Shumi wa ... koto desu.","Sở thích của tôi là…"],
     ["今は〜を担当しています。","Ima wa ... o tantō shite imasu.","Hiện tôi phụ trách…"],
     ["まず〜。次に〜。それから〜。最後に〜。","Mazu… Tsugi ni… Sorekara… Saigo ni…","Đầu tiên… Tiếp theo… Sau đó… Cuối cùng…"],
     ["一番大切なのは〜ことです。〜からです。","Ichiban taisetsu na no wa ... koto desu. ... kara desu.","Quan trọng nhất là… Vì…"],
     ["困ることは〜です。","Komaru koto wa ... desu.","Điều tôi gặp khó là…"],
+    ["分からないことはメモして、あとで〜に聞きます。","Wakaranai koto wa memo shite, ato de ... ni kikimasu.","Điều không hiểu tôi ghi lại rồi hỏi … sau."],
     ["〜ようにしています。","... yō ni shite imasu.","Tôi luôn cố gắng…"],
     ["目標は〜ことです。","Mokuhyō wa ... koto desu.","Mục tiêu là…"],
     ["以上です。","Ijō desu.","Tôi xin hết."]
@@ -286,7 +288,11 @@ const SETS = [
     ["日報","nippō","báo cáo ngày"],
     ["会議","kaigi","cuộc họp"],
     ["目標","mokuhyō","mục tiêu"],
-    ["同僚","dōryō","đồng nghiệp"]
+    ["同僚","dōryō","đồng nghiệp"],
+    ["趣味","shumi","sở thích"],
+    ["上司","jōshi","cấp trên"],
+    ["考え方","kangaekata","cách suy nghĩ"],
+    ["品質管理","hinshitsu kanri","quản lý chất lượng"]
   ],
   verbs:[
     ["選ぶ","erabu","chọn"],
@@ -298,20 +304,20 @@ const SETS = [
     ["質問する","shitsumon suru","hỏi"],
     ["報告する","hōkoku suru","báo cáo"],
     ["手伝う","tetsudau","giúp"],
-    ["練習する","renshū suru","luyện tập"]
+    ["練習する","renshū suru","luyện tập"],
+    ["メモする","memo suru","ghi chú"],
+    ["チャレンジする","charenji suru","thử thách, thử sức"]
   ],
   when:"Đầu bài thi, khi cô nói 自己紹介をお願いします.",
   lines:[
-    {"g":"Tự giới thiệu (8 ý, mỗi ý một câu)"},
+    {"g":"Tự giới thiệu (mỗi ý một câu)"},
     {"r":"名前","ja":"グエン・ズイ・キエンと申します。ハノイ出身です。","ro":"Guen Zui Kien to mōshimasu. Hanoi shusshin desu.","vi":"Tôi là Nguyễn Duy Kiên, quê Hà Nội."},
-    {"r":"理由","ja":"パソコンとアニメが好きで、ITの仕事を選びました。","ro":"Pasokon to anime ga suki de, aitī no shigoto o erabimashita.","vi":"Vì thích máy tính và anime nên tôi chọn nghề IT."},
+    {"r":"理由","ja":"パソコンが好きで、ITの仕事を選びました。趣味はバドミントンと、友達や同僚とカフェに行くことです。","ro":"Pasokon ga suki de, aitī no shigoto o erabimashita. Shumi wa badominton to, tomodachi ya dōryō to kafe ni iku koto desu.","vi":"Vì thích máy tính nên tôi chọn nghề IT. Sở thích là cầu lông và đi cà phê với bạn bè, đồng nghiệp."},
     {"r":"担当","ja":"フルスタックエンジニアで、病院の予約システムを作っています。","ro":"Furusutakku enjinia de, byōin no yoyaku shisutemu o tsukutte imasu.","vi":"Tôi là Fullstack Developer, đang làm hệ thống đặt lịch của bệnh viện."},
     {"r":"仕事の流れ","ja":"タスクを確認して、実装、テスト、レビューの順に進めます。","ro":"Tasuku o kakunin shite, jissō, tesuto, rebyū no jun ni susumemasu.","vi":"Tôi xác nhận task rồi làm theo thứ tự: code, test, review."},
     {"r":"大切なこと","ja":"一番大切なのは、タスクを正しく理解することです。","ro":"Ichiban taisetsu na no wa, tasuku o tadashiku rikai suru koto desu.","vi":"Quan trọng nhất là hiểu đúng task."},
-    {"r":"困ること","ja":"日本語の会議が難しいので、分からないときはすぐ質問します。","ro":"Nihongo no kaigi ga muzukashii node, wakaranai toki wa sugu shitsumon shimasu.","vi":"Họp bằng tiếng Nhật khó nên không hiểu là tôi hỏi ngay."},
-    {"r":"目標","ja":"目標は、自分のAIアシスタントを作ることです。","ro":"Mokuhyō wa, jibun no ēai ashisutanto o tsukuru koto desu.","vi":"Mục tiêu là tự làm một AI assistant cho mình."},
-    {"r":"チーム","ja":"チームは十六人で、レビューはみんなでします。","ro":"Chīmu wa jūrokunin de, rebyū wa minna de shimasu.","vi":"Team có 16 người, review thì cả team cùng làm."},
-    {"r":"一番難しいこと","ja":"一番難しいのは、日本語で話すことです。以上です。","ro":"Ichiban muzukashii no wa, Nihongo de hanasu koto desu. Ijō desu.","vi":"Khó nhất là nói bằng tiếng Nhật. Tôi xin hết."}
+    {"r":"困ること","ja":"日本語の会議は難しいので、分からないことはメモして、あとでベトナム人の上司に聞きます。","ro":"Nihongo no kaigi wa muzukashii node, wakaranai koto wa memo shite, ato de Betonamujin no jōshi ni kikimasu.","vi":"Họp bằng tiếng Nhật khó nên điều không hiểu tôi ghi lại, rồi hỏi cấp trên người Việt."},
+    {"r":"目標","ja":"目標は、ビジネスの考え方を勉強して、品質管理の仕事にもチャレンジすることです。以上です。","ro":"Mokuhyō wa, bijinesu no kangaekata o benkyō shite, hinshitsu kanri no shigoto ni mo charenji suru koto desu. Ijō desu.","vi":"Mục tiêu là học cách tư duy business và thử sức cả với công việc quản lý chất lượng. Tôi xin hết."}
   ]
 },
 
@@ -319,7 +325,7 @@ const SETS = [
   id:"p2",
   tab:"② 納期の相談",
   title:"Tình huống 1 · Sắp trễ hạn",
-  lead:"Đề: đang làm thì có việc gấp chen vào, sắp trễ hạn. Giải thích với cấp trên, xin gia hạn hoặc nhờ người làm cùng. Khung: 問題 → 原因 → 影響 → 提案.",
+  lead:"Đề: đang làm thì có việc gấp chen vào, sắp trễ hạn. Giải thích với cấp trên, xin lùi sang đợt release sau. Khung: 問題 → 原因 → 影響 → 提案.",
   terms:[
     ["問題","mondai","vấn đề","Nói kết luận ngay."],
     ["原因","gen'in","nguyên nhân","Vì sao trễ."],
@@ -329,11 +335,9 @@ const SETS = [
   patterns:[
     ["〇〇さん、今よろしいでしょうか。","... san, ima yoroshii deshō ka.","Anh/chị …, giờ có tiện không ạ?"],
     ["〜に間に合わないかもしれません。","... ni maniawanai kamo shiremasen.","Có thể không kịp…"],
-    ["〜が入ったためです。","... ga haitta tame desu.","Vì có … chen vào."],
-    ["今、〜日遅れています。","Ima, ... nichi okurete imasu.","Hiện đang chậm … ngày."],
-    ["〜を延ばしていただけませんか。","... o nobashite itadakemasen ka.","Có thể lùi … giúp em không ạ?"],
-    ["〜さんに手伝っていただけませんか。","... san ni tetsudatte itadakemasen ka.","Có thể nhờ … giúp không ạ?"],
-    ["〜までに報告します。","... made ni hōkoku shimasu.","Em sẽ báo cáo trước…"]
+    ["〜の対応が多くて、〜はまだ〜しか終わっていません。","... no taiō ga ōkute, ... wa mada ... shika owatte imasen.","Vì phải xử lý nhiều … nên … mới xong được …"],
+    ["〜を次のリリースに延ばしてもよろしいでしょうか。","... o tsugi no rirīsu ni nobashite mo yoroshii deshō ka.","Em lùi … sang đợt release sau có được không ạ?"],
+    ["〜までに〜を報告します。","... made ni ... o hōkoku shimasu.","Trước … em sẽ báo cáo …"]
   ],
   nouns:[
     ["納期","nōki","hạn bàn giao"],
@@ -346,7 +350,9 @@ const SETS = [
     ["リリース","rirīsu","release"],
     ["本番環境","honban kankyō","production"],
     ["デブワン","debuwan","môi trường dev1"],
-    ["エヌジー","enujī","NG, không đạt"]
+    ["セキュリティのバグ","sekyuriti no bagu","lỗi bảo mật"],
+    ["次のリリース","tsugi no rirīsu","đợt release sau"],
+    ["パーセント","pāsento","phần trăm"]
   ],
   verbs:[
     ["間に合う","maniau","kịp"],
@@ -360,13 +366,12 @@ const SETS = [
   ],
   when:"Roleplay với cấp trên (ミンさん).",
   lines:[
-    {"g":"Việc gấp chen vào, sắp trễ hạn"},
-    {"r":"問題","ja":"ミンさん、金曜日の納期に間に合わないかもしれません。","ro":"Min-san, kin'yōbi no nōki ni maniawanai kamo shiremasen.","vi":"Anh Minh, em có thể không kịp hạn thứ Sáu."},
-    {"r":"原因","ja":"急ぎのバグ修正が入ったためです。","ro":"Isogi no bagu shūsei ga haitta tame desu.","vi":"Vì có việc sửa bug gấp chen vào."},
-    {"r":"影響","ja":"今、一日遅れています。","ro":"Ima, ichinichi okurete imasu.","vi":"Hiện đang chậm một ngày."},
-    {"r":"提案","ja":"一日延ばすか、井原さんに手伝っていただけませんか。","ro":"Ichinichi nobasu ka, Ihara-san ni tetsudatte itadakemasen ka.","vi":"Cho em lùi một ngày, hoặc nhờ Ihara giúp được không ạ?"},
-    {"r":"上司","ja":"延長は難しいですね。","ro":"Enchō wa muzukashii desu ne.","vi":"(Cấp trên) Gia hạn thì khó đấy."},
-    {"r":"自分","ja":"では、井原さんと分けて進めます。","ro":"Dewa, Ihara-san to wakete susumemasu.","vi":"Vậy em chia việc với Ihara để làm."}
+    {"g":"Lỗi bảo mật nhiều, test mới xong 70%"},
+    {"r":"問題","ja":"ミンさん、今よろしいでしょうか。このタスクは、金曜日のリリースに間に合わないかもしれません。","ro":"Min-san, ima yoroshii deshō ka. Kono tasuku wa, kin'yōbi no rirīsu ni maniawanai kamo shiremasen.","vi":"Anh Minh, giờ có tiện không ạ? Task này có thể không kịp release thứ Sáu."},
+    {"r":"原因","ja":"セキュリティのバグの対応が多くて、テストはまだ七十パーセントしか終わっていません。","ro":"Sekyuriti no bagu no taiō ga ōkute, tesuto wa mada nanajuppāsento shika owatte imasen.","vi":"Vì phải xử lý nhiều lỗi bảo mật nên test mới xong được 70%."},
+    {"r":"提案","ja":"このタスクを、次のリリースに延ばしてもよろしいでしょうか。","ro":"Kono tasuku o, tsugi no rirīsu ni nobashite mo yoroshii deshō ka.","vi":"Em lùi task này sang đợt release sau có được không ạ?"},
+    {"r":"上司","ja":"分かりました。次のリリースにしましょう。","ro":"Wakarimashita. Tsugi no rirīsu ni shimashō.","vi":"(Cấp trên) Được, để đợt release sau nhé."},
+    {"r":"自分","ja":"ありがとうございます。今日中に、新しいスケジュールを報告します。","ro":"Arigatō gozaimasu. Kyōjū ni, atarashii sukejūru o hōkoku shimasu.","vi":"Cảm ơn anh. Trong hôm nay em sẽ báo lịch mới."}
   ]
 },
 
@@ -374,19 +379,16 @@ const SETS = [
   id:"p3",
   tab:"③ 仕様の確認",
   title:"Tình huống 2 · Spec chưa rõ",
-  lead:"Đề: spec có chỗ không rõ. Dừng lại để hỏi, rồi đề xuất cách làm tiếp. Khung: 問題 → 対応 → 提案.",
+  lead:"Đề: spec có chỗ không rõ. Dừng lại để hỏi, rồi đề xuất cách làm tiếp. Khung: 確認 → 問題 → 提案.",
   terms:[
+    ["確認","kakunin","xin hỏi","Nói đang hỏi về chức năng nào."],
     ["問題","mondai","chỗ chưa rõ","Spec không ghi điều gì."],
-    ["対応","taiō","việc đang làm","Làm trước phần đã rõ."],
     ["提案","teian","đề xuất","Cách của mình."]
   ],
   patterns:[
     ["〜について、確認したいことがあります。","... ni tsuite, kakunin shitai koto ga arimasu.","Em có điều muốn hỏi lại về…"],
-    ["〜が書かれていません。","... ga kakarete imasen.","Không có ghi…"],
-    ["〜か〜か、分かりません。","... ka ... ka, wakarimasen.","Em không rõ là … hay …"],
-    ["決まるまで、〜を止めています。","Kimaru made, ... o tomete imasu.","Đến khi chốt, em tạm dừng…"],
-    ["先に〜を進めます。","Saki ni ... o susumemasu.","Em làm trước…"],
-    ["〜のはどうでしょうか。","... no wa dō deshō ka.","… thì thế nào ạ?"]
+    ["仕様書に、〜場合が書かれていません。","Shiyōsho ni, ... baai ga kakarete imasen.","Spec không ghi trường hợp…"],
+    ["〜のは、どうでしょうか。","... no wa, dō deshō ka.","… thì thế nào ạ?"]
   ],
   nouns:[
     ["仕様書","shiyōsho","tài liệu spec"],
@@ -396,7 +398,11 @@ const SETS = [
     ["処理","shori","xử lý"],
     ["個人情報","kojin jōhō","thông tin cá nhân"],
     ["進め方","susumekata","cách tiến hành"],
-    ["案","an","phương án"]
+    ["案","an","phương án"],
+    ["場合","baai","trường hợp"],
+    ["パスワード","pasuwādo","mật khẩu"],
+    ["アカウント","akaunto","tài khoản"],
+    ["ログイン","roguin","đăng nhập"]
   ],
   verbs:[
     ["確認する","kakunin suru","xác nhận"],
@@ -405,16 +411,15 @@ const SETS = [
     ["決める","kimeru","quyết định"],
     ["提案する","teian suru","đề xuất"],
     ["表示する","hyōji suru","hiển thị"],
-    ["送る","okuru","gửi"]
+    ["間違える","machigaeru","nhập sai, làm sai"],
+    ["ロックする","rokku suru","khóa"]
   ],
   when:"Roleplay với cấp trên. Ngoài đời: đọc task thấy chỗ mơ hồ thì hỏi trước khi code.",
   lines:[
-    {"g":"Spec chưa rõ"},
-    {"r":"問題","ja":"仕様書に、AIが答えられない場合が書かれていません。","ro":"Shiyōsho ni, ēai ga kotaerarenai baai ga kakarete imasen.","vi":"Spec không ghi trường hợp AI không trả lời được."},
-    {"r":"対応","ja":"決まるまで、この部分は止めて、ほかを進めます。","ro":"Kimaru made, kono bubun wa tomete, hoka o susumemasu.","vi":"Đến khi chốt, em dừng phần này và làm phần khác trước."},
-    {"r":"提案","ja":"「分かりません」と表示するのは、どうでしょうか。","ro":"'Wakarimasen' to hyōji suru no wa, dō deshō ka.","vi":"Hiện chữ 'Không biết' thì thế nào ạ?"},
-    {"r":"上司","ja":"ほかにありますか。","ro":"Hoka ni arimasu ka.","vi":"(Cấp trên) Còn gì nữa không?"},
-    {"r":"自分","ja":"個人情報をAIに送ってもいいかも、確認したいです。","ro":"Kojin jōhō o ēai ni okutte mo ii ka mo, kakunin shitai desu.","vi":"Em cũng muốn hỏi có được gửi thông tin cá nhân cho AI không."}
+    {"g":"Spec không ghi khi nhập sai mật khẩu 5 lần"},
+    {"r":"確認","ja":"ミンさん、ログイン機能について、確認したいことがあります。","ro":"Min-san, roguin kinō ni tsuite, kakunin shitai koto ga arimasu.","vi":"Anh Minh, em có điều muốn hỏi lại về chức năng đăng nhập."},
+    {"r":"問題","ja":"仕様書に、パスワードを五回間違えた場合が書かれていません。","ro":"Shiyōsho ni, pasuwādo o gokai machigaeta baai ga kakarete imasen.","vi":"Spec không ghi trường hợp nhập sai mật khẩu 5 lần."},
+    {"r":"提案","ja":"アカウントを三十分ロックするのは、どうでしょうか。","ro":"Akaunto o sanjuppun rokku suru no wa, dō deshō ka.","vi":"Khóa tài khoản 30 phút thì thế nào ạ?"}
   ]
 },
 
@@ -422,7 +427,7 @@ const SETS = [
   id:"p4",
   tab:"④ 事故報告",
   title:"Tình huống 3 · Báo lỗi do mình",
-  lead:"Đề: gửi dữ liệu sai do thao tác sai hoặc kiểm tra không kỹ. Báo ngay cho cấp trên, nói nguyên nhân và cách xử lý. Khung: 謝罪 → 原因 → 対応 → 対策.",
+  lead:"Đề: gửi nhầm do kiểm tra không kỹ (ở đây: không đọc lại tin nhắn AI soạn). Báo ngay cho cấp trên, nói nguyên nhân và cách xử lý. Khung: 謝罪 → 原因 → 対応 → 対策.",
   terms:[
     ["謝罪","shazai","xin lỗi","Câu đầu tiên."],
     ["原因","gen'in","nguyên nhân","Mình đã bỏ sót gì."],
@@ -434,8 +439,7 @@ const SETS = [
     ["〜のが原因です。","... no ga gen'in desu.","Nguyên nhân là…"],
     ["〜を直しました。","... o naoshimashita.","Em đã sửa…"],
     ["今後は、〜ようにします。","Kongo wa, ... yō ni shimasu.","Từ nay em sẽ…"],
-    ["〜までに〜して、〜で報告します。","... made ni ... shite, ... de hōkoku shimasu.","Trước … em sẽ … và báo qua…"],
-    ["ご迷惑をおかけして、申し訳ございません。","Go-meiwaku o okake shite, mōshiwake gozaimasen.","Xin lỗi vì đã gây phiền phức. (với khách)"]
+    ["〜までに〜して、〜で報告します。","... made ni ... shite, ... de hōkoku shimasu.","Trước … em sẽ … và báo qua…"]
   ],
   nouns:[
     ["間違い","machigai","chỗ sai"],
@@ -446,7 +450,10 @@ const SETS = [
     ["データ","dēta","dữ liệu"],
     ["件数","kensū","số bản ghi"],
     ["チェックリスト","chekku risuto","checklist"],
-    ["手順書","tejunsho","tài liệu quy trình"]
+    ["手順書","tejunsho","tài liệu quy trình"],
+    ["メッセージ","messēji","tin nhắn"],
+    ["文章","bunshō","văn bản"],
+    ["チャット","chatto","chat"]
   ],
   verbs:[
     ["間違える","machigaeru","làm sai"],
@@ -457,13 +464,13 @@ const SETS = [
     ["チェックする","chekku suru","kiểm tra"],
     ["連絡する","renraku suru","liên lạc"]
   ],
-  when:"Roleplay với cấp trên. Biến thể cuối dùng khi báo lỗi cho khách hàng.",
+  when:"Roleplay với cấp trên.",
   lines:[
-    {"g":"Gửi dữ liệu sai"},
-    {"r":"謝罪","ja":"申し訳ありません。送ったデータに間違いがありました。","ro":"Mōshiwake arimasen. Okutta dēta ni machigai ga arimashita.","vi":"Em xin lỗi. Dữ liệu em gửi bị sai."},
-    {"r":"原因","ja":"送る前に、確認しなかったのが原因です。","ro":"Okuru mae ni, kakunin shinakatta no ga gen'in desu.","vi":"Nguyên nhân là em không kiểm tra trước khi gửi."},
-    {"r":"対応","ja":"正しいデータを作り直して、三時までに送ります。","ro":"Tadashii dēta o tsukurinaoshite, sanji made ni okurimasu.","vi":"Em làm lại dữ liệu đúng và gửi trước 3 giờ."},
-    {"r":"対策","ja":"今後は、送る前に二人でチェックします。","ro":"Kongo wa, okuru mae ni futari de chekku shimasu.","vi":"Từ nay trước khi gửi sẽ có hai người kiểm tra."}
+    {"g":"Không kiểm tra tin nhắn AI soạn trước khi gửi"},
+    {"r":"謝罪","ja":"申し訳ありません。AIが作ったメッセージに、間違いがありました。","ro":"Mōshiwake arimasen. Ēai ga tsukutta messēji ni, machigai ga arimashita.","vi":"Em xin lỗi. Tin nhắn AI soạn bị sai."},
+    {"r":"原因","ja":"送る前に、自分で読んで確認しなかったのが原因です。","ro":"Okuru mae ni, jibun de yonde kakunin shinakatta no ga gen'in desu.","vi":"Nguyên nhân là em không tự đọc lại trước khi gửi."},
+    {"r":"対応","ja":"正しいメッセージを送り直して、三時までにチャットで報告します。","ro":"Tadashii messēji o okurinaoshite, sanji made ni chatto de hōkoku shimasu.","vi":"Em sẽ gửi lại tin đúng và báo qua chat trước 3 giờ."},
+    {"r":"対策","ja":"今後は、AIの文章も、送る前に必ずチェックします。","ro":"Kongo wa, ēai no bunshō mo, okuru mae ni kanarazu chekku shimasu.","vi":"Từ nay văn bản AI soạn em cũng sẽ kiểm tra trước khi gửi."}
   ]
 },
 
@@ -603,11 +610,10 @@ const SETS = [
   when:"Bất cứ lúc nào cô hỏi lại một từ.",
   lines:[
     {"r":"説明","ja":"すみません、簡単に説明しますね。","ro":"Sumimasen, kantan ni setsumei shimasu ne.","vi":"Xin lỗi, em giải thích đơn giản nhé."},
-    {"r":"デプロイ","ja":"デプロイは、作ったものを使える場所に置くことです。","ro":"Depuroi wa, tsukutta mono o tsukaeru basho ni oku koto desu.","vi":"Deploy là đặt thứ mình làm vào chỗ dùng được."},
-    {"r":"リリース","ja":"リリースは、新しい機能を公開することです。","ro":"Rirīsu wa, atarashii kinō o kōkai suru koto desu.","vi":"Release là công bố chức năng mới."},
-    {"r":"本番環境","ja":"本番環境は、お医者さんが使っているシステムです。","ro":"Honban kankyō wa, o-isha-san ga tsukatte iru shisutemu desu.","vi":"Production là hệ thống bác sĩ đang dùng."},
-    {"r":"エヌジー","ja":"エヌジーは、テストがだめだった、という意味です。","ro":"Enujī wa, tesuto ga dame datta, to iu imi desu.","vi":"NG nghĩa là test không đạt."},
-    {"r":"レビュー","ja":"レビューは、ほかの人にチェックしてもらうことです。","ro":"Rebyū wa, hoka no hito ni chekku shite morau koto desu.","vi":"Review là nhờ người khác kiểm tra."},
+    {"r":"デプロイ","ja":"デプロイは、作ったものを、テスターやお客様が使える場所に置くことです。","ro":"Depuroi wa, tsukutta mono o, tesutā ya okyakusama ga tsukaeru basho ni oku koto desu.","vi":"Deploy là đặt thứ mình làm vào nơi tester và khách hàng dùng được."},
+    {"r":"リリース","ja":"リリースは、新しい機能や、バグを直したものを公開することです。","ro":"Rirīsu wa, atarashii kinō ya, bagu o naoshita mono o kōkai suru koto desu.","vi":"Release là công bố chức năng mới hoặc bản đã sửa lỗi."},
+    {"r":"本番環境","ja":"本番環境は、お客様が使っているシステムです。","ro":"Honban kankyō wa, okyakusama ga tsukatte iru shisutemu desu.","vi":"Production là hệ thống khách hàng đang dùng."},
+    {"r":"レビュー","ja":"レビューは、新しいバグが出ないように、ほかの人にチェックしてもらうことです。","ro":"Rebyū wa, atarashii bagu ga denai yō ni, hoka no hito ni chekku shite morau koto desu.","vi":"Review là nhờ người khác kiểm tra để không sinh ra lỗi mới."},
     {"r":"仕様書","ja":"仕様書は、作るものの説明書です。","ro":"Shiyōsho wa, tsukuru mono no setsumeisho desu.","vi":"Spec là bản hướng dẫn về thứ sẽ làm."},
     {"r":"フルスタック","ja":"フルスタックは、全部を担当できるエンジニアです。","ro":"Furusutakku wa, zenbu o tantō dekiru enjinia desu.","vi":"Fullstack là kỹ sư làm được mọi phần."}
   ]
