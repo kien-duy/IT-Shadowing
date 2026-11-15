@@ -8,7 +8,9 @@ Sửa trực tiếp trong file này rồi gửi lại cho Claude để cập nh�
 - Các trường trên một dòng ngăn bằng ` | `. Chỉ cần sửa chữ, giữ nguyên dấu `|`.
 - **Romaji** để trống cũng được, Claude sẽ tự điền.
 - Trong **Kịch bản**: `### Tên tình huống` là dòng ngăn nhóm (không đọc thành tiếng).
-  Mỗi câu: `- [vai] câu tiếng Nhật | romaji | nghĩa Việt`. Vai 上司 / 先生 / 新人 là câu của người kia.
+  Mỗi câu: `- [vai] câu tiếng Nhật | romaji | nghĩa Việt | câu cô hỏi`. Vai 上司 / 先生 / 新人 là câu của người kia.
+  Cột cuối **câu cô hỏi** (không bắt buộc) là câu cô hoặc cấp trên nói ngay trước câu này, dùng cho chế độ "Cô hỏi".
+  Nếu câu ngay trước đã là câu của người kia thì không cần viết.
 - Số và từ viết tắt nên viết cách đọc bằng chữ để máy đọc đúng: `十五分`, `デブワン`, `エヌジー`.
 - Muốn ghi chú cho Claude thì viết dòng bắt đầu bằng `> ` ở bất cứ đâu, ví dụ `> câu này nói tự nhiên hơn giúp tôi`.
 
@@ -96,13 +98,13 @@ Nói liền 8 ý theo đề cương, mỗi ý một câu ngắn. Cô hỏi sâu 
 
 ### Tự giới thiệu (mỗi ý một câu)
 
-- [名前] グエン・ズイ・キエンと申します。ハノイ出身です。 | Guen Zui Kien to mōshimasu. Hanoi shusshin desu. | Tôi là Nguyễn Duy Kiên, quê Hà Nội.
-- [理由] パソコンが好きで、ITの仕事を選びました。趣味はバドミントンと、友達や同僚とカフェに行くことです。 | Pasokon ga suki de, aitī no shigoto o erabimashita. Shumi wa badominton to, tomodachi ya dōryō to kafe ni iku koto desu. | Vì thích máy tính nên tôi chọn nghề IT. Sở thích là cầu lông và đi cà phê với bạn bè, đồng nghiệp.
-- [担当] フルスタックエンジニアで、病院の予約システムを作っています。 | Furusutakku enjinia de, byōin no yoyaku shisutemu o tsukutte imasu. | Tôi là Fullstack Developer, đang làm hệ thống đặt lịch của bệnh viện.
-- [仕事の流れ] タスクを確認して、実装、テスト、レビューの順に進めます。 | Tasuku o kakunin shite, jissō, tesuto, rebyū no jun ni susumemasu. | Tôi xác nhận task rồi làm theo thứ tự: code, test, review.
-- [大切なこと] 一番大切なのは、タスクを正しく理解することです。 | Ichiban taisetsu na no wa, tasuku o tadashiku rikai suru koto desu. | Quan trọng nhất là hiểu đúng task.
-- [困ること] 日本語の会議は難しいので、分からないことはメモして、あとでベトナム人の上司に聞きます。 | Nihongo no kaigi wa muzukashii node, wakaranai koto wa memo shite, ato de Betonamujin no jōshi ni kikimasu. | Họp bằng tiếng Nhật khó nên điều không hiểu tôi ghi lại, rồi hỏi cấp trên người Việt.
-- [目標] 目標は、ビジネスの考え方を勉強して、品質管理の仕事にもチャレンジすることです。以上です。 | Mokuhyō wa, bijinesu no kangaekata o benkyō shite, hinshitsu kanri no shigoto ni mo charenji suru koto desu. Ijō desu. | Mục tiêu là học cách tư duy business và thử sức cả với công việc quản lý chất lượng. Tôi xin hết.
+- [名前] グエン・ズイ・キエンと申します。ハノイ出身です。 | Guen Zui Kien to mōshimasu. Hanoi shusshin desu. | Tôi là Nguyễn Duy Kiên, quê Hà Nội. | では、自己紹介をお願いします。
+- [理由] パソコンが好きで、ITの仕事を選びました。趣味はバドミントンと、友達や同僚とカフェに行くことです。 | Pasokon ga suki de, aitī no shigoto o erabimashita. Shumi wa badominton to, tomodachi ya dōryō to kafe ni iku koto desu. | Vì thích máy tính nên tôi chọn nghề IT. Sở thích là cầu lông và đi cà phê với bạn bè, đồng nghiệp. | どうしてITの仕事を選びましたか。
+- [担当] フルスタックエンジニアで、病院の予約システムを作っています。 | Furusutakku enjinia de, byōin no yoyaku shisutemu o tsukutte imasu. | Tôi là Fullstack Developer, đang làm hệ thống đặt lịch của bệnh viện. | 今、どんな仕事をしていますか。
+- [仕事の流れ] タスクを確認して、実装、テスト、レビューの順に進めます。 | Tasuku o kakunin shite, jissō, tesuto, rebyū no jun ni susumemasu. | Tôi xác nhận task rồi làm theo thứ tự: code, test, review. | 仕事は、どんな流れで進めますか。
+- [大切なこと] 一番大切なのは、タスクを正しく理解することです。 | Ichiban taisetsu na no wa, tasuku o tadashiku rikai suru koto desu. | Quan trọng nhất là hiểu đúng task. | 仕事で一番大切なことは何ですか。
+- [困ること] 日本語の会議は難しいので、分からないことはメモして、あとでベトナム人の上司に聞きます。 | Nihongo no kaigi wa muzukashii node, wakaranai koto wa memo shite, ato de Betonamujin no jōshi ni kikimasu. | Họp bằng tiếng Nhật khó nên điều không hiểu tôi ghi lại, rồi hỏi cấp trên người Việt. | 仕事で困ることはありますか。
+- [目標] 目標は、ビジネスの考え方を勉強して、品質管理の仕事にもチャレンジすることです。以上です。 | Mokuhyō wa, bijinesu no kangaekata o benkyō shite, hinshitsu kanri no shigoto ni mo charenji suru koto desu. Ijō desu. | Mục tiêu là học cách tư duy business và thử sức cả với công việc quản lý chất lượng. Tôi xin hết. | これからの目標は何ですか。
 
 ---
 
@@ -168,9 +170,9 @@ Roleplay với cấp trên (ミンさん).
 
 ### Lỗi bảo mật nhiều, test mới xong 70%
 
-- [問題] ミンさん、今よろしいでしょうか。このタスクは、金曜日のリリースに間に合わないかもしれません。 | Min-san, ima yoroshii deshō ka. Kono tasuku wa, kin'yōbi no rirīsu ni maniawanai kamo shiremasen. | Anh Minh, giờ có tiện không ạ? Task này có thể không kịp release thứ Sáu.
-- [原因] セキュリティのバグの対応が多くて、テストはまだ七十パーセントしか終わっていません。 | Sekyuriti no bagu no taiō ga ōkute, tesuto wa mada nanajuppāsento shika owatte imasen. | Vì phải xử lý nhiều lỗi bảo mật nên test mới xong được 70%.
-- [提案] このタスクを、次のリリースに延ばしてもよろしいでしょうか。 | Kono tasuku o, tsugi no rirīsu ni nobashite mo yoroshii deshō ka. | Em lùi task này sang đợt release sau có được không ạ?
+- [問題] ミンさん、今よろしいでしょうか。このタスクは、金曜日のリリースに間に合わないかもしれません。 | Min-san, ima yoroshii deshō ka. Kono tasuku wa, kin'yōbi no rirīsu ni maniawanai kamo shiremasen. | Anh Minh, giờ có tiện không ạ? Task này có thể không kịp release thứ Sáu. | はい、どうしましたか。
+- [原因] セキュリティのバグの対応が多くて、テストはまだ七十パーセントしか終わっていません。 | Sekyuriti no bagu no taiō ga ōkute, tesuto wa mada nanajuppāsento shika owatte imasen. | Vì phải xử lý nhiều lỗi bảo mật nên test mới xong được 70%. | どうして間に合わないんですか。
+- [提案] このタスクを、次のリリースに延ばしてもよろしいでしょうか。 | Kono tasuku o, tsugi no rirīsu ni nobashite mo yoroshii deshō ka. | Em lùi task này sang đợt release sau có được không ạ? | じゃあ、どうしたいですか。
 - [上司] 分かりました。次のリリースにしましょう。 | Wakarimashita. Tsugi no rirīsu ni shimashō. | (Cấp trên) Được, để đợt release sau nhé.
 - [自分] ありがとうございます。今日中に、新しいスケジュールを報告します。 | Arigatō gozaimasu. Kyōjū ni, atarashii sukejūru o hōkoku shimasu. | Cảm ơn anh. Trong hôm nay em sẽ báo lịch mới.
 
@@ -234,9 +236,9 @@ Roleplay với cấp trên. Ngoài đời: đọc task thấy chỗ mơ hồ th�
 
 ### Spec không ghi khi nhập sai mật khẩu 5 lần
 
-- [確認] ミンさん、ログイン機能について、確認したいことがあります。 | Min-san, roguin kinō ni tsuite, kakunin shitai koto ga arimasu. | Anh Minh, em có điều muốn hỏi lại về chức năng đăng nhập.
-- [問題] 仕様書に、パスワードを五回間違えた場合が書かれていません。 | Shiyōsho ni, pasuwādo o gokai machigaeta baai ga kakarete imasen. | Spec không ghi trường hợp nhập sai mật khẩu 5 lần.
-- [提案] アカウントを三十分ロックするのは、どうでしょうか。 | Akaunto o sanjuppun rokku suru no wa, dō deshō ka. | Khóa tài khoản 30 phút thì thế nào ạ?
+- [確認] ミンさん、ログイン機能について、確認したいことがあります。 | Min-san, roguin kinō ni tsuite, kakunin shitai koto ga arimasu. | Anh Minh, em có điều muốn hỏi lại về chức năng đăng nhập. | はい、どうしましたか。
+- [問題] 仕様書に、パスワードを五回間違えた場合が書かれていません。 | Shiyōsho ni, pasuwādo o gokai machigaeta baai ga kakarete imasen. | Spec không ghi trường hợp nhập sai mật khẩu 5 lần. | 何が分からないんですか。
+- [提案] アカウントを三十分ロックするのは、どうでしょうか。 | Akaunto o sanjuppun rokku suru no wa, dō deshō ka. | Khóa tài khoản 30 phút thì thế nào ạ? | キエンさんは、どうしたらいいと思いますか。
 
 ---
 
@@ -300,10 +302,10 @@ Roleplay với cấp trên.
 
 ### Không kiểm tra tin nhắn AI soạn trước khi gửi
 
-- [謝罪] 申し訳ありません。AIが作ったメッセージに、間違いがありました。 | Mōshiwake arimasen. Ēai ga tsukutta messēji ni, machigai ga arimashita. | Em xin lỗi. Tin nhắn AI soạn bị sai.
-- [原因] 送る前に、自分で読んで確認しなかったのが原因です。 | Okuru mae ni, jibun de yonde kakunin shinakatta no ga gen'in desu. | Nguyên nhân là em không tự đọc lại trước khi gửi.
-- [対応] 正しいメッセージを送り直して、三時までにチャットで報告します。 | Tadashii messēji o okurinaoshite, sanji made ni chatto de hōkoku shimasu. | Em sẽ gửi lại tin đúng và báo qua chat trước 3 giờ.
-- [対策] 今後は、AIの文章も、送る前に必ずチェックします。 | Kongo wa, ēai no bunshō mo, okuru mae ni kanarazu chekku shimasu. | Từ nay văn bản AI soạn em cũng sẽ kiểm tra trước khi gửi.
+- [謝罪] 申し訳ありません。AIが作ったメッセージに、間違いがありました。 | Mōshiwake arimasen. Ēai ga tsukutta messēji ni, machigai ga arimashita. | Em xin lỗi. Tin nhắn AI soạn bị sai. | どうしましたか。
+- [原因] 送る前に、自分で読んで確認しなかったのが原因です。 | Okuru mae ni, jibun de yonde kakunin shinakatta no ga gen'in desu. | Nguyên nhân là em không tự đọc lại trước khi gửi. | 原因は何ですか。
+- [対応] 正しいメッセージを送り直して、三時までにチャットで報告します。 | Tadashii messēji o okurinaoshite, sanji made ni chatto de hōkoku shimasu. | Em sẽ gửi lại tin đúng và báo qua chat trước 3 giờ. | これから、どう対応しますか。
+- [対策] 今後は、AIの文章も、送る前に必ずチェックします。 | Kongo wa, ēai no bunshō mo, okuru mae ni kanarazu chekku shimasu. | Từ nay văn bản AI soạn em cũng sẽ kiểm tra trước khi gửi. | 今後は、どうしますか。
 
 ---
 
@@ -363,9 +365,9 @@ Phần cuối bài thi. Cô hay hỏi vặn lại, có sẵn câu đáp ở cu�
 ## Kịch bản
 - [先生] 会議や連絡が多くて、作業時間が足りないとき、どう改善しますか。 | Kaigi ya renraku ga ōkute, sagyō jikan ga tarinai toki, dō kaizen shimasu ka. | (Cô) Họp và liên lạc nhiều làm thiếu thời gian làm việc, em cải thiện thế nào?
 - [意見] 会議を減らすべきだと思います。 | Kaigi o herasu beki da to omoimasu. | Em nghĩ nên giảm số cuộc họp.
-- [理由] 作業が止まると、集中できないからです。 | Sagyō ga tomaru to, shūchū dekinai kara desu. | Vì công việc bị ngắt thì không tập trung được.
-- [改善案] 朝会は十五分にして、連絡はチャットにまとめます。 | Asakai wa jūgofun ni shite, renraku wa chatto ni matomemasu. | Họp sáng 15 phút, liên lạc thì gom vào chat.
-- [まとめ] そうすれば、作業時間が増えると思います。 | Sō sureba, sagyō jikan ga fueru to omoimasu. | Làm vậy thì thời gian làm việc sẽ tăng.
+- [理由] 作業が止まると、集中できないからです。 | Sagyō ga tomaru to, shūchū dekinai kara desu. | Vì công việc bị ngắt thì không tập trung được. | どうしてですか。
+- [改善案] 朝会は十五分にして、連絡はチャットにまとめます。 | Asakai wa jūgofun ni shite, renraku wa chatto ni matomemasu. | Họp sáng 15 phút, liên lạc thì gom vào chat. | では、どう改善しますか。
+- [まとめ] そうすれば、作業時間が増えると思います。 | Sō sureba, sagyō jikan ga fueru to omoimasu. | Làm vậy thì thời gian làm việc sẽ tăng. | そうすると、どうなりますか。
 
 ---
 
@@ -429,14 +431,14 @@ Khi cô hỏi 新しいメンバーが入ったら、何をしますか.
 
 - [先生] 新しいメンバーが入ったら、何をしますか。 | Atarashii menbā ga haittara, nani o shimasu ka. | (Cô) Khi có thành viên mới, em sẽ làm gì?
 - [意見] メンターとして、早く慣れるように手伝います。 | Mentā to shite, hayaku nareru yō ni tetsudaimasu. | Với vai trò mentor, em giúp bạn ấy sớm quen việc.
-- [具体例] まず、ツールの準備と資料の説明をします。 | Mazu, tsūru no junbi to shiryō no setsumei o shimasu. | Đầu tiên em chuẩn bị công cụ và giải thích tài liệu.
-- [具体例] 次に、小さいタスクを任せて、レビューします。 | Tsugi ni, chiisai tasuku o makasete, rebyū shimasu. | Tiếp theo em giao task nhỏ rồi review.
-- [具体例] お昼には、食べ物や趣味の話もします。 | O-hiru ni wa, tabemono ya shumi no hanashi mo shimasu. | Giờ trưa em cũng nói chuyện đồ ăn, sở thích.
+- [具体例] まず、ツールの準備と資料の説明をします。 | Mazu, tsūru no junbi to shiryō no setsumei o shimasu. | Đầu tiên em chuẩn bị công cụ và giải thích tài liệu. | 具体的に、何をしますか。
+- [具体例] 次に、小さいタスクを任せて、レビューします。 | Tsugi ni, chiisai tasuku o makasete, rebyū shimasu. | Tiếp theo em giao task nhỏ rồi review. | それから、何をしますか。
+- [具体例] お昼には、食べ物や趣味の話もします。 | O-hiru ni wa, tabemono ya shumi no hanashi mo shimasu. | Giờ trưa em cũng nói chuyện đồ ăn, sở thích. | 仕事のほかに、何かしますか。
 
 ### (b) Nói với người mới
 
-- [自分] 分からないことは、何でも聞いてくださいね。 | Wakaranai koto wa, nan demo kiite kudasai ne. | Có gì không hiểu cứ hỏi mình nhé.
-- [自分] 会議の前に、話すことをメモしておくといいですよ。 | Kaigi no mae ni, hanasu koto o memo shite oku to ii desu yo. | Trước họp bạn nên ghi sẵn điều sẽ nói.
+- [自分] 分からないことは、何でも聞いてくださいね。 | Wakaranai koto wa, nan demo kiite kudasai ne. | Có gì không hiểu cứ hỏi mình nhé. | 新人に、最初に何と言いますか。
+- [自分] 会議の前に、話すことをメモしておくといいですよ。 | Kaigi no mae ni, hanasu koto o memo shite oku to ii desu yo. | Trước họp bạn nên ghi sẵn điều sẽ nói. | 会議が苦手な新人には、何と言いますか。
 
 ---
 
@@ -488,13 +490,13 @@ Bất cứ lúc nào cô hỏi lại một từ.
 - 使う | tsukau | dùng
 
 ## Kịch bản
-- [説明] すみません、簡単に説明しますね。 | Sumimasen, kantan ni setsumei shimasu ne. | Xin lỗi, em giải thích đơn giản nhé.
-- [デプロイ] デプロイは、作ったものを、テスターやお客様が使える場所に置くことです。 | Depuroi wa, tsukutta mono o, tesutā ya okyakusama ga tsukaeru basho ni oku koto desu. | Deploy là đặt thứ mình làm vào nơi tester và khách hàng dùng được.
-- [リリース] リリースは、新しい機能や、バグを直したものを公開することです。 | Rirīsu wa, atarashii kinō ya, bagu o naoshita mono o kōkai suru koto desu. | Release là công bố chức năng mới hoặc bản đã sửa lỗi.
-- [本番環境] 本番環境は、お客様が使っているシステムです。 | Honban kankyō wa, okyakusama ga tsukatte iru shisutemu desu. | Production là hệ thống khách hàng đang dùng.
-- [レビュー] レビューは、新しいバグが出ないように、ほかの人にチェックしてもらうことです。 | Rebyū wa, atarashii bagu ga denai yō ni, hoka no hito ni chekku shite morau koto desu. | Review là nhờ người khác kiểm tra để không sinh ra lỗi mới.
-- [仕様書] 仕様書は、作るものの説明書です。 | Shiyōsho wa, tsukuru mono no setsumeisho desu. | Spec là bản hướng dẫn về thứ sẽ làm.
-- [フルスタック] フルスタックは、全部を担当できるエンジニアです。 | Furusutakku wa, zenbu o tantō dekiru enjinia desu. | Fullstack là kỹ sư làm được mọi phần.
+- [説明] すみません、簡単に説明しますね。 | Sumimasen, kantan ni setsumei shimasu ne. | Xin lỗi, em giải thích đơn giản nhé. | すみません、専門用語はよく分かりません。
+- [デプロイ] デプロイは、作ったものを、テスターやお客様が使える場所に置くことです。 | Depuroi wa, tsukutta mono o, tesutā ya okyakusama ga tsukaeru basho ni oku koto desu. | Deploy là đặt thứ mình làm vào nơi tester và khách hàng dùng được. | デプロイって何ですか。
+- [リリース] リリースは、新しい機能や、バグを直したものを公開することです。 | Rirīsu wa, atarashii kinō ya, bagu o naoshita mono o kōkai suru koto desu. | Release là công bố chức năng mới hoặc bản đã sửa lỗi. | リリースって何ですか。
+- [本番環境] 本番環境は、お客様が使っているシステムです。 | Honban kankyō wa, okyakusama ga tsukatte iru shisutemu desu. | Production là hệ thống khách hàng đang dùng. | 本番環境って何ですか。
+- [レビュー] レビューは、新しいバグが出ないように、ほかの人にチェックしてもらうことです。 | Rebyū wa, atarashii bagu ga denai yō ni, hoka no hito ni chekku shite morau koto desu. | Review là nhờ người khác kiểm tra để không sinh ra lỗi mới. | レビューって何ですか。
+- [仕様書] 仕様書は、作るものの説明書です。 | Shiyōsho wa, tsukuru mono no setsumeisho desu. | Spec là bản hướng dẫn về thứ sẽ làm. | 仕様書って何ですか。
+- [フルスタック] フルスタックは、全部を担当できるエンジニアです。 | Furusutakku wa, zenbu o tantō dekiru enjinia desu. | Fullstack là kỹ sư làm được mọi phần. | フルスタックって何ですか。
 
 ---
 
@@ -544,6 +546,6 @@ Bất cứ lúc nào trong bài thi.
 ## Kịch bản
 - [聞き返し] すみません、もう一度お願いします。 | Sumimasen, mō ichido onegai shimasu. | Xin lỗi, cô nói lại giúp em ạ.
 - [聞き返し] もう少し、ゆっくりお願いします。 | Mō sukoshi, yukkuri onegai shimasu. | Cô nói chậm hơn chút giúp em ạ.
-- [時間] 少し考えてもいいですか。 | Sukoshi kangaete mo ii desu ka. | Cho em nghĩ một chút được không ạ?
-- [つなぎ] 簡単に言うと、テストが足りません。 | Kantan ni iu to, tesuto ga tarimasen. | Nói đơn giản là test chưa đủ.
-- [保留] 確認して、あとで連絡します。 | Kakunin shite, ato de renraku shimasu. | Em kiểm tra rồi báo lại sau.
+- [時間] 少し考えてもいいですか。 | Sukoshi kangaete mo ii desu ka. | Cho em nghĩ một chút được không ạ? | AIについて、どう思いますか。
+- [つなぎ] 簡単に言うと、テストが足りません。 | Kantan ni iu to, tesuto ga tarimasen. | Nói đơn giản là test chưa đủ. | それは、どういう意味ですか。
+- [保留] 確認して、あとで連絡します。 | Kakunin shite, ato de renraku shimasu. | Em kiểm tra rồi báo lại sau. | それは、いつできますか。

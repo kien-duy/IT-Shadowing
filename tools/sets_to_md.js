@@ -17,7 +17,9 @@ Sửa trực tiếp trong file này rồi gửi lại cho Claude để cập nh�
 - Các trường trên một dòng ngăn bằng \` | \`. Chỉ cần sửa chữ, giữ nguyên dấu \`|\`.
 - **Romaji** để trống cũng được, Claude sẽ tự điền.
 - Trong **Kịch bản**: \`### Tên tình huống\` là dòng ngăn nhóm (không đọc thành tiếng).
-  Mỗi câu: \`- [vai] câu tiếng Nhật | romaji | nghĩa Việt\`. Vai 上司 / 先生 / 新人 là câu của người kia.
+  Mỗi câu: \`- [vai] câu tiếng Nhật | romaji | nghĩa Việt | câu cô hỏi\`. Vai 上司 / 先生 / 新人 là câu của người kia.
+  Cột cuối **câu cô hỏi** (không bắt buộc) là câu cô hoặc cấp trên nói ngay trước câu này, dùng cho chế độ "Cô hỏi".
+  Nếu câu ngay trước đã là câu của người kia thì không cần viết.
 - Số và từ viết tắt nên viết cách đọc bằng chữ để máy đọc đúng: \`十五分\`, \`デブワン\`, \`エヌジー\`.
 - Muốn ghi chú cho Claude thì viết dòng bắt đầu bằng \`> \` ở bất cứ đâu, ví dụ \`> câu này nói tự nhiên hơn giúp tôi\`.
 `);
@@ -33,7 +35,7 @@ for (const s of SETS) {
   const lines = [];
   for (const l of s.lines) {
     if (l.g) lines.push(`\n### ${l.g}\n`);
-    else lines.push(`- [${l.r}] ${l.ja} | ${l.ro} | ${l.vi}`);
+    else lines.push(`- [${l.r}] ${l.ja} | ${l.ro} | ${l.vi}` + (l.q ? ` | ${l.q}` : ""));
   }
   out.push(`## Kịch bản\n` + lines.join("\n") + "\n");
 }

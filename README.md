@@ -18,6 +18,26 @@ bật/tắt độc lập; lựa chọn được nhớ trong trình duyệt.
 
 Phím tắt: `Space` chạy/dừng · `R` nghe lại câu hiện tại · `B` bật tắt romaji · `V` bật tắt nghĩa.
 
+## Học thuộc kịch bản
+
+Thanh chế độ phía trên có ba nút:
+
+- **Nghe & nhại**: chế độ shadowing ở trên.
+- **Nhớ lại**: trang chỉ hiện nghĩa tiếng Việt và nhãn vai. Bạn nói câu tiếng Nhật, rồi bấm
+  **Xem đáp án** để xem câu và nghe máy đọc, sau đó tự chấm **Nhớ** hoặc **Quên**. Câu bị Quên
+  quay lại sau 2–3 thẻ, cho đến khi nhớ. Bấm **Gợi ý** để hiện hai chữ đầu của mỗi cụm; câu đã
+  dùng gợi ý được tính là Quên.
+- **Cô hỏi**: máy đọc câu cô hoặc cấp trên hỏi (bằng giọng còn lại), bạn có 4/6/9 giây để trả
+  lời, rồi trang tự hiện đáp án để chấm. Gợi ý lần một hiện câu hỏi và nghĩa, lần hai hiện chữ đầu.
+
+Ô **Phạm vi**: mục đang chọn, tất cả mục, hoặc chỉ câu chưa thuộc. Kết quả Nhớ / Quên được lưu
+trong trình duyệt nên buổi sau chọn "Chỉ câu chưa thuộc" để ôn tiếp.
+Phím tắt: `Space` xem đáp án · `H` gợi ý · `1` nhớ · `2` quên · `R` nghe lại.
+
+**Nghe trên điện thoại**: cuối trang có các file `audio/nghe/*.m4a`, mỗi mục một file và một
+file gộp tất cả. Mỗi câu là nghĩa tiếng Việt → khoảng lặng để tự nói → câu tiếng Nhật →
+khoảng lặng để nhại theo.
+
 ## Nội dung
 
 Xếp theo đề thi nói cuối kỳ: nói chuyện liền mạch với thầy 10–15 phút. Mọi câu nằm trong phạm vi
@@ -61,9 +81,15 @@ Sau khi sửa hoặc thêm câu, mở app [VOICEVOX](https://voicevox.hiroshiba.
 python3 tools/gen_audio.py
 ```
 
-Script chỉ tạo lại câu mới hoặc câu đã sửa, xóa file thừa và ghi lại `audio/manifest.js`.
+Script tạo âm thanh cho cả câu kịch bản (`ja`) và câu cô hỏi (`q`). Nó chỉ tạo lại câu mới hoặc câu đã sửa, xóa file thừa và ghi lại `audio/manifest.js`.
 Muốn thêm hoặc bớt giọng thì sửa danh sách `VOICES` đầu script
 (id của từng giọng: `curl localhost:50021/speakers`). Câu nào chưa có file âm thanh thì trang bỏ qua.
+
+Sau đó tạo lại file nghe cho điện thoại (dùng giọng tiếng Việt Linh có sẵn trên macOS và `afconvert`):
+
+```
+python3 tools/gen_listen.py
+```
 
 ## Chạy tại máy
 
@@ -81,12 +107,23 @@ File `.nojekyll` để Jekyll khỏi đụng vào nội dung.
 
 ## Thêm hoặc sửa câu
 
-Toàn bộ nội dung nằm trong mảng `SETS` ở cuối `index.html`:
+Cách dễ nhất là sửa `noi-dung.md` (toàn bộ nội dung, mỗi câu một dòng
+`- [vai] tiếng Nhật | romaji | nghĩa Việt | câu cô hỏi`), rồi nạp lại vào trang:
+
+```
+node tools/md_to_sets.js noi-dung.md --write index.html
+```
+
+Chiều ngược lại, xuất `SETS` ra md: `node tools/sets_to_md.js index.html noi-dung.md`.
+
+Nội dung nằm trong mảng `SETS` ở cuối `index.html`:
 
 ```js
-{r:"結論", ja:"...", ro:"...", vi:"..."}   // một câu
-{g:"Tên tình huống"}                        // dòng ngăn nhóm, không đọc
+{r:"結論", ja:"...", ro:"...", vi:"...", q:"..."}   // một câu; q là câu cô hỏi, không bắt buộc
+{g:"Tên tình huống"}                                 // dòng ngăn nhóm, không đọc
 ```
+
+Nếu câu ngay trước là câu của `上司` / `先生` / `新人` thì chế độ Cô hỏi dùng luôn câu đó, không cần `q`.
 
 Với số và từ viết tắt, viết cách đọc bằng katakana (`シーアイ・シーディー`, `五百エラー`)
 để máy đọc đúng, rồi ghi romaji theo đúng cách đọc đó.

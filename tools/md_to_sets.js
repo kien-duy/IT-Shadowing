@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // Doc noi-dung.md (dinh dang do tools/sets_to_md.js xuat ra) thanh mang SETS.
-//   node tools/md_to_sets.js noi-dung.md            -> in JSON ra stdout
-//   node tools/md_to_sets.js noi-dung.md --notes    -> chi in cac dong ghi chu "> ..."
+//   node tools/md_to_sets.js noi-dung.md                    -> in JSON ra stdout
+//   node tools/md_to_sets.js noi-dung.md --notes            -> chi in cac dong ghi chu "> ..."
+//   node tools/md_to_sets.js noi-dung.md --write index.html -> ghi SETS vao index.html
 const fs = require("fs");
 
 function parse(md) {
@@ -23,8 +24,10 @@ function parse(md) {
     if (sec === "Kịch bản") {
       if ((m = line.match(/^### (.+)$/))) { s.lines.push({ g: m[1].trim() }); continue; }
       if ((m = line.match(/^- \[([^\]]*)\]\s*(.+)$/))) {
-        const [ja, ro = "", vi = ""] = cells(m[2]);
-        s.lines.push({ r: m[1].trim(), ja, ro, vi });
+        const [ja, ro = "", vi = "", q = ""] = cells(m[2]);
+        const l = { r: m[1].trim(), ja, ro, vi };
+        if (q) l.q = q;
+        s.lines.push(l);
       }
       continue;
     }
@@ -38,8 +41,24 @@ function parse(md) {
   return { sets, notes };
 }
 
+// Ghi SETS vao index.html, dung dinh dang moi dong mot ban ghi nhu hien tai.
+function serialize(sets) {
+  const J = JSON.stringify, arr = (k, a) => `  ${k}:[\n` + a.map(r => "    " + J(r)).join(",\n") + "\n  ]";
+  const one = s => ["{", `  id:${J(s.id)},`, `  tab:${J(s.tab)},`, `  title:${J(s.title)},`, `  lead:${J(s.lead)},`,
+    arr("terms", s.terms) + ",", arr("patterns", s.patterns) + ",", arr("nouns", s.nouns) + ",", arr("verbs", s.verbs) + ",",
+    `  when:${J(s.when)},`, arr("lines", s.lines), "}"].join("\n");
+  return "const SETS = [\n" + sets.map(one).join(",\n\n") + "\n];";
+}
+function writeHtml(htmlPath, sets) {
+  const h = fs.readFileSync(htmlPath, "utf8");
+  const a = h.indexOf("const SETS = ["), b = h.indexOf("\n];", a) + 3;
+  fs.writeFileSync(htmlPath, h.slice(0, a) + serialize(sets) + h.slice(b));
+}
+
 if (require.main === module) {
   const { sets, notes } = parse(fs.readFileSync(process.argv[2], "utf8"));
-  console.log(JSON.stringify(process.argv.includes("--notes") ? notes : sets, null, 1));
+  const w = process.argv.indexOf("--write");
+  if (w > 0) { writeHtml(process.argv[w + 1], sets); console.error(`Đã ghi ${sets.length} mục vào ${process.argv[w + 1]}`); }
+  else console.log(JSON.stringify(process.argv.includes("--notes") ? notes : sets, null, 1));
 }
-module.exports = { parse };
+module.exports = { parse, serialize, writeHtml };
