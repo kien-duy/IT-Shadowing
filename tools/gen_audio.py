@@ -45,8 +45,10 @@ def synth(text, speaker, out):
 
 def main():
     html = open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
+    start = html.index("const SETS = [")
+    html = html[start:html.index("\n];", start)]   # chi quet du lieu, khong quet code
     texts = list(dict.fromkeys(json.loads(f'"{t}"') for t in
-                               re.findall(r'"?\b(?:ja|q)"?\s*:\s*"((?:[^"\\]|\\.)*)"', html)))
+                               re.findall(r'"?\b(?:ja|q)"?\s*:\s*"((?:[^"\\]|\\.)*)"', html) if t.strip()))
     os.makedirs(AUDIO, exist_ok=True)
 
     voices, used, made = [], set(), 0

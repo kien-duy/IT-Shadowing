@@ -720,6 +720,81 @@ const SETS = [
     {"r":"つなぎ","ja":"簡単に言うと、テストが足りません。","ro":"Kantan ni iu to, tesuto ga tarimasen.","vi":"Nói đơn giản là test chưa đủ.","q":"それは、どういう意味ですか。"},
     {"r":"保留","ja":"確認して、あとで連絡します。","ro":"Kakunin shite, ato de renraku shimasu.","vi":"Em kiểm tra rồi báo lại sau.","q":"それは、いつできますか。"}
   ]
+},
+
+{
+  id:"p9",
+  tab:"⑨ トラブル対応",
+  title:"Tình huống bất ngờ · Có sự cố thì làm gì",
+  lead:"Đề mới: cô kể một sự cố trong công việc rồi hỏi 「上司にどう報告しますか。どう対応しますか。」. Trả lời hai phần: **báo cáo sếp** (結論 → 状況 → 原因 → 影響 → 次の連絡) rồi **cách xử lý** (まず → 次に → それから → 今後は). Gặp sự cố lạ thì cứ thay danh từ vào mẫu câu, khung vẫn giữ nguyên.",
+  terms:[
+    ["報告","hōkoku","báo ngay","Câu đầu luôn là: báo sếp ngay, không tự xử lý một mình."],
+    ["状況","jōkyō","tình trạng","Từ lúc nào, cái gì đang không dùng được."],
+    ["原因","gen'in","nguyên nhân","Biết thì nói; chưa biết thì nói 「まだ分かりませんが、〜かもしれません」."],
+    ["影響","eikyō","ảnh hưởng","Ai bị ảnh hưởng, bao nhiêu người."],
+    ["対応","taiō","xử lý","まず → 次に → それから. Có cách tạm thời thì nói trước."],
+    ["連絡","renraku","báo tiếp","Khi nào, bằng cách nào sẽ báo lại."],
+    ["対策","taisaku","phòng ngừa","今後は〜ように、〜します."]
+  ],
+  patterns:[
+    ["そうですね。まず、すぐに上司に報告します。","Sō desu ne. Mazu, sugu ni jōshi ni hōkoku shimasu.","Vâng. Trước hết em báo ngay cho cấp trên."],
+    ["ミンさん、急ぎで報告したいことがあります。","Min-san, isogi de hōkoku shitai koto ga arimasu.","Anh Minh, em có việc gấp cần báo."],
+    ["〜時ごろから、〜ができない状態です。","... ji goro kara, ... ga dekinai jōtai desu.","Từ khoảng … giờ, đang không … được."],
+    ["原因はまだ分かりませんが、〜かもしれません。","Gen'in wa mada wakarimasen ga, ... kamo shiremasen.","Nguyên nhân chưa rõ, nhưng có thể là…"],
+    ["〜に影響が出ています。","... ni eikyō ga dete imasu.","Đang ảnh hưởng đến…"],
+    ["まず、〜を確認して、原因を調べます。","Mazu, ... o kakunin shite, gen'in o shirabemasu.","Trước tiên em kiểm tra … và tìm nguyên nhân."],
+    ["直るまで、一時的に〜します。","Naoru made, ichijiteki ni ... shimasu.","Đến khi sửa xong, tạm thời em sẽ…"],
+    ["一人で判断できないので、〜さんに相談します。","Hitori de handan dekinai node, ... san ni sōdan shimasu.","Em không tự quyết được nên sẽ hỏi ý …"],
+    ["〜分ごとに、チャットで状況を共有します。","... fun goto ni, chatto de jōkyō o kyōyū shimasu.","Cứ … phút em cập nhật tình hình qua chat."],
+    ["直ったら、すぐに連絡します。","Naottara, sugu ni renraku shimasu.","Sửa xong em báo ngay."],
+    ["今後は、同じことが起きないように、〜します。","Kongo wa, onaji koto ga okinai yō ni, ... shimasu.","Từ nay, để không lặp lại, em sẽ…"],
+    ["もし〜なら、〜します。","Moshi ... nara, ... shimasu.","Nếu … thì em sẽ…"]
+  ],
+  nouns:[
+    ["トラブル","toraburu","sự cố"],
+    ["障害","shōgai","sự cố hệ thống"],
+    ["エラー","erā","lỗi"],
+    ["サーバー","sābā","server"],
+    ["ログ","rogu","log"],
+    ["状況","jōkyō","tình hình"],
+    ["影響","eikyō","ảnh hưởng"],
+    ["範囲","han'i","phạm vi"],
+    ["一時的","ichijiteki","tạm thời"],
+    ["前のバージョン","mae no bājon","phiên bản trước"],
+    ["バックアップ","bakkuappu","bản sao lưu"],
+    ["再発防止","saihatsu bōshi","phòng tái diễn"],
+    ["お客様","okyakusama","khách hàng"],
+    ["担当者","tantōsha","người phụ trách"]
+  ],
+  verbs:[
+    ["起きる","okiru","xảy ra"],
+    ["止まる","tomaru","dừng"],
+    ["調べる","shiraberu","tìm hiểu, điều tra"],
+    ["直る","naoru","được sửa xong"],
+    ["戻す","modosu","đưa về, khôi phục"],
+    ["判断する","handan suru","phán đoán, quyết định"],
+    ["相談する","sōdan suru","xin ý kiến"],
+    ["共有する","kyōyū suru","chia sẻ"],
+    ["連絡する","renraku suru","liên lạc"],
+    ["防ぐ","fusegu","phòng tránh"]
+  ],
+  when:"Cô hỏi 「〜というトラブルが起きました。どうしますか。」 với bất kỳ sự cố nào: hệ thống dừng, AI trả lời sai, lỡ xóa dữ liệu, khách hàng phàn nàn, người phụ trách nghỉ đột xuất…",
+  lines:[
+    {"g":"Hệ thống đặt lịch bị dừng vào buổi sáng"},
+    {"r":"報告","ja":"まず、すぐにミンさんに報告します。","ro":"Mazu, sugu ni Min-san ni hōkoku shimasu.","vi":"Trước hết em báo ngay cho anh Minh.","q":"朝、病院の予約システムが止まってしまいました。どうしますか。"},
+    {"r":"状況","ja":"「九時ごろから、お医者さんが予約を見られない状態です。」と伝えます。","ro":"'Kuji goro kara, o-isha-san ga yoyaku o mirarenai jōtai desu.' to tsutaemasu.","vi":"Em báo: \"Từ khoảng 9 giờ, bác sĩ không xem được lịch hẹn.\"","q":"何と報告しますか。"},
+    {"r":"対応","ja":"それから、ログを見て、原因を調べます。直るまで、前のバージョンに戻します。","ro":"Sorekara, rogu o mite, gen'in o shirabemasu. Naoru made, mae no bājon ni modoshimasu.","vi":"Sau đó em xem log, tìm nguyên nhân. Đến khi sửa xong thì đưa về phiên bản trước.","q":"それから、どうしますか。"},
+    {"r":"連絡","ja":"三十分ごとに、チャットで状況を共有します。","ro":"Sanjuppun goto ni, chatto de jōkyō o kyōyū shimasu.","vi":"Cứ 30 phút em cập nhật tình hình qua chat.","q":"上司には、いつ連絡しますか。"},
+    {"g":"AI trả lời sai cho bác sĩ"},
+    {"r":"報告","ja":"ミンさんに、どんな質問で、どんな間違いが出たか報告します。","ro":"Min-san ni, donna shitsumon de, donna machigai ga deta ka hōkoku shimasu.","vi":"Em báo anh Minh câu hỏi nào và AI đã trả lời sai thế nào.","q":"AIアシスタントが、お医者さんに間違った答えを出しました。どうしますか。"},
+    {"r":"対応","ja":"同じ質問でもう一度テストして、原因を調べます。","ro":"Onaji shitsumon de mō ichido tesuto shite, gen'in o shirabemasu.","vi":"Em test lại bằng đúng câu hỏi đó và tìm nguyên nhân.","q":"原因は、どう調べますか。"},
+    {"r":"提案","ja":"直るまで、その機能を一時的に止めるのはどうでしょうか。","ro":"Naoru made, sono kinō o ichijiteki ni tomeru no wa dō deshō ka.","vi":"Đến khi sửa xong, tạm dừng chức năng đó thì thế nào ạ?","q":"直るまで、どうしますか。"},
+    {"r":"対策","ja":"今後は、テストの質問を増やして、リリースの前に確認します。","ro":"Kongo wa, tesuto no shitsumon o fuyashite, rirīsu no mae ni kakunin shimasu.","vi":"Từ nay em sẽ thêm câu hỏi test và kiểm tra trước khi release.","q":"今後は、どうしますか。"},
+    {"g":"Lỡ xóa dữ liệu trên môi trường test"},
+    {"r":"謝罪","ja":"「申し訳ありません。デブワンのデータを、間違えて消してしまいました。」と、すぐに報告します。","ro":"'Mōshiwake arimasen. Debuwan no dēta o, machigaete keshite shimaimashita.' to, sugu ni hōkoku shimasu.","vi":"Em báo ngay: \"Em xin lỗi, em lỡ xóa nhầm dữ liệu trên dev1.\"","q":"テスト環境のデータを、間違えて消してしまいました。どうしますか。"},
+    {"r":"対応","ja":"バックアップがあるか確認して、データを戻します。","ro":"Bakkuappu ga aru ka kakunin shite, dēta o modoshimasu.","vi":"Em kiểm tra có bản sao lưu không rồi khôi phục dữ liệu.","q":"どう対応しますか。"},
+    {"r":"対策","ja":"今後は、消す前に、ほかの人に確認してもらいます。","ro":"Kongo wa, kesu mae ni, hoka no hito ni kakunin shite moraimasu.","vi":"Từ nay trước khi xóa em sẽ nhờ người khác kiểm tra.","q":"今後は、どうしますか。"}
+  ]
 }
 ];
 
