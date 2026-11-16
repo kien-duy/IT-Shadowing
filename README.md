@@ -34,36 +34,35 @@ Thanh chế độ phía trên có ba nút:
 trong trình duyệt nên buổi sau chọn "Chỉ câu chưa thuộc" để ôn tiếp.
 Phím tắt: `Space` xem đáp án · `H` gợi ý · `1` nhớ · `2` quên · `R` nghe lại.
 
-**Nghe trên điện thoại**: cuối trang có các file `audio/nghe/*.m4a`, mỗi mục một file và một
+**Nghe trên điện thoại**: cuối trang có các file `audio/nghe/*.m4a`, mỗi tab một file và một
 file gộp tất cả. Mỗi câu là nghĩa tiếng Việt → khoảng lặng để tự nói → câu tiếng Nhật →
 khoảng lặng để nhại theo.
 
 ## Nội dung
 
 Xếp theo đề thi nói cuối kỳ: nói chuyện liền mạch với thầy 10–15 phút. Mọi câu nằm trong phạm vi
-ngữ pháp N3, từ vựng IT và văn phòng; bối cảnh là dự án hệ thống đặt lịch khám.
+ngữ pháp N3, từ vựng IT và văn phòng; bối cảnh là dự án hệ thống đặt lịch khám. Trang có hai tab:
 
-| Mục | Phần thi | Khung câu |
-| --- | --- | --- |
-| ① 自己紹介 | Tự giới thiệu (8 ý theo đề cương) | 名前・理由 → 担当 → 仕事の流れ → 大切なこと → 困ること・注意すること → 目標 → チーム・個人 → 一番難しいこと |
-| ② 納期の相談 | Roleplay テーマ1: việc gấp chen vào / dev1 NG trước ngày release | 問題 → 原因 → 影響 → 対応 → 提案 → 連絡 |
-| ③ 仕様の確認 | Roleplay テーマ2: spec AI assistant có chỗ chưa rõ | 問題 → 原因 → 影響 → 対応 → 提案 |
-| ④ 事故報告 | Roleplay テーマ3: gửi dữ liệu sai | 謝罪 → 状況説明 → 原因 → 対応 → 今後の対策 → 連絡 |
-| ⑤ 意見 | Part 3 テーマA: họp và liên lạc quá nhiều | 意見 → 理由 → 具体例 → 改善案 → まとめ |
-| ⑥ 新人のサポート | Làm mentor cho người mới: trả lời câu hỏi của cô + roleplay | 意見 → 理由 → 具体例 → 注意 → まとめ |
-| ⑦ 用語の説明 | Giải thích thuật ngữ IT cho người không làm IT | 〇〇というのは、〜のことです + so sánh đời thường |
-| ⑧ つなぎ・困った時 | Câu nối và gỡ bí khi đang thi | 聞き返し・確認・時間・つなぎ・保留 |
+| Tab | Nội dung |
+| --- | --- |
+| ① 自己紹介 | Tự giới thiệu, mỗi ý một câu: tên, lý do và sở thích, công việc, quy trình, điều quan trọng, khó khăn, mục tiêu |
+| ② シナリオ | Hội thoại hỏi đáp với thầy, theo thứ tự luyện bên dưới |
 
-Câu mẫu ngắn, mỗi câu một ý. Mỗi mục có thêm **bộ học thuộc**: mẫu câu có chỗ trống `〜` để tự điền,
-danh từ và động từ hay dùng (mảng `patterns`, `nouns`, `verbs` trong `SETS`), để lúc thi tự ghép câu.
-`mau-cau.html` là bản in của toàn bộ nội dung, kèm bảng tổng hợp từ vựng.
+Các tình huống trong tab ② シナリオ:
 
-Các mục roleplay có dòng `上司` / `先生` / `新人` là câu người kia có thể nói, kèm câu đáp của mình.
-Nội dung dùng ngữ cảnh thật: Fullstack Developer, dự án quản lý lịch khám, chức năng AI assistant dùng
-Amazon Bedrock, cấp trên ミンさん, đồng nghiệp 桑原さん・井原さん.
+1. **納期の相談**: báo senpai là sắp trễ hạn release vì lỗi bảo mật, xin lùi sang đợt sau.
+2. **トラブル対応**: báo sự cố gấp cho senpai: hệ thống dừng, AI trả lời sai, lỡ xóa dữ liệu, bị hỏi điều chưa biết.
+3. **仕様の確認**: spec chưa rõ, hỏi lại và đề xuất cách làm.
+4. **意見**: nêu ý kiến về họp và liên lạc quá nhiều, trả lời câu hỏi vặn.
+5. **新人のサポート**: (a) thầy hỏi có người mới thì làm gì, (b) thầy đóng vai người mới.
 
-Mỗi mục có một thẻ giải nghĩa ngay dưới thanh tab: từ tiếng Nhật đặt tên cho mục nghĩa là gì,
-từng thành phần trong khung câu đảm nhiệm việc gì, và ngữ cảnh nào thì mang khung đó ra dùng.
+Thầy đóng vai senpai (ミンさん) nên câu của mình ở mức です・ます; chỉ câu xin lỗi dùng
+申し訳ございません. Dòng `上司` / `先生` / `新人` là câu thầy nói, kèm câu đáp của mình ngay sau.
+Câu đầu mỗi tình huống có câu thầy giao đề (trường `q`) để luyện ở chế độ Cô hỏi.
+
+Mỗi tab có **bộ học thuộc**: mẫu câu có chỗ trống `〜` để tự điền, danh từ và động từ hay dùng
+(mảng `patterns`, `nouns`, `verbs` trong `SETS`). `mau-cau.html` là bản in của toàn bộ nội dung,
+kèm bảng tổng hợp từ vựng.
 
 ## Giọng đọc
 

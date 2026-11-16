@@ -108,34 +108,68 @@ Nói liền 8 ý theo đề cương, mỗi ý một câu ngắn. Cô hỏi sâu 
 
 ---
 
-# ② 納期の相談 | Tình huống 1 · Sắp trễ hạn
+# ② シナリオ | Kịch bản · Tất cả tình huống
 
-id: p2
+id: kb
 
 ## Giới thiệu
 
-Đề: đang làm thì có việc gấp chen vào, sắp trễ hạn. Giải thích với cấp trên, xin lùi sang đợt release sau. Khung: 問題 → 原因 → 影響 → 提案.
+Các tình huống roleplay theo thứ tự luyện: trễ hạn → báo sự cố gấp cho senpai → spec chưa rõ → nêu ý kiến → hỗ trợ người mới. Mỗi dòng tiêu đề ghi tên tình huống và khung câu; nghe hoặc luyện Nhớ lại từ đầu đến cuối là đủ.
 
 ## Dùng khi
 
-Roleplay với cấp trên (ミンさん).
+Phần roleplay và hỏi đáp sau tự giới thiệu. Thầy đóng vai senpai hoặc cấp trên, hoặc hỏi ý kiến và hỏi lại thuật ngữ.
 
 ## Khung câu
 
 <!-- tên bước | romaji | nghĩa Việt | giải thích -->
-- 問題 | mondai | vấn đề | Nói kết luận ngay.
-- 原因 | gen'in | nguyên nhân | Vì sao trễ.
-- 影響 | eikyō | ảnh hưởng | Trễ bao nhiêu.
-- 提案 | teian | đề xuất | Gia hạn, hoặc nhờ người.
+- 納期の相談 | nōki no sōdan | Sắp trễ hạn | 問題 → 原因 → 影響 → 提案
+- トラブル対応 | toraburu taiō | Báo sự cố gấp cho senpai | 声かけ → 結論 → 状況 → 原因 → 相談 → 連絡 → 謝罪
+- 仕様の確認 | shiyō no kakunin | Spec chưa rõ | 確認 → 問題 → 提案
+- 意見 | iken | Nêu ý kiến | 意見 → 理由 → 改善案 → まとめ
+- 新人のサポート | shinjin no sapōto | Hỗ trợ người mới | 意見 → 理由 → 具体例 → 自分 ↔ 新人
 
 ## Mẫu câu
 
 <!-- mẫu câu | romaji | nghĩa Việt -->
-- 〇〇さん、今よろしいでしょうか。 | ... san, ima yoroshii deshō ka. | Anh/chị …, giờ có tiện không ạ?
+- 〜のことで、相談したいことがあります。 | ... no koto de, sōdan shitai koto ga arimasu. | Em muốn bàn với anh về…
 - 〜に間に合わないかもしれません。 | ... ni maniawanai kamo shiremasen. | Có thể không kịp…
 - 〜の対応が多くて、〜はまだ〜しか終わっていません。 | ... no taiō ga ōkute, ... wa mada ... shika owatte imasen. | Vì phải xử lý nhiều … nên … mới xong được …
-- 〜を次のリリースに延ばしてもよろしいでしょうか。 | ... o tsugi no rirīsu ni nobashite mo yoroshii deshō ka. | Em lùi … sang đợt release sau có được không ạ?
+- 〜を次のリリースに延ばしてもいいですか。 | ... o tsugi no rirīsu ni nobashite mo ii desu ka. | Em lùi … sang đợt release sau được không ạ?
 - 〜までに〜を報告します。 | ... made ni ... o hōkoku shimasu. | Trước … em sẽ báo cáo …
+- ミンさん、今ちょっといいですか。 | Min-san, ima chotto ii desu ka. | Anh Minh, giờ anh có rảnh chút không ạ?
+- 急ぎで報告したいことがあります。 | Isogi de hōkoku shitai koto ga arimasu. | Em có việc gấp cần báo ạ.
+- 〜時ごろから、〜が使えなくなっています。 | ... ji goro kara, ... ga tsukaenaku natte imasu. | Từ khoảng … giờ, … không dùng được nữa.
+- 原因はまだ調べていますが、〜かもしれません。 | Gen'in wa mada shirabete imasu ga, ... kamo shiremasen. | Em vẫn đang tìm nguyên nhân, nhưng có thể là…
+- 今、〜を確認しています。 | Ima, ... o kakunin shite imasu. | Em đang kiểm tra…
+- 〜してもいいですか。 | ... shite mo ii desu ka. | Em … có được không ạ?
+- 〜は、どうしたらいいですか。 | ... wa, dō shitara ii desu ka. | … thì em nên làm thế nào ạ?
+- 〜時までに、もう一度報告します。 | ... ji made ni, mō ichido hōkoku shimasu. | Trước … giờ em báo lại ạ.
+- 分かりました。すぐに対応します。 | Wakarimashita. Sugu ni taiō shimasu. | Em hiểu rồi. Em xử lý ngay.
+- 確認して、すぐに連絡します。 | Kakunin shite, sugu ni renraku shimasu. | Em kiểm tra rồi báo lại ngay.
+- すみません、もう一度言ってもらえますか。 | Sumimasen, mō ichido itte moraemasu ka. | Xin lỗi, anh nói lại giúp em được không?
+- 申し訳ございません。〜てしまいました。 | Mōshiwake gozaimasen. ... te shimaimashita. | Em xin lỗi. Em đã lỡ…
+- 迷惑をかけて、申し訳ございません。 | Meiwaku o kakete, mōshiwake gozaimasen. | Em xin lỗi vì đã gây phiền phức.
+- 〜について、確認したいことがあります。 | ... ni tsuite, kakunin shitai koto ga arimasu. | Em có điều muốn hỏi lại về…
+- 仕様書に、〜場合が書かれていません。 | Shiyōsho ni, ... baai ga kakarete imasen. | Spec không ghi trường hợp…
+- 〜のは、どうでしょうか。 | ... no wa, dō deshō ka. | … thì thế nào ạ?
+- 私は、〜べきだと思います。 | Watashi wa, ... beki da to omoimasu. | Em nghĩ nên…
+- 〜からです。 | ... kara desu. | Vì…
+- 例えば、〜。 | Tatoeba, ... | Ví dụ…
+- 〜たらいいと思います。 | ... tara ii to omoimasu. | Em nghĩ … thì tốt.
+- そうすれば、〜と思います。 | Sō sureba, ... to omoimasu. | Làm vậy thì em nghĩ…
+- 確かにそうですね。ですから、〜。 | Tashika ni sō desu ne. Desukara, ... | Đúng vậy ạ. Vì thế…
+- メンターとして、〜ように手伝います。 | Mentā to shite, ... yō ni tetsudaimasu. | Với vai trò mentor, em giúp để…
+- 私も最初は〜だったからです。 | Watashi mo saisho wa ... datta kara desu. | Vì lúc đầu em cũng…
+- 〜を任せます。 | ... o makasemasu. | Em giao … cho bạn ấy.
+- 〜てくださいね。 | ... te kudasai ne. | Bạn hãy … nhé.
+- 〜ておくといいですよ。 | ... te oku to ii desu yo. | Bạn nên … trước nhé.
+- 〜のような人です。 | ... no yō na hito desu. | Là người giống như…
+- 決まるまで、〜を先に進めます。 | Kimaru made, ... o saki ni susumemasu. | Đến khi chốt, em làm trước…
+- 〜だけ〜ば、大丈夫だと思います。 | ... dake ... ba, daijōbu da to omoimasu. | Chỉ cần … thì em nghĩ là ổn.
+- 一番大切なのは、〜ことだと思います。 | Ichiban taisetsu na no wa, ... koto da to omoimasu. | Em nghĩ quan trọng nhất là…
+- 大丈夫ですよ。 | Daijōbu desu yo. | Không sao đâu.
+- 一緒に〜に行きませんか。 | Issho ni ... ni ikimasen ka. | Cùng đi … không?
 
 ## Danh từ
 
@@ -153,60 +187,16 @@ Roleplay với cấp trên (ミンさん).
 - セキュリティのバグ | sekyuriti no bagu | lỗi bảo mật
 - 次のリリース | tsugi no rirīsu | đợt release sau
 - パーセント | pāsento | phần trăm
-
-## Động từ
-
-<!-- từ | romaji | nghĩa Việt -->
-- 間に合う | maniau | kịp
-- 遅れる | okureru | trễ
-- 延ばす | nobasu | lùi, kéo dài
-- 相談する | sōdan suru | trao đổi, xin ý kiến
-- 手伝う | tetsudau | giúp
-- 分ける | wakeru | chia
-- 進める | susumeru | tiến hành
-- デプロイする | depuroi suru | deploy
-
-## Kịch bản
-
-### Lỗi bảo mật nhiều, test mới xong 70%
-
-- [問題] ミンさん、今よろしいでしょうか。このタスクは、金曜日のリリースに間に合わないかもしれません。 | Min-san, ima yoroshii deshō ka. Kono tasuku wa, kin'yōbi no rirīsu ni maniawanai kamo shiremasen. | Anh Minh, giờ có tiện không ạ? Task này có thể không kịp release thứ Sáu. | はい、どうしましたか。
-- [原因] セキュリティのバグの対応が多くて、テストはまだ七十パーセントしか終わっていません。 | Sekyuriti no bagu no taiō ga ōkute, tesuto wa mada nanajuppāsento shika owatte imasen. | Vì phải xử lý nhiều lỗi bảo mật nên test mới xong được 70%. | どうして間に合わないんですか。
-- [提案] このタスクを、次のリリースに延ばしてもよろしいでしょうか。 | Kono tasuku o, tsugi no rirīsu ni nobashite mo yoroshii deshō ka. | Em lùi task này sang đợt release sau có được không ạ? | じゃあ、どうしたいですか。
-- [上司] 分かりました。次のリリースにしましょう。 | Wakarimashita. Tsugi no rirīsu ni shimashō. | (Cấp trên) Được, để đợt release sau nhé.
-- [自分] ありがとうございます。今日中に、新しいスケジュールを報告します。 | Arigatō gozaimasu. Kyōjū ni, atarashii sukejūru o hōkoku shimasu. | Cảm ơn anh. Trong hôm nay em sẽ báo lịch mới.
-
----
-
-# ③ 仕様の確認 | Tình huống 2 · Spec chưa rõ
-
-id: p3
-
-## Giới thiệu
-
-Đề: spec có chỗ không rõ. Dừng lại để hỏi, rồi đề xuất cách làm tiếp. Khung: 確認 → 問題 → 提案.
-
-## Dùng khi
-
-Roleplay với cấp trên. Ngoài đời: đọc task thấy chỗ mơ hồ thì hỏi trước khi code.
-
-## Khung câu
-
-<!-- tên bước | romaji | nghĩa Việt | giải thích -->
-- 確認 | kakunin | xin hỏi | Nói đang hỏi về chức năng nào.
-- 問題 | mondai | chỗ chưa rõ | Spec không ghi điều gì.
-- 提案 | teian | đề xuất | Cách của mình.
-
-## Mẫu câu
-
-<!-- mẫu câu | romaji | nghĩa Việt -->
-- 〜について、確認したいことがあります。 | ... ni tsuite, kakunin shitai koto ga arimasu. | Em có điều muốn hỏi lại về…
-- 仕様書に、〜場合が書かれていません。 | Shiyōsho ni, ... baai ga kakarete imasen. | Spec không ghi trường hợp…
-- 〜のは、どうでしょうか。 | ... no wa, dō deshō ka. | … thì thế nào ạ?
-
-## Danh từ
-
-<!-- từ | romaji | nghĩa Việt -->
+- 急ぎ | isogi | gấp
+- トラブル | toraburu | sự cố
+- 原因 | gen'in | nguyên nhân
+- 影響 | eikyō | ảnh hưởng
+- 前のバージョン | mae no bājon | phiên bản trước
+- バックアップ | bakkuappu | bản sao lưu
+- 答え | kotae | câu trả lời
+- 患者さん | kanja-san | bệnh nhân
+- 私のミス | watashi no misu | lỗi của em
+- 予定 | yotei | dự kiến
 - 仕様書 | shiyōsho | tài liệu spec
 - 指示書 | shijisho | tài liệu chỉ thị
 - 不明な点 | fumei na ten | điểm chưa rõ
@@ -219,129 +209,6 @@ Roleplay với cấp trên. Ngoài đời: đọc task thấy chỗ mơ hồ th�
 - パスワード | pasuwādo | mật khẩu
 - アカウント | akaunto | tài khoản
 - ログイン | roguin | đăng nhập
-
-## Động từ
-
-<!-- từ | romaji | nghĩa Việt -->
-- 確認する | kakunin suru | xác nhận
-- 止める | tomeru | dừng
-- 決まる | kimaru | được quyết định
-- 決める | kimeru | quyết định
-- 提案する | teian suru | đề xuất
-- 表示する | hyōji suru | hiển thị
-- 間違える | machigaeru | nhập sai, làm sai
-- ロックする | rokku suru | khóa
-
-## Kịch bản
-
-### Spec không ghi khi nhập sai mật khẩu 5 lần
-
-- [確認] ミンさん、ログイン機能について、確認したいことがあります。 | Min-san, roguin kinō ni tsuite, kakunin shitai koto ga arimasu. | Anh Minh, em có điều muốn hỏi lại về chức năng đăng nhập. | はい、どうしましたか。
-- [問題] 仕様書に、パスワードを五回間違えた場合が書かれていません。 | Shiyōsho ni, pasuwādo o gokai machigaeta baai ga kakarete imasen. | Spec không ghi trường hợp nhập sai mật khẩu 5 lần. | 何が分からないんですか。
-- [提案] アカウントを三十分ロックするのは、どうでしょうか。 | Akaunto o sanjuppun rokku suru no wa, dō deshō ka. | Khóa tài khoản 30 phút thì thế nào ạ? | キエンさんは、どうしたらいいと思いますか。
-
----
-
-# ④ 事故報告 | Tình huống 3 · Báo lỗi do mình
-
-id: p4
-
-## Giới thiệu
-
-Đề: gửi nhầm do kiểm tra không kỹ (ở đây: không đọc lại tin nhắn AI soạn). Báo ngay cho cấp trên, nói nguyên nhân và cách xử lý. Khung: 謝罪 → 原因 → 対応 → 対策.
-
-## Dùng khi
-
-Roleplay với cấp trên.
-
-## Khung câu
-
-<!-- tên bước | romaji | nghĩa Việt | giải thích -->
-- 謝罪 | shazai | xin lỗi | Câu đầu tiên.
-- 原因 | gen'in | nguyên nhân | Mình đã bỏ sót gì.
-- 対応 | taiō | đã xử lý | Đã sửa gì.
-- 対策 | taisaku | phòng ngừa | Lần sau làm khác thế nào.
-
-## Mẫu câu
-
-<!-- mẫu câu | romaji | nghĩa Việt -->
-- 申し訳ありません。〜に間違いがありました。 | Mōshiwake arimasen. ... ni machigai ga arimashita. | Em xin lỗi. … bị sai.
-- 〜のが原因です。 | ... no ga gen'in desu. | Nguyên nhân là…
-- 〜を直しました。 | ... o naoshimashita. | Em đã sửa…
-- 今後は、〜ようにします。 | Kongo wa, ... yō ni shimasu. | Từ nay em sẽ…
-- 〜までに〜して、〜で報告します。 | ... made ni ... shite, ... de hōkoku shimasu. | Trước … em sẽ … và báo qua…
-
-## Danh từ
-
-<!-- từ | romaji | nghĩa Việt -->
-- 間違い | machigai | chỗ sai
-- 確認不足 | kakunin busoku | kiểm tra không kỹ
-- 操作ミス | sōsa misu | thao tác sai
-- 原因 | gen'in | nguyên nhân
-- 対策 | taisaku | biện pháp
-- データ | dēta | dữ liệu
-- 件数 | kensū | số bản ghi
-- チェックリスト | chekku risuto | checklist
-- 手順書 | tejunsho | tài liệu quy trình
-- メッセージ | messēji | tin nhắn
-- 文章 | bunshō | văn bản
-- チャット | chatto | chat
-
-## Động từ
-
-<!-- từ | romaji | nghĩa Việt -->
-- 間違える | machigaeru | làm sai
-- 直す | naosu | sửa
-- 作り直す | tsukurinaosu | làm lại
-- 送り直す | okurinaosu | gửi lại
-- 削除する | sakujo suru | xóa
-- チェックする | chekku suru | kiểm tra
-- 連絡する | renraku suru | liên lạc
-
-## Kịch bản
-
-### Không kiểm tra tin nhắn AI soạn trước khi gửi
-
-- [謝罪] 申し訳ありません。AIが作ったメッセージに、間違いがありました。 | Mōshiwake arimasen. Ēai ga tsukutta messēji ni, machigai ga arimashita. | Em xin lỗi. Tin nhắn AI soạn bị sai. | どうしましたか。
-- [原因] 送る前に、自分で読んで確認しなかったのが原因です。 | Okuru mae ni, jibun de yonde kakunin shinakatta no ga gen'in desu. | Nguyên nhân là em không tự đọc lại trước khi gửi. | 原因は何ですか。
-- [対応] 正しいメッセージを送り直して、三時までにチャットで報告します。 | Tadashii messēji o okurinaoshite, sanji made ni chatto de hōkoku shimasu. | Em sẽ gửi lại tin đúng và báo qua chat trước 3 giờ. | これから、どう対応しますか。
-- [対策] 今後は、AIの文章も、送る前に必ずチェックします。 | Kongo wa, ēai no bunshō mo, okuru mae ni kanarazu chekku shimasu. | Từ nay văn bản AI soạn em cũng sẽ kiểm tra trước khi gửi. | 今後は、どうしますか。
-
----
-
-# ⑤ 意見 | Chủ đề A · Nêu ý kiến
-
-id: p5
-
-## Giới thiệu
-
-Đề: họp và liên lạc nhiều quá, mất thời gian làm việc. Nên cải thiện thế nào, vì sao? Khung: 意見 → 理由 → 改善案 → まとめ.
-
-## Dùng khi
-
-Phần cuối bài thi. Cô hay hỏi vặn lại, có sẵn câu đáp ở cuối.
-
-## Khung câu
-
-<!-- tên bước | romaji | nghĩa Việt | giải thích -->
-- 意見 | iken | ý kiến | Kết luận trước.
-- 理由 | riyū | lý do | 〜からです.
-- 改善案 | kaizen'an | cách cải thiện | 1–2 cách.
-- まとめ | matome | chốt lại | そうすれば〜.
-
-## Mẫu câu
-
-<!-- mẫu câu | romaji | nghĩa Việt -->
-- 私は、〜べきだと思います。 | Watashi wa, ... beki da to omoimasu. | Em nghĩ nên…
-- 〜からです。 | ... kara desu. | Vì…
-- 例えば、〜。 | Tatoeba, ... | Ví dụ…
-- 〜たらいいと思います。 | ... tara ii to omoimasu. | Em nghĩ … thì tốt.
-- そうすれば、〜と思います。 | Sō sureba, ... to omoimasu. | Làm vậy thì em nghĩ…
-- 確かにそうですね。ですから、〜。 | Tashika ni sō desu ne. Desukara, ... | Đúng vậy ạ. Vì thế…
-
-## Danh từ
-
-<!-- từ | romaji | nghĩa Việt -->
 - 作業時間 | sagyō jikan | thời gian làm việc
 - 効率 | kōritsu | hiệu suất
 - 改善 | kaizen | cải thiện
@@ -350,60 +217,6 @@ Phần cuối bài thi. Cô hay hỏi vặn lại, có sẵn câu đáp ở cu�
 - ルール | rūru | quy tắc
 - 連絡 | renraku | liên lạc
 - 返事 | henji | trả lời
-
-## Động từ
-
-<!-- từ | romaji | nghĩa Việt -->
-- 減らす | herasu | giảm
-- 増える | fueru | tăng
-- まとめる | matomeru | gom lại
-- 決める | kimeru | quyết định
-- 集中する | shūchū suru | tập trung
-- 改善する | kaizen suru | cải thiện
-- 守る | mamoru | giữ
-
-## Kịch bản
-- [先生] 会議や連絡が多くて、作業時間が足りないとき、どう改善しますか。 | Kaigi ya renraku ga ōkute, sagyō jikan ga tarinai toki, dō kaizen shimasu ka. | (Cô) Họp và liên lạc nhiều làm thiếu thời gian làm việc, em cải thiện thế nào?
-- [意見] 会議を減らすべきだと思います。 | Kaigi o herasu beki da to omoimasu. | Em nghĩ nên giảm số cuộc họp.
-- [理由] 作業が止まると、集中できないからです。 | Sagyō ga tomaru to, shūchū dekinai kara desu. | Vì công việc bị ngắt thì không tập trung được. | どうしてですか。
-- [改善案] 朝会は十五分にして、連絡はチャットにまとめます。 | Asakai wa jūgofun ni shite, renraku wa chatto ni matomemasu. | Họp sáng 15 phút, liên lạc thì gom vào chat. | では、どう改善しますか。
-- [まとめ] そうすれば、作業時間が増えると思います。 | Sō sureba, sagyō jikan ga fueru to omoimasu. | Làm vậy thì thời gian làm việc sẽ tăng. | そうすると、どうなりますか。
-
----
-
-# ⑥ 新人のサポート | Chủ đề · Hỗ trợ người mới
-
-id: p6
-
-## Giới thiệu
-
-Tình huống thêm: có bạn người Việt mới vào, ra trường được một năm, bạn là mentor. (a) trả lời câu cô hỏi, khả năng ra thi cao; (b) roleplay nói với người mới.
-
-## Dùng khi
-
-Khi cô hỏi 新しいメンバーが入ったら、何をしますか.
-
-## Khung câu
-
-<!-- tên bước | romaji | nghĩa Việt | giải thích -->
-- 意見 | iken | sẽ làm gì | Vai trò mentor.
-- 理由 | riyū | lý do | Trải nghiệm của mình.
-- 具体例 | gutairei | việc cụ thể | Công cụ → tài liệu → task nhỏ → review → small talk.
-- 自分 ↔ 新人 | jibun ↔ shinjin | roleplay | Nói thân thiện, thêm ね, よ.
-
-## Mẫu câu
-
-<!-- mẫu câu | romaji | nghĩa Việt -->
-- メンターとして、〜ように手伝います。 | Mentā to shite, ... yō ni tetsudaimasu. | Với vai trò mentor, em giúp để…
-- 私も最初は〜だったからです。 | Watashi mo saisho wa ... datta kara desu. | Vì lúc đầu em cũng…
-- 〜を任せます。 | ... o makasemasu. | Em giao … cho bạn ấy.
-- 〜てくださいね。 | ... te kudasai ne. | Bạn hãy … nhé.
-- 〜ておくといいですよ。 | ... te oku to ii desu yo. | Bạn nên … trước nhé.
-- 〜のような人です。 | ... no yō na hito desu. | Là người giống như…
-
-## Danh từ
-
-<!-- từ | romaji | nghĩa Việt -->
 - メンター | mentā | mentor
 - 新人 | shinjin | người mới
 - ツール | tsūru | công cụ
@@ -417,6 +230,36 @@ Khi cô hỏi 新しいメンバーが入ったら、何をしますか.
 ## Động từ
 
 <!-- từ | romaji | nghĩa Việt -->
+- 間に合う | maniau | kịp
+- 遅れる | okureru | trễ
+- 延ばす | nobasu | lùi, kéo dài
+- 相談する | sōdan suru | trao đổi, xin ý kiến
+- 手伝う | tetsudau | giúp
+- 分ける | wakeru | chia
+- 進める | susumeru | tiến hành
+- デプロイする | depuroi suru | deploy
+- 使えなくなる | tsukaenaku naru | không dùng được nữa
+- 止まる | tomaru | dừng
+- 調べる | shiraberu | tìm hiểu
+- 確認する | kakunin suru | kiểm tra
+- 戻す | modosu | đưa về, khôi phục
+- 止める | tomeru | tạm dừng
+- 消す | kesu | xóa
+- 報告する | hōkoku suru | báo cáo
+- 連絡する | renraku suru | liên lạc
+- 対応する | taiō suru | xử lý
+- 決まる | kimaru | được quyết định
+- 決める | kimeru | quyết định
+- 提案する | teian suru | đề xuất
+- 表示する | hyōji suru | hiển thị
+- 間違える | machigaeru | nhập sai, làm sai
+- ロックする | rokku suru | khóa
+- 減らす | herasu | giảm
+- 増える | fueru | tăng
+- まとめる | matomeru | gom lại
+- 集中する | shūchū suru | tập trung
+- 改善する | kaizen suru | cải thiện
+- 守る | mamoru | giữ
 - 慣れる | nareru | quen
 - 教える | oshieru | dạy
 - 渡す | watasu | đưa
@@ -427,239 +270,93 @@ Khi cô hỏi 新しいメンバーが入ったら、何をしますか.
 
 ## Kịch bản
 
-### (a) Trả lời câu hỏi của cô
+### 1. 納期の相談 · Lỗi bảo mật nhiều, test mới xong 70% (声かけ → 謝罪・結論 → 原因 → 提案 → 連絡)
 
-- [先生] 新しいメンバーが入ったら、何をしますか。 | Atarashii menbā ga haittara, nani o shimasu ka. | (Cô) Khi có thành viên mới, em sẽ làm gì?
-- [意見] メンターとして、早く慣れるように手伝います。 | Mentā to shite, hayaku nareru yō ni tetsudaimasu. | Với vai trò mentor, em giúp bạn ấy sớm quen việc.
-- [具体例] まず、ツールの準備と資料の説明をします。 | Mazu, tsūru no junbi to shiryō no setsumei o shimasu. | Đầu tiên em chuẩn bị công cụ và giải thích tài liệu. | 具体的に、何をしますか。
-- [具体例] 次に、小さいタスクを任せて、レビューします。 | Tsugi ni, chiisai tasuku o makasete, rebyū shimasu. | Tiếp theo em giao task nhỏ rồi review. | それから、何をしますか。
-- [具体例] お昼には、食べ物や趣味の話もします。 | O-hiru ni wa, tabemono ya shumi no hanashi mo shimasu. | Giờ trưa em cũng nói chuyện đồ ăn, sở thích. | 仕事のほかに、何かしますか。
+- [自分] ミンさん、今ちょっといいですか。リリースのことで、相談したいことがあります。 | Min-san, ima chotto ii desu ka. Rirīsu no koto de, sōdan shitai koto ga arimasu. | Anh Minh, giờ anh rảnh chút không ạ? Em muốn bàn về việc release. | では、始めます。金曜日にリリースがありますが、テストが終わっていません。私に相談してください。
+- [上司] はい、どうしましたか。 | Hai, dō shimashita ka. | (Senpai) Ừ, có chuyện gì vậy?
+- [自分] 申し訳ございません。このタスクは、金曜日のリリースに間に合わないかもしれません。 | Mōshiwake gozaimasen. Kono tasuku wa, kin'yōbi no rirīsu ni maniawanai kamo shiremasen. | Em xin lỗi. Task này có thể không kịp release thứ Sáu.
+- [上司] どうしてですか。 | Dōshite desu ka. | (Senpai) Sao vậy?
+- [自分] セキュリティのバグの対応が多くて、テストはまだ七十パーセントしか終わっていません。 | Sekyuriti no bagu no taiō ga ōkute, tesuto wa mada nanajuppāsento shika owatte imasen. | Vì phải xử lý nhiều lỗi bảo mật nên test mới xong được 70%.
+- [上司] じゃあ、どうしますか。 | Jā, dō shimasu ka. | (Senpai) Vậy em định làm sao?
+- [自分] このタスクを、次のリリースに延ばしてもいいですか。 | Kono tasuku o, tsugi no rirīsu ni nobashite mo ii desu ka. | Em lùi task này sang đợt release sau được không ạ?
+- [上司] 分かりました。次のリリースにしましょう。 | Wakarimashita. Tsugi no rirīsu ni shimashō. | (Senpai) Được, để đợt release sau nhé.
+- [自分] ありがとうございます。今日中に、新しいスケジュールを報告します。 | Arigatō gozaimasu. Kyōjū ni, atarashii sukejūru o hōkoku shimasu. | Cảm ơn anh. Trong hôm nay em sẽ báo lịch mới.
 
-### (b) Nói với người mới
+### 2. トラブル対応 · Hệ thống đặt lịch dừng sau khi release (声かけ → 結論 → 状況 → 原因 → 相談 → 連絡 → 謝罪)
 
-- [自分] 分からないことは、何でも聞いてくださいね。 | Wakaranai koto wa, nan demo kiite kudasai ne. | Có gì không hiểu cứ hỏi mình nhé. | 新人に、最初に何と言いますか。
-- [自分] 会議の前に、話すことをメモしておくといいですよ。 | Kaigi no mae ni, hanasu koto o memo shite oku to ii desu yo. | Trước họp bạn nên ghi sẵn điều sẽ nói. | 会議が苦手な新人には、何と言いますか。
+- [自分] ミンさん、今ちょっといいですか。急ぎで報告したいことがあります。 | Min-san, ima chotto ii desu ka. Isogi de hōkoku shitai koto ga arimasu. | Anh Minh, giờ anh rảnh chút không ạ? Em có việc gấp cần báo. | では、始めます。朝、予約システムが止まりました。私に報告してください。
+- [上司] どうしましたか。 | Dō shimashita ka. | (Senpai) Có chuyện gì vậy?
+- [自分] 九時ごろから、予約システムが使えなくなっています。 | Kuji goro kara, yoyaku shisutemu ga tsukaenaku natte imasu. | Từ khoảng 9 giờ, hệ thống đặt lịch không dùng được nữa.
+- [上司] 原因は分かりますか。 | Gen'in wa wakarimasu ka. | (Senpai) Biết nguyên nhân chưa?
+- [自分] まだ調べていますが、昨日のリリースが原因かもしれません。 | Mada shirabete imasu ga, kinō no rirīsu ga gen'in kamo shiremasen. | Em vẫn đang tìm, nhưng có thể do bản release hôm qua.
+- [上司] どう対応しますか。 | Dō taiō shimasu ka. | (Senpai) Xử lý thế nào?
+- [自分] まず、前のバージョンに戻してもいいですか。 | Mazu, mae no bājon ni modoshite mo ii desu ka. | Trước mắt em đưa về phiên bản trước được không ạ?
+- [上司] はい、お願いします。 | Hai, onegai shimasu. | (Senpai) Được, làm đi.
+- [自分] 分かりました。十時までに、もう一度報告します。 | Wakarimashita. Jūji made ni, mō ichido hōkoku shimasu. | Em hiểu rồi. Trước 10 giờ em báo lại ạ.
 
----
+### 2. トラブル対応 · Bệnh viện báo AI trả lời sai (声かけ → 結論 → 状況 → 原因 → 相談 → 連絡 → 謝罪)
 
-# ⑦ 用語の説明 | Giải thích thuật ngữ IT
+- [自分] ミンさん、今ちょっといいですか。病院から、AIの答えが間違っていたと連絡がありました。 | Min-san, ima chotto ii desu ka. Byōin kara, ēai no kotae ga machigatte ita to renraku ga arimashita. | Anh Minh, giờ anh rảnh chút không ạ? Bệnh viện vừa báo là AI trả lời sai. | 病院から、AIの答えが間違っていたと連絡がありました。私に報告してください。
+- [上司] 患者さんに影響はありましたか。 | Kanja-san ni eikyō wa arimashita ka. | (Senpai) Có ảnh hưởng đến bệnh nhân không?
+- [自分] 今確認していますが、今のところ、影響はありません。 | Ima kakunin shite imasu ga, ima no tokoro, eikyō wa arimasen. | Em đang kiểm tra, nhưng hiện tại chưa có ảnh hưởng.
+- [上司] どうしたらいいと思いますか。 | Dō shitara ii to omoimasu ka. | (Senpai) Em nghĩ nên làm thế nào?
+- [自分] 直るまで、AIの機能を止めてもいいですか。 | Naoru made, ēai no kinō o tomete mo ii desu ka. | Em tạm dừng chức năng AI đến khi sửa xong được không ạ?
+- [上司] 分かりました。病院への説明は、私がします。 | Wakarimashita. Byōin e no setsumei wa, watashi ga shimasu. | (Senpai) Được. Việc giải thích với bệnh viện để anh lo.
+- [自分] ありがとうございます。原因が分かったら、すぐに連絡します。 | Arigatō gozaimasu. Gen'in ga wakattara, sugu ni renraku shimasu. | Cảm ơn anh. Biết nguyên nhân là em báo ngay.
 
-id: p7
+### 2. トラブル対応 · Lỗi của mình: lỡ xóa dữ liệu trên dev1 (声かけ → 結論 → 状況 → 原因 → 相談 → 連絡 → 謝罪)
 
-## Giới thiệu
+- [自分] ミンさん、申し訳ございません。私のミスで、デブワンのデータを消してしまいました。 | Min-san, mōshiwake gozaimasen. Watashi no misu de, debuwan no dēta o keshite shimaimashita. | Anh Minh, em xin lỗi. Do lỗi của em, dữ liệu trên dev1 đã bị xóa. | あなたは、間違えてテスト環境のデータを消しました。私に報告してください。
+- [上司] バックアップはありますか。 | Bakkuappu wa arimasu ka. | (Senpai) Có bản sao lưu không?
+- [自分] はい、昨日のバックアップがあるので、今、戻しています。 | Hai, kinō no bakkuappu ga aru node, ima, modoshite imasu. | Dạ có bản sao lưu hôm qua, em đang khôi phục.
+- [上司] いつ終わりますか。 | Itsu owarimasu ka. | (Senpai) Khi nào xong?
+- [自分] 午後二時までに、元に戻せると思います。 | Gogo niji made ni, moto ni modoseru to omoimasu. | Em nghĩ trước 2 giờ chiều sẽ khôi phục xong.
+- [上司] 今後は、どうしますか。 | Kongo wa, dō shimasu ka. | (Senpai) Sau này em sẽ làm gì?
+- [自分] 今後は、データを消す前に、必ずほかの人に確認してもらいます。迷惑をかけて、申し訳ございません。 | Kongo wa, dēta o kesu mae ni, kanarazu hoka no hito ni kakunin shite moraimasu. Meiwaku o kakete, mōshiwake gozaimasen. | Từ nay trước khi xóa dữ liệu, em sẽ luôn nhờ người khác kiểm tra. Em xin lỗi vì đã gây phiền phức.
 
-Cô không làm IT, nên có thể hỏi lại 「〇〇って何ですか」. Trả lời một câu theo mẫu 〇〇は、〜ことです.
+### 2. トラブル対応 · Khi bị hỏi điều chưa biết (声かけ → 結論 → 状況 → 原因 → 相談 → 連絡 → 謝罪)
 
-## Dùng khi
+- [自分] 申し訳ございません。それは、まだ確認できていません。確認して、すぐに連絡します。 | Mōshiwake gozaimasen. Sore wa, mada kakunin dekite imasen. Kakunin shite, sugu ni renraku shimasu. | Em xin lỗi, việc đó em chưa kiểm tra được. Em kiểm tra rồi báo lại ngay. | お客様は何人ぐらい困っていますか。
+- [自分] すみません、もう一度言ってもらえますか。 | Sumimasen, mō ichido itte moraemasu ka. | Xin lỗi, anh nói lại giúp em được không? | 影響範囲と復旧の見込みは、どうなっていますか。
 
-Bất cứ lúc nào cô hỏi lại một từ.
+### 3. 仕様の確認 · Spec không ghi khi nhập sai mật khẩu 5 lần (声かけ → 問題 → 提案 → 対応)
 
-## Khung câu
+- [自分] ミンさん、今ちょっといいですか。ログイン機能の仕様について、確認したいことがあります。 | Min-san, ima chotto ii desu ka. Roguin kinō no shiyō ni tsuite, kakunin shitai koto ga arimasu. | Anh Minh, giờ anh rảnh chút không ạ? Em muốn hỏi lại về spec chức năng đăng nhập. | では、始めます。仕様書に、分からないところがあります。私に相談してください。
+- [上司] はい、何ですか。 | Hai, nan desu ka. | (Senpai) Ừ, chuyện gì?
+- [自分] 仕様書に、パスワードを五回間違えた場合が書かれていません。 | Shiyōsho ni, pasuwādo o gokai machigaeta baai ga kakarete imasen. | Spec không ghi trường hợp nhập sai mật khẩu 5 lần.
+- [上司] そうですか。キエンさんは、どうしたらいいと思いますか。 | Sō desu ka. Kien-san wa, dō shitara ii to omoimasu ka. | (Senpai) Vậy à. Kiên nghĩ nên làm thế nào?
+- [自分] アカウントを三十分ロックするのは、どうでしょうか。 | Akaunto o sanjuppun rokku suru no wa, dō deshō ka. | Khóa tài khoản 30 phút thì thế nào ạ?
+- [上司] いいですね。でも、お客様に確認してみます。 | Ii desu ne. Demo, okyakusama ni kakunin shite mimasu. | (Senpai) Được đấy. Nhưng để anh hỏi lại khách hàng.
+- [自分] ありがとうございます。決まるまで、ほかの部分を先に進めます。 | Arigatō gozaimasu. Kimaru made, hoka no bubun o saki ni susumemasu. | Cảm ơn anh. Đến khi chốt, em làm trước phần khác.
 
-<!-- tên bước | romaji | nghĩa Việt | giải thích -->
-- 説明 | setsumei | giải thích | 〇〇は、〜ことです.
-- たとえ | tatoe | so sánh | 〜と同じです.
+### 4. 意見 · Nêu ý kiến (意見 → 理由 → 改善案 → まとめ)
 
-## Mẫu câu
+- [先生] 会議や連絡が多くて、作業時間が足りないとき、どう改善しますか。 | Kaigi ya renraku ga ōkute, sagyō jikan ga tarinai toki, dō kaizen shimasu ka. | (Thầy) Họp và liên lạc nhiều làm thiếu thời gian làm việc, em cải thiện thế nào?
+- [自分] 私は、会議を減らすべきだと思います。 | Watashi wa, kaigi o herasu beki da to omoimasu. | Em nghĩ nên giảm số cuộc họp.
+- [先生] どうしてですか。 | Dōshite desu ka. | (Thầy) Tại sao?
+- [自分] 作業が止まると、集中できないからです。 | Sagyō ga tomaru to, shūchū dekinai kara desu. | Vì công việc bị ngắt thì không tập trung được.
+- [先生] では、具体的に、どうしますか。 | Dewa, gutaiteki ni, dō shimasu ka. | (Thầy) Vậy cụ thể em làm gì?
+- [自分] 朝会は十五分にして、連絡はチャットにまとめます。 | Asakai wa jūgofun ni shite, renraku wa chatto ni matomemasu. | Họp sáng 15 phút, liên lạc thì gom vào chat.
+- [先生] でも、チャットだけで大丈夫ですか。 | Demo, chatto dake de daijōbu desu ka. | (Thầy) Nhưng chỉ chat thôi có ổn không?
+- [自分] 大切なことだけ会議で話せば、大丈夫だと思います。そうすれば、作業時間が増えます。 | Taisetsu na koto dake kaigi de hanaseba, daijōbu da to omoimasu. Sō sureba, sagyō jikan ga fuemasu. | Chỉ việc quan trọng mới đưa ra họp thì em nghĩ là ổn. Làm vậy thời gian làm việc sẽ tăng.
 
-<!-- mẫu câu | romaji | nghĩa Việt -->
-- すみません、簡単に説明しますね。 | Sumimasen, kantan ni setsumei shimasu ne. | Xin lỗi, em giải thích đơn giản nhé.
-- 〇〇は、〜ことです。 | ... wa, ... koto desu. | … là việc…
-- 〇〇は、〜という意味です。 | ... wa, ... to iu imi desu. | … nghĩa là…
-- 〜と同じです。 | ... to onaji desu. | Giống như…
-- 簡単に言うと、〜。 | Kantan ni iu to, ... | Nói đơn giản thì…
+### 5. 新人のサポート · (a) Thầy hỏi: có người mới thì làm gì (意見 → 具体例 → まとめ)
 
-## Danh từ
+- [先生] 新しいメンバーが入ったら、何をしますか。 | Atarashii menbā ga haittara, nani o shimasu ka. | (Thầy) Khi có thành viên mới, em sẽ làm gì?
+- [自分] メンターとして、早く慣れるように手伝います。 | Mentā to shite, hayaku nareru yō ni tetsudaimasu. | Với vai trò mentor, em giúp bạn ấy sớm quen việc.
+- [先生] 具体的に、何をしますか。 | Gutaiteki ni, nani o shimasu ka. | (Thầy) Cụ thể em làm gì?
+- [自分] まず、ツールの準備と資料の説明をします。次に、小さいタスクを任せて、レビューします。 | Mazu, tsūru no junbi to shiryō no setsumei o shimasu. Tsugi ni, chiisai tasuku o makasete, rebyū shimasu. | Đầu tiên em chuẩn bị công cụ và giải thích tài liệu. Tiếp theo em giao task nhỏ rồi review.
+- [先生] 仕事のほかに、何かしますか。 | Shigoto no hoka ni, nani ka shimasu ka. | (Thầy) Ngoài công việc, em có làm gì không?
+- [自分] お昼に、食べ物や趣味の話をして、チームの人と仲良くなれるようにします。 | O-hiru ni, tabemono ya shumi no hanashi o shite, chīmu no hito to nakayoku nareru yō ni shimasu. | Giờ trưa em nói chuyện đồ ăn, sở thích để bạn ấy thân với mọi người trong team.
+- [先生] 一番大切なことは、何だと思いますか。 | Ichiban taisetsu na koto wa, nan da to omoimasu ka. | (Thầy) Em nghĩ điều quan trọng nhất là gì?
+- [自分] 何でも聞ける雰囲気を作ることだと思います。 | Nan demo kikeru fun'iki o tsukuru koto da to omoimasu. | Em nghĩ là tạo không khí để bạn ấy hỏi gì cũng được.
 
-<!-- từ | romaji | nghĩa Việt -->
-- 専門用語 | senmon yōgo | thuật ngữ chuyên môn
-- 説明書 | setsumeisho | bản hướng dẫn
-- 土台 | dodai | nền móng
-- テスト用 | tesuto-yō | dùng để test
-- プログラム | puroguramu | chương trình
-- サービス | sābisu | dịch vụ
+### 5. 新人のサポート · (b) Roleplay: thầy đóng vai người mới (挨拶 → 安心させる → アドバイス → 誘う)
 
-## Động từ
-
-<!-- từ | romaji | nghĩa Việt -->
-- 説明する | setsumei suru | giải thích
-- 置く | oku | đặt
-- 公開する | kōkai suru | công bố
-- まとめる | matomeru | gộp lại
-- 動く | ugoku | chạy, hoạt động
-- 使う | tsukau | dùng
-
-## Kịch bản
-- [説明] すみません、簡単に説明しますね。 | Sumimasen, kantan ni setsumei shimasu ne. | Xin lỗi, em giải thích đơn giản nhé. | すみません、専門用語はよく分かりません。
-- [デプロイ] デプロイは、作ったものを、テスターやお客様が使える場所に置くことです。 | Depuroi wa, tsukutta mono o, tesutā ya okyakusama ga tsukaeru basho ni oku koto desu. | Deploy là đặt thứ mình làm vào nơi tester và khách hàng dùng được. | デプロイって何ですか。
-- [リリース] リリースは、新しい機能や、バグを直したものを公開することです。 | Rirīsu wa, atarashii kinō ya, bagu o naoshita mono o kōkai suru koto desu. | Release là công bố chức năng mới hoặc bản đã sửa lỗi. | リリースって何ですか。
-- [本番環境] 本番環境は、お客様が使っているシステムです。 | Honban kankyō wa, okyakusama ga tsukatte iru shisutemu desu. | Production là hệ thống khách hàng đang dùng. | 本番環境って何ですか。
-- [レビュー] レビューは、新しいバグが出ないように、ほかの人にチェックしてもらうことです。 | Rebyū wa, atarashii bagu ga denai yō ni, hoka no hito ni chekku shite morau koto desu. | Review là nhờ người khác kiểm tra để không sinh ra lỗi mới. | レビューって何ですか。
-- [仕様書] 仕様書は、作るものの説明書です。 | Shiyōsho wa, tsukuru mono no setsumeisho desu. | Spec là bản hướng dẫn về thứ sẽ làm. | 仕様書って何ですか。
-- [フルスタック] フルスタックは、全部を担当できるエンジニアです。 | Furusutakku wa, zenbu o tantō dekiru enjinia desu. | Fullstack là kỹ sư làm được mọi phần. | フルスタックって何ですか。
-
----
-
-# ⑧ つなぎ・困った時 | Câu nối và gỡ bí
-
-id: p8
-
-## Giới thiệu
-
-Câu ngắn để xin nhắc lại, xin thời gian, chuyển ý. Nói một câu trong số này vẫn tốt hơn im lặng.
-
-## Dùng khi
-
-Bất cứ lúc nào trong bài thi.
-
-## Khung câu
-
-<!-- tên bước | romaji | nghĩa Việt | giải thích -->
-- 聞き返し | kikikaeshi | xin nhắc lại | Đừng gật đại.
-- 時間 | jikan | xin vài giây | Khi chưa nghĩ ra.
-- つなぎ | tsunagi | chuyển ý | Nối câu thành mạch.
-
-## Mẫu câu
-
-<!-- mẫu câu | romaji | nghĩa Việt -->
-- もう一度お願いします。 | Mō ichido onegai shimasu. | Xin nói lại một lần nữa.
-- 〜ということですか。 | ... to iu koto desu ka. | Ý cô là… phải không ạ?
-- 少し考えてもいいですか。 | Sukoshi kangaete mo ii desu ka. | Cho em nghĩ một chút được không ạ?
-- 簡単に言うと、〜。 | Kantan ni iu to, ... | Nói đơn giản thì…
-- 結論から言うと、〜。 | Ketsuron kara iu to, ... | Nói kết luận trước thì…
-- 確認して、あとで連絡します。 | Kakunin shite, ato de renraku shimasu. | Em kiểm tra rồi báo lại sau.
-
-## Danh từ
-
-<!-- từ | romaji | nghĩa Việt -->
-- 結論 | ketsuron | kết luận
-- 意味 | imi | ý nghĩa
-- 質問 | shitsumon | câu hỏi
-
-## Động từ
-
-<!-- từ | romaji | nghĩa Việt -->
-- 言う | iu | nói
-- 考える | kangaeru | suy nghĩ
-- 聞く | kiku | nghe, hỏi
-
-## Kịch bản
-- [聞き返し] すみません、もう一度お願いします。 | Sumimasen, mō ichido onegai shimasu. | Xin lỗi, cô nói lại giúp em ạ.
-- [聞き返し] もう少し、ゆっくりお願いします。 | Mō sukoshi, yukkuri onegai shimasu. | Cô nói chậm hơn chút giúp em ạ.
-- [時間] 少し考えてもいいですか。 | Sukoshi kangaete mo ii desu ka. | Cho em nghĩ một chút được không ạ? | AIについて、どう思いますか。
-- [つなぎ] 簡単に言うと、テストが足りません。 | Kantan ni iu to, tesuto ga tarimasen. | Nói đơn giản là test chưa đủ. | それは、どういう意味ですか。
-- [保留] 確認して、あとで連絡します。 | Kakunin shite, ato de renraku shimasu. | Em kiểm tra rồi báo lại sau. | それは、いつできますか。
-
----
-
-# ⑨ トラブル対応 | Roleplay · Báo sự cố khẩn cho cấp trên
-
-id: p9
-
-## Giới thiệu
-
-Đề mới: thầy đóng vai cấp trên (課長), đưa ra một tình huống khẩn cấp, bạn phải nói chuyện trực tiếp với thầy bằng kính ngữ công sở. Thứ tự: xin phép làm phiền → báo kết luận → tình hình → nguyên nhân → xin ý kiến hoặc chỉ thị → hẹn giờ báo lại. Thầy sẽ hỏi chen vào (原因は？ いつ直る？ 影響は？), nên mỗi câu hỏi đều có câu đáp mẫu.
-
-## Dùng khi
-
-Roleplay với thầy đóng vai 上司. Câu của mình luôn ở thể です・ます + kính ngữ: ある→ございます, いる・している→おります・しております, する→いたします, 分かった→承知いたしました. Không dùng 〜します／〜です trơn khi nói về việc mình làm, đổi sang 〜いたします／〜でございます.
-
-## Khung câu
-
-<!-- tên bước | romaji | nghĩa Việt | giải thích -->
-- 声かけ | koekake | xin phép làm phiền | お忙しいところ申し訳ございません。今、少しお時間よろしいでしょうか。
-- 結論 | ketsuron | báo kết luận | 至急ご報告したいことがございます。〜が起きております。
-- 状況 | jōkyō | tình hình | 〜時ごろから、〜できない状態になっております。
-- 原因 | gen'in | nguyên nhân | Chưa rõ: まだ調査中ですが、〜の可能性がございます。
-- 相談 | sōdan | xin ý kiến, chỉ thị | 〜してもよろしいでしょうか。／ご指示をいただけますでしょうか。
-- 連絡 | renraku | hẹn báo lại | 〜時までに、改めてご報告いたします。
-- 締め | shime | kết | 承知いたしました。／ご迷惑をおかけして、申し訳ございません。
-
-## Mẫu câu
-
-<!-- mẫu câu | romaji | nghĩa Việt -->
-- 課長、お忙しいところ申し訳ございません。 | Kachō, oisogashii tokoro mōshiwake gozaimasen. | Thưa trưởng phòng, xin lỗi đã làm phiền lúc anh đang bận.
-- 今、少しお時間よろしいでしょうか。 | Ima, sukoshi ojikan yoroshii deshō ka. | Bây giờ anh có chút thời gian không ạ?
-- 至急、ご報告したいことがございます。 | Shikyū, gohōkoku shitai koto ga gozaimasu. | Em có việc gấp cần báo cáo ạ.
-- 〜時ごろから、〜できない状態になっております。 | ... ji goro kara, ... dekinai jōtai ni natte orimasu. | Từ khoảng … giờ, đang ở tình trạng không … được ạ.
-- 原因はまだ調査中ですが、〜の可能性がございます。 | Gen'in wa mada chōsachū desu ga, ... no kanōsei ga gozaimasu. | Nguyên nhân đang điều tra, nhưng có khả năng là … ạ.
-- 現在、〜を確認しております。 | Genzai, ... o kakunin shite orimasu. | Hiện em đang kiểm tra … ạ.
-- 〜してもよろしいでしょうか。 | ... shite mo yoroshii deshō ka. | Em … có được không ạ?
-- 〜について、ご指示をいただけますでしょうか。 | ... ni tsuite, goshiji o itadakemasu deshō ka. | Về …, anh có thể chỉ thị giúp em không ạ?
-- 〜時までに、改めてご報告いたします。 | ... ji made ni, aratamete gohōkoku itashimasu. | Trước … giờ em sẽ báo cáo lại ạ.
-- 承知いたしました。すぐに対応いたします。 | Shōchi itashimashita. Sugu ni taiō itashimasu. | Em hiểu rồi ạ. Em xử lý ngay.
-- 申し訳ございません。その点は、まだ確認できておりません。 | Mōshiwake gozaimasen. Sono ten wa, mada kakunin dekite orimasen. | Xin lỗi anh, điểm đó em chưa kiểm tra được ạ.
-- 確認して、すぐにご連絡いたします。 | Kakunin shite, sugu ni gorenraku itashimasu. | Em kiểm tra rồi liên lạc lại ngay ạ.
-- 申し訳ございません、もう一度おっしゃっていただけますか。 | Mōshiwake gozaimasen, mō ichido osshatte itadakemasu ka. | Xin lỗi, anh có thể nói lại một lần nữa không ạ?
-- ご迷惑をおかけして、申し訳ございません。 | Gomeiwaku o okake shite, mōshiwake gozaimasen. | Em xin lỗi vì đã gây phiền phức.
-
-## Danh từ
-
-<!-- từ | romaji | nghĩa Việt -->
-- 課長 | kachō | trưởng phòng
-- 至急 | shikyū | gấp, khẩn
-- 障害 | shōgai | sự cố hệ thống
-- 状態 | jōtai | tình trạng
-- 調査中 | chōsachū | đang điều tra
-- 可能性 | kanōsei | khả năng
-- 影響 | eikyō | ảnh hưởng
-- ご指示 | goshiji | chỉ thị (của cấp trên)
-- 前のバージョン | mae no bājon | phiên bản trước
-- バックアップ | bakkuappu | bản sao lưu
-- 回答 | kaitō | câu trả lời
-- 患者さん | kanja-san | bệnh nhân
-- 私のミス | watashi no misu | lỗi của em
-- 予定 | yotei | dự kiến
-
-## Động từ
-
-<!-- thể thường → kính ngữ | romaji | nghĩa Việt -->
-- ある → ございます | gozaimasu | có (khiêm nhường)
-- している → しております | shite orimasu | đang làm
-- する → いたします | itashimasu | làm (khiêm nhường)
-- 言う → 申します | mōshimasu | nói (khiêm nhường)
-- 聞く → 伺います | ukagaimasu | hỏi, nghe (khiêm nhường)
-- 分かった → 承知いたしました | shōchi itashimashita | em hiểu rồi ạ
-- 報告する → ご報告いたします | gohōkoku itashimasu | báo cáo
-- 連絡する → ご連絡いたします | gorenraku itashimasu | liên lạc
-- 言う（上司が）→ おっしゃる | ossharu | nói (tôn kính, cho cấp trên)
-- 戻す | modosu | đưa về, khôi phục
-
-## Kịch bản
-
-### Hệ thống đặt lịch dừng sau khi release
-
-- [自分] 課長、お忙しいところ申し訳ございません。至急ご報告したいことがございます。 | Kachō, oisogashii tokoro mōshiwake gozaimasen. Shikyū gohōkoku shitai koto ga gozaimasu. | Thưa trưởng phòng, xin lỗi đã làm phiền, em có việc gấp cần báo cáo ạ. | では、始めます。朝、予約システムが止まりました。私に報告してください。
-- [上司] どうしましたか。 | Dō shimashita ka. | (Cấp trên) Có chuyện gì vậy?
-- [自分] 九時ごろから、予約システムが使えない状態になっております。 | Kuji goro kara, yoyaku shisutemu ga tsukaenai jōtai ni natte orimasu. | Từ khoảng 9 giờ, hệ thống đặt lịch đang không dùng được ạ.
-- [上司] 原因は分かりますか。 | Gen'in wa wakarimasu ka. | (Cấp trên) Biết nguyên nhân chưa?
-- [自分] まだ調査中ですが、昨日のリリースが原因の可能性がございます。 | Mada chōsachū desu ga, kinō no rirīsu ga gen'in no kanōsei ga gozaimasu. | Vẫn đang điều tra, nhưng có khả năng do bản release hôm qua ạ.
-- [上司] どう対応しますか。 | Dō taiō shimasu ka. | (Cấp trên) Xử lý thế nào?
-- [自分] まず、前のバージョンに戻してもよろしいでしょうか。 | Mazu, mae no bājon ni modoshite mo yoroshii deshō ka. | Trước mắt em đưa về phiên bản trước có được không ạ?
-- [上司] はい、お願いします。 | Hai, onegai shimasu. | (Cấp trên) Được, làm đi.
-- [自分] 承知いたしました。十時までに、改めてご報告いたします。 | Shōchi itashimashita. Jūji made ni, aratamete gohōkoku itashimasu. | Em hiểu rồi ạ. Trước 10 giờ em sẽ báo cáo lại.
-
-### Bệnh viện báo AI trả lời sai
-
-- [自分] 課長、今少しお時間よろしいでしょうか。病院から、AIの回答が間違っていたと連絡がございました。 | Kachō, ima sukoshi ojikan yoroshii deshō ka. Byōin kara, ēai no kaitō ga machigatte ita to renraku ga gozaimashita. | Thưa trưởng phòng, anh có chút thời gian không ạ? Bệnh viện vừa báo là AI trả lời sai ạ. | 病院から、AIの答えが間違っていたと連絡がありました。私に報告してください。
-- [上司] 患者さんに影響はありましたか。 | Kanja-san ni eikyō wa arimashita ka. | (Cấp trên) Có ảnh hưởng đến bệnh nhân không?
-- [自分] 現在確認しておりますが、今のところ、影響は出ておりません。 | Genzai kakunin shite orimasu ga, ima no tokoro, eikyō wa dete orimasen. | Em đang kiểm tra, nhưng hiện tại chưa có ảnh hưởng ạ.
-- [上司] どうしたらいいと思いますか。 | Dō shitara ii to omoimasu ka. | (Cấp trên) Em nghĩ nên làm thế nào?
-- [自分] 直るまで、AIの機能を止めたいと考えておりますが、よろしいでしょうか。 | Naoru made, ēai no kinō o tometai to kangaete orimasu ga, yoroshii deshō ka. | Em muốn tạm dừng chức năng AI đến khi sửa xong, có được không ạ?
-- [上司] 分かりました。病院への説明は、私がします。 | Wakarimashita. Byōin e no setsumei wa, watashi ga shimasu. | (Cấp trên) Được. Việc giải thích với bệnh viện để tôi lo.
-- [自分] ありがとうございます。原因が分かったら、すぐにご連絡いたします。 | Arigatō gozaimasu. Gen'in ga wakattara, sugu ni gorenraku itashimasu. | Cảm ơn anh. Biết nguyên nhân là em liên lạc ngay ạ.
-
-### Lỗi của mình: lỡ xóa dữ liệu trên dev1
-
-- [自分] 課長、申し訳ございません。私のミスで、デブワンのデータを消してしまいました。 | Kachō, mōshiwake gozaimasen. Watashi no misu de, debuwan no dēta o keshite shimaimashita. | Thưa trưởng phòng, em xin lỗi. Do lỗi của em, dữ liệu trên dev1 đã bị xóa ạ. | あなたは、間違えてテスト環境のデータを消しました。私に報告してください。
-- [上司] バックアップはありますか。 | Bakkuappu wa arimasu ka. | (Cấp trên) Có bản sao lưu không?
-- [自分] はい、昨日のバックアップがございますので、今、戻しております。 | Hai, kinō no bakkuappu ga gozaimasu node, ima, modoshite orimasu. | Dạ có bản sao lưu hôm qua, em đang khôi phục ạ.
-- [上司] いつ終わりますか。 | Itsu owarimasu ka. | (Cấp trên) Khi nào xong?
-- [自分] 午後二時までには、元に戻せる予定です。 | Gogo niji made ni wa, moto ni modoseru yotei desu. | Dự kiến trước 2 giờ chiều sẽ khôi phục xong ạ.
-- [上司] 今後は、どうしますか。 | Kongo wa, dō shimasu ka. | (Cấp trên) Sau này em sẽ làm gì?
-- [自分] 今後は、データを消す前に、必ずほかの方に確認をお願いいたします。ご迷惑をおかけして、申し訳ございません。 | Kongo wa, dēta o kesu mae ni, kanarazu hoka no kata ni kakunin o onegai itashimasu. Gomeiwaku o okake shite, mōshiwake gozaimasen. | Từ nay trước khi xóa dữ liệu, em sẽ luôn nhờ người khác kiểm tra. Em xin lỗi vì đã gây phiền phức.
-
-### Khi bị hỏi điều chưa biết
-
-- [自分] 申し訳ございません。その点は、まだ確認できておりません。確認して、すぐにご連絡いたします。 | Mōshiwake gozaimasen. Sono ten wa, mada kakunin dekite orimasen. Kakunin shite, sugu ni gorenraku itashimasu. | Xin lỗi anh, điểm đó em chưa kiểm tra được. Em kiểm tra rồi liên lạc lại ngay ạ. | お客様は何人ぐらい困っていますか。
-- [自分] 申し訳ございません、もう一度おっしゃっていただけますか。 | Mōshiwake gozaimasen, mō ichido osshatte itadakemasu ka. | Xin lỗi, anh có thể nói lại một lần nữa không ạ? | 影響範囲と復旧の見込みは、どうなっていますか。
+- [自分] はじめまして、キエンです。今日から、よろしくお願いします。 | Hajimemashite, Kien desu. Kyō kara, yoroshiku onegai shimasu. | Chào bạn, mình là Kiên. Từ hôm nay mong được làm việc cùng nhé. | では、私は新人です。今日から会社に来ました。話しかけてください。
+- [新人] よろしくお願いします。少し緊張しています。 | Yoroshiku onegai shimasu. Sukoshi kinchō shite imasu. | (Người mới) Mong anh giúp đỡ. Em hơi hồi hộp ạ.
+- [自分] 大丈夫ですよ。分からないことは、何でも聞いてくださいね。 | Daijōbu desu yo. Wakaranai koto wa, nan demo kiite kudasai ne. | Không sao đâu. Có gì không hiểu cứ hỏi mình nhé.
+- [新人] 会議で日本語が分からないときは、どうしたらいいですか。 | Kaigi de Nihongo ga wakaranai toki wa, dō shitara ii desu ka. | (Người mới) Trong họp không hiểu tiếng Nhật thì em nên làm sao ạ?
+- [自分] 会議の前に、話すことをメモしておくといいですよ。分からないことは、あとで私に聞いてください。 | Kaigi no mae ni, hanasu koto o memo shite oku to ii desu yo. Wakaranai koto wa, ato de watashi ni kiite kudasai. | Trước họp bạn nên ghi sẵn điều sẽ nói. Chỗ nào không hiểu thì hỏi lại mình sau nhé.
+- [新人] ありがとうございます。 | Arigatō gozaimasu. | (Người mới) Em cảm ơn anh.
+- [自分] お昼、一緒に食べに行きませんか。 | O-hiru, issho ni tabe ni ikimasen ka. | Trưa nay đi ăn cùng không?
