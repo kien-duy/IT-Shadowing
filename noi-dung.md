@@ -552,95 +552,114 @@ Bất cứ lúc nào trong bài thi.
 
 ---
 
-# ⑨ トラブル対応 | Tình huống bất ngờ · Có sự cố thì làm gì
+# ⑨ トラブル対応 | Roleplay · Báo sự cố khẩn cho cấp trên
 
 id: p9
 
 ## Giới thiệu
 
-Đề mới: cô kể một sự cố trong công việc rồi hỏi 「上司にどう報告しますか。どう対応しますか。」. Trả lời hai phần: **báo cáo sếp** (結論 → 状況 → 原因 → 影響 → 次の連絡) rồi **cách xử lý** (まず → 次に → それから → 今後は). Gặp sự cố lạ thì cứ thay danh từ vào mẫu câu, khung vẫn giữ nguyên.
+Đề mới: thầy đóng vai cấp trên (課長), đưa ra một tình huống khẩn cấp, bạn phải nói chuyện trực tiếp với thầy bằng kính ngữ công sở. Thứ tự: xin phép làm phiền → báo kết luận → tình hình → nguyên nhân → xin ý kiến hoặc chỉ thị → hẹn giờ báo lại. Thầy sẽ hỏi chen vào (原因は？ いつ直る？ 影響は？), nên mỗi câu hỏi đều có câu đáp mẫu.
 
 ## Dùng khi
 
-Cô hỏi 「〜というトラブルが起きました。どうしますか。」 với bất kỳ sự cố nào: hệ thống dừng, AI trả lời sai, lỡ xóa dữ liệu, khách hàng phàn nàn, người phụ trách nghỉ đột xuất…
+Roleplay với thầy đóng vai 上司. Câu của mình luôn ở thể です・ます + kính ngữ: ある→ございます, いる・している→おります・しております, する→いたします, 分かった→承知いたしました. Không dùng 〜します／〜です trơn khi nói về việc mình làm, đổi sang 〜いたします／〜でございます.
 
 ## Khung câu
 
 <!-- tên bước | romaji | nghĩa Việt | giải thích -->
-- 報告 | hōkoku | báo ngay | Câu đầu luôn là: báo sếp ngay, không tự xử lý một mình.
-- 状況 | jōkyō | tình trạng | Từ lúc nào, cái gì đang không dùng được.
-- 原因 | gen'in | nguyên nhân | Biết thì nói; chưa biết thì nói 「まだ分かりませんが、〜かもしれません」.
-- 影響 | eikyō | ảnh hưởng | Ai bị ảnh hưởng, bao nhiêu người.
-- 対応 | taiō | xử lý | まず → 次に → それから. Có cách tạm thời thì nói trước.
-- 連絡 | renraku | báo tiếp | Khi nào, bằng cách nào sẽ báo lại.
-- 対策 | taisaku | phòng ngừa | 今後は〜ように、〜します.
+- 声かけ | koekake | xin phép làm phiền | お忙しいところ申し訳ございません。今、少しお時間よろしいでしょうか。
+- 結論 | ketsuron | báo kết luận | 至急ご報告したいことがございます。〜が起きております。
+- 状況 | jōkyō | tình hình | 〜時ごろから、〜できない状態になっております。
+- 原因 | gen'in | nguyên nhân | Chưa rõ: まだ調査中ですが、〜の可能性がございます。
+- 相談 | sōdan | xin ý kiến, chỉ thị | 〜してもよろしいでしょうか。／ご指示をいただけますでしょうか。
+- 連絡 | renraku | hẹn báo lại | 〜時までに、改めてご報告いたします。
+- 締め | shime | kết | 承知いたしました。／ご迷惑をおかけして、申し訳ございません。
 
 ## Mẫu câu
 
 <!-- mẫu câu | romaji | nghĩa Việt -->
-- そうですね。まず、すぐに上司に報告します。 | Sō desu ne. Mazu, sugu ni jōshi ni hōkoku shimasu. | Vâng. Trước hết em báo ngay cho cấp trên.
-- ミンさん、急ぎで報告したいことがあります。 | Min-san, isogi de hōkoku shitai koto ga arimasu. | Anh Minh, em có việc gấp cần báo.
-- 〜時ごろから、〜ができない状態です。 | ... ji goro kara, ... ga dekinai jōtai desu. | Từ khoảng … giờ, đang không … được.
-- 原因はまだ分かりませんが、〜かもしれません。 | Gen'in wa mada wakarimasen ga, ... kamo shiremasen. | Nguyên nhân chưa rõ, nhưng có thể là…
-- 〜に影響が出ています。 | ... ni eikyō ga dete imasu. | Đang ảnh hưởng đến…
-- まず、〜を確認して、原因を調べます。 | Mazu, ... o kakunin shite, gen'in o shirabemasu. | Trước tiên em kiểm tra … và tìm nguyên nhân.
-- 直るまで、一時的に〜します。 | Naoru made, ichijiteki ni ... shimasu. | Đến khi sửa xong, tạm thời em sẽ…
-- 一人で判断できないので、〜さんに相談します。 | Hitori de handan dekinai node, ... san ni sōdan shimasu. | Em không tự quyết được nên sẽ hỏi ý …
-- 〜分ごとに、チャットで状況を共有します。 | ... fun goto ni, chatto de jōkyō o kyōyū shimasu. | Cứ … phút em cập nhật tình hình qua chat.
-- 直ったら、すぐに連絡します。 | Naottara, sugu ni renraku shimasu. | Sửa xong em báo ngay.
-- 今後は、同じことが起きないように、〜します。 | Kongo wa, onaji koto ga okinai yō ni, ... shimasu. | Từ nay, để không lặp lại, em sẽ…
-- もし〜なら、〜します。 | Moshi ... nara, ... shimasu. | Nếu … thì em sẽ…
+- 課長、お忙しいところ申し訳ございません。 | Kachō, oisogashii tokoro mōshiwake gozaimasen. | Thưa trưởng phòng, xin lỗi đã làm phiền lúc anh đang bận.
+- 今、少しお時間よろしいでしょうか。 | Ima, sukoshi ojikan yoroshii deshō ka. | Bây giờ anh có chút thời gian không ạ?
+- 至急、ご報告したいことがございます。 | Shikyū, gohōkoku shitai koto ga gozaimasu. | Em có việc gấp cần báo cáo ạ.
+- 〜時ごろから、〜できない状態になっております。 | ... ji goro kara, ... dekinai jōtai ni natte orimasu. | Từ khoảng … giờ, đang ở tình trạng không … được ạ.
+- 原因はまだ調査中ですが、〜の可能性がございます。 | Gen'in wa mada chōsachū desu ga, ... no kanōsei ga gozaimasu. | Nguyên nhân đang điều tra, nhưng có khả năng là … ạ.
+- 現在、〜を確認しております。 | Genzai, ... o kakunin shite orimasu. | Hiện em đang kiểm tra … ạ.
+- 〜してもよろしいでしょうか。 | ... shite mo yoroshii deshō ka. | Em … có được không ạ?
+- 〜について、ご指示をいただけますでしょうか。 | ... ni tsuite, goshiji o itadakemasu deshō ka. | Về …, anh có thể chỉ thị giúp em không ạ?
+- 〜時までに、改めてご報告いたします。 | ... ji made ni, aratamete gohōkoku itashimasu. | Trước … giờ em sẽ báo cáo lại ạ.
+- 承知いたしました。すぐに対応いたします。 | Shōchi itashimashita. Sugu ni taiō itashimasu. | Em hiểu rồi ạ. Em xử lý ngay.
+- 申し訳ございません。その点は、まだ確認できておりません。 | Mōshiwake gozaimasen. Sono ten wa, mada kakunin dekite orimasen. | Xin lỗi anh, điểm đó em chưa kiểm tra được ạ.
+- 確認して、すぐにご連絡いたします。 | Kakunin shite, sugu ni gorenraku itashimasu. | Em kiểm tra rồi liên lạc lại ngay ạ.
+- 申し訳ございません、もう一度おっしゃっていただけますか。 | Mōshiwake gozaimasen, mō ichido osshatte itadakemasu ka. | Xin lỗi, anh có thể nói lại một lần nữa không ạ?
+- ご迷惑をおかけして、申し訳ございません。 | Gomeiwaku o okake shite, mōshiwake gozaimasen. | Em xin lỗi vì đã gây phiền phức.
 
 ## Danh từ
 
 <!-- từ | romaji | nghĩa Việt -->
-- トラブル | toraburu | sự cố
+- 課長 | kachō | trưởng phòng
+- 至急 | shikyū | gấp, khẩn
 - 障害 | shōgai | sự cố hệ thống
-- エラー | erā | lỗi
-- サーバー | sābā | server
-- ログ | rogu | log
-- 状況 | jōkyō | tình hình
+- 状態 | jōtai | tình trạng
+- 調査中 | chōsachū | đang điều tra
+- 可能性 | kanōsei | khả năng
 - 影響 | eikyō | ảnh hưởng
-- 範囲 | han'i | phạm vi
-- 一時的 | ichijiteki | tạm thời
+- ご指示 | goshiji | chỉ thị (của cấp trên)
 - 前のバージョン | mae no bājon | phiên bản trước
 - バックアップ | bakkuappu | bản sao lưu
-- 再発防止 | saihatsu bōshi | phòng tái diễn
-- お客様 | okyakusama | khách hàng
-- 担当者 | tantōsha | người phụ trách
+- 回答 | kaitō | câu trả lời
+- 患者さん | kanja-san | bệnh nhân
+- 私のミス | watashi no misu | lỗi của em
+- 予定 | yotei | dự kiến
 
 ## Động từ
 
-<!-- từ | romaji | nghĩa Việt -->
-- 起きる | okiru | xảy ra
-- 止まる | tomaru | dừng
-- 調べる | shiraberu | tìm hiểu, điều tra
-- 直る | naoru | được sửa xong
+<!-- thể thường → kính ngữ | romaji | nghĩa Việt -->
+- ある → ございます | gozaimasu | có (khiêm nhường)
+- している → しております | shite orimasu | đang làm
+- する → いたします | itashimasu | làm (khiêm nhường)
+- 言う → 申します | mōshimasu | nói (khiêm nhường)
+- 聞く → 伺います | ukagaimasu | hỏi, nghe (khiêm nhường)
+- 分かった → 承知いたしました | shōchi itashimashita | em hiểu rồi ạ
+- 報告する → ご報告いたします | gohōkoku itashimasu | báo cáo
+- 連絡する → ご連絡いたします | gorenraku itashimasu | liên lạc
+- 言う（上司が）→ おっしゃる | ossharu | nói (tôn kính, cho cấp trên)
 - 戻す | modosu | đưa về, khôi phục
-- 判断する | handan suru | phán đoán, quyết định
-- 相談する | sōdan suru | xin ý kiến
-- 共有する | kyōyū suru | chia sẻ
-- 連絡する | renraku suru | liên lạc
-- 防ぐ | fusegu | phòng tránh
 
 ## Kịch bản
 
-### Hệ thống đặt lịch bị dừng vào buổi sáng
+### Hệ thống đặt lịch dừng sau khi release
 
-- [報告] まず、すぐにミンさんに報告します。 | Mazu, sugu ni Min-san ni hōkoku shimasu. | Trước hết em báo ngay cho anh Minh. | 朝、病院の予約システムが止まってしまいました。どうしますか。
-- [状況] 「九時ごろから、お医者さんが予約を見られない状態です。」と伝えます。 | 'Kuji goro kara, o-isha-san ga yoyaku o mirarenai jōtai desu.' to tsutaemasu. | Em báo: "Từ khoảng 9 giờ, bác sĩ không xem được lịch hẹn." | 何と報告しますか。
-- [対応] それから、ログを見て、原因を調べます。直るまで、前のバージョンに戻します。 | Sorekara, rogu o mite, gen'in o shirabemasu. Naoru made, mae no bājon ni modoshimasu. | Sau đó em xem log, tìm nguyên nhân. Đến khi sửa xong thì đưa về phiên bản trước. | それから、どうしますか。
-- [連絡] 三十分ごとに、チャットで状況を共有します。 | Sanjuppun goto ni, chatto de jōkyō o kyōyū shimasu. | Cứ 30 phút em cập nhật tình hình qua chat. | 上司には、いつ連絡しますか。
+- [自分] 課長、お忙しいところ申し訳ございません。至急ご報告したいことがございます。 | Kachō, oisogashii tokoro mōshiwake gozaimasen. Shikyū gohōkoku shitai koto ga gozaimasu. | Thưa trưởng phòng, xin lỗi đã làm phiền, em có việc gấp cần báo cáo ạ. | では、始めます。朝、予約システムが止まりました。私に報告してください。
+- [上司] どうしましたか。 | Dō shimashita ka. | (Cấp trên) Có chuyện gì vậy?
+- [自分] 九時ごろから、予約システムが使えない状態になっております。 | Kuji goro kara, yoyaku shisutemu ga tsukaenai jōtai ni natte orimasu. | Từ khoảng 9 giờ, hệ thống đặt lịch đang không dùng được ạ.
+- [上司] 原因は分かりますか。 | Gen'in wa wakarimasu ka. | (Cấp trên) Biết nguyên nhân chưa?
+- [自分] まだ調査中ですが、昨日のリリースが原因の可能性がございます。 | Mada chōsachū desu ga, kinō no rirīsu ga gen'in no kanōsei ga gozaimasu. | Vẫn đang điều tra, nhưng có khả năng do bản release hôm qua ạ.
+- [上司] どう対応しますか。 | Dō taiō shimasu ka. | (Cấp trên) Xử lý thế nào?
+- [自分] まず、前のバージョンに戻してもよろしいでしょうか。 | Mazu, mae no bājon ni modoshite mo yoroshii deshō ka. | Trước mắt em đưa về phiên bản trước có được không ạ?
+- [上司] はい、お願いします。 | Hai, onegai shimasu. | (Cấp trên) Được, làm đi.
+- [自分] 承知いたしました。十時までに、改めてご報告いたします。 | Shōchi itashimashita. Jūji made ni, aratamete gohōkoku itashimasu. | Em hiểu rồi ạ. Trước 10 giờ em sẽ báo cáo lại.
 
-### AI trả lời sai cho bác sĩ
+### Bệnh viện báo AI trả lời sai
 
-- [報告] ミンさんに、どんな質問で、どんな間違いが出たか報告します。 | Min-san ni, donna shitsumon de, donna machigai ga deta ka hōkoku shimasu. | Em báo anh Minh câu hỏi nào và AI đã trả lời sai thế nào. | AIアシスタントが、お医者さんに間違った答えを出しました。どうしますか。
-- [対応] 同じ質問でもう一度テストして、原因を調べます。 | Onaji shitsumon de mō ichido tesuto shite, gen'in o shirabemasu. | Em test lại bằng đúng câu hỏi đó và tìm nguyên nhân. | 原因は、どう調べますか。
-- [提案] 直るまで、その機能を一時的に止めるのはどうでしょうか。 | Naoru made, sono kinō o ichijiteki ni tomeru no wa dō deshō ka. | Đến khi sửa xong, tạm dừng chức năng đó thì thế nào ạ? | 直るまで、どうしますか。
-- [対策] 今後は、テストの質問を増やして、リリースの前に確認します。 | Kongo wa, tesuto no shitsumon o fuyashite, rirīsu no mae ni kakunin shimasu. | Từ nay em sẽ thêm câu hỏi test và kiểm tra trước khi release. | 今後は、どうしますか。
+- [自分] 課長、今少しお時間よろしいでしょうか。病院から、AIの回答が間違っていたと連絡がございました。 | Kachō, ima sukoshi ojikan yoroshii deshō ka. Byōin kara, ēai no kaitō ga machigatte ita to renraku ga gozaimashita. | Thưa trưởng phòng, anh có chút thời gian không ạ? Bệnh viện vừa báo là AI trả lời sai ạ. | 病院から、AIの答えが間違っていたと連絡がありました。私に報告してください。
+- [上司] 患者さんに影響はありましたか。 | Kanja-san ni eikyō wa arimashita ka. | (Cấp trên) Có ảnh hưởng đến bệnh nhân không?
+- [自分] 現在確認しておりますが、今のところ、影響は出ておりません。 | Genzai kakunin shite orimasu ga, ima no tokoro, eikyō wa dete orimasen. | Em đang kiểm tra, nhưng hiện tại chưa có ảnh hưởng ạ.
+- [上司] どうしたらいいと思いますか。 | Dō shitara ii to omoimasu ka. | (Cấp trên) Em nghĩ nên làm thế nào?
+- [自分] 直るまで、AIの機能を止めたいと考えておりますが、よろしいでしょうか。 | Naoru made, ēai no kinō o tometai to kangaete orimasu ga, yoroshii deshō ka. | Em muốn tạm dừng chức năng AI đến khi sửa xong, có được không ạ?
+- [上司] 分かりました。病院への説明は、私がします。 | Wakarimashita. Byōin e no setsumei wa, watashi ga shimasu. | (Cấp trên) Được. Việc giải thích với bệnh viện để tôi lo.
+- [自分] ありがとうございます。原因が分かったら、すぐにご連絡いたします。 | Arigatō gozaimasu. Gen'in ga wakattara, sugu ni gorenraku itashimasu. | Cảm ơn anh. Biết nguyên nhân là em liên lạc ngay ạ.
 
-### Lỡ xóa dữ liệu trên môi trường test
+### Lỗi của mình: lỡ xóa dữ liệu trên dev1
 
-- [謝罪] 「申し訳ありません。デブワンのデータを、間違えて消してしまいました。」と、すぐに報告します。 | 'Mōshiwake arimasen. Debuwan no dēta o, machigaete keshite shimaimashita.' to, sugu ni hōkoku shimasu. | Em báo ngay: "Em xin lỗi, em lỡ xóa nhầm dữ liệu trên dev1." | テスト環境のデータを、間違えて消してしまいました。どうしますか。
-- [対応] バックアップがあるか確認して、データを戻します。 | Bakkuappu ga aru ka kakunin shite, dēta o modoshimasu. | Em kiểm tra có bản sao lưu không rồi khôi phục dữ liệu. | どう対応しますか。
-- [対策] 今後は、消す前に、ほかの人に確認してもらいます。 | Kongo wa, kesu mae ni, hoka no hito ni kakunin shite moraimasu. | Từ nay trước khi xóa em sẽ nhờ người khác kiểm tra. | 今後は、どうしますか。
+- [自分] 課長、申し訳ございません。私のミスで、デブワンのデータを消してしまいました。 | Kachō, mōshiwake gozaimasen. Watashi no misu de, debuwan no dēta o keshite shimaimashita. | Thưa trưởng phòng, em xin lỗi. Do lỗi của em, dữ liệu trên dev1 đã bị xóa ạ. | あなたは、間違えてテスト環境のデータを消しました。私に報告してください。
+- [上司] バックアップはありますか。 | Bakkuappu wa arimasu ka. | (Cấp trên) Có bản sao lưu không?
+- [自分] はい、昨日のバックアップがございますので、今、戻しております。 | Hai, kinō no bakkuappu ga gozaimasu node, ima, modoshite orimasu. | Dạ có bản sao lưu hôm qua, em đang khôi phục ạ.
+- [上司] いつ終わりますか。 | Itsu owarimasu ka. | (Cấp trên) Khi nào xong?
+- [自分] 午後二時までには、元に戻せる予定です。 | Gogo niji made ni wa, moto ni modoseru yotei desu. | Dự kiến trước 2 giờ chiều sẽ khôi phục xong ạ.
+- [上司] 今後は、どうしますか。 | Kongo wa, dō shimasu ka. | (Cấp trên) Sau này em sẽ làm gì?
+- [自分] 今後は、データを消す前に、必ずほかの方に確認をお願いいたします。ご迷惑をおかけして、申し訳ございません。 | Kongo wa, dēta o kesu mae ni, kanarazu hoka no kata ni kakunin o onegai itashimasu. Gomeiwaku o okake shite, mōshiwake gozaimasen. | Từ nay trước khi xóa dữ liệu, em sẽ luôn nhờ người khác kiểm tra. Em xin lỗi vì đã gây phiền phức.
+
+### Khi bị hỏi điều chưa biết
+
+- [自分] 申し訳ございません。その点は、まだ確認できておりません。確認して、すぐにご連絡いたします。 | Mōshiwake gozaimasen. Sono ten wa, mada kakunin dekite orimasen. Kakunin shite, sugu ni gorenraku itashimasu. | Xin lỗi anh, điểm đó em chưa kiểm tra được. Em kiểm tra rồi liên lạc lại ngay ạ. | お客様は何人ぐらい困っていますか。
+- [自分] 申し訳ございません、もう一度おっしゃっていただけますか。 | Mōshiwake gozaimasen, mō ichido osshatte itadakemasu ka. | Xin lỗi, anh có thể nói lại một lần nữa không ạ? | 影響範囲と復旧の見込みは、どうなっていますか。
