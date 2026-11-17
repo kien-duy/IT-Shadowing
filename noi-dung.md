@@ -114,7 +114,7 @@ id: kb
 
 ## Giới thiệu
 
-Các tình huống roleplay theo thứ tự luyện: trễ hạn → báo sự cố gấp cho senpai → spec chưa rõ → nêu ý kiến → hỗ trợ người mới. Mỗi dòng tiêu đề ghi tên tình huống và khung câu; nghe hoặc luyện Nhớ lại từ đầu đến cuối là đủ.
+Các tình huống roleplay theo thứ tự luyện: trễ hạn → báo sự cố gấp cho senpai → spec chưa rõ → nêu ý kiến → hỗ trợ người mới → đề xuất cải thiện UI và trả lời câu hỏi sâu. Mỗi dòng tiêu đề ghi tên tình huống và khung câu; nghe hoặc luyện Nhớ lại từ đầu đến cuối là đủ.
 
 ## Dùng khi
 
@@ -128,6 +128,7 @@ Phần roleplay và hỏi đáp sau tự giới thiệu. Thầy đóng vai senpa
 - 仕様の確認 | shiyō no kakunin | Spec chưa rõ | 確認 → 問題 → 提案
 - 意見 | iken | Nêu ý kiến | 意見 → 理由 → 改善案 → まとめ
 - 新人のサポート | shinjin no sapōto | Hỗ trợ người mới | 意見 → 理由 → 具体例 → 自分 ↔ 新人
+- UIの改善 | yūai no kaizen | Senpai nhờ cải thiện UI | 確認 → 問題 → 提案 → 理由 → 根拠 → 代案
 
 ## Mẫu câu
 
@@ -170,6 +171,15 @@ Phần roleplay và hỏi đáp sau tự giới thiệu. Thầy đóng vai senpa
 - 一番大切なのは、〜ことだと思います。 | Ichiban taisetsu na no wa, ... koto da to omoimasu. | Em nghĩ quan trọng nhất là…
 - 大丈夫ですよ。 | Daijōbu desu yo. | Không sao đâu.
 - 一緒に〜に行きませんか。 | Issho ni ... ni ikimasen ka. | Cùng đi … không?
+- どこが〜か、具体的に教えてもらえますか。 | Doko ga ... ka, gutaiteki ni oshiete moraemasu ka. | Anh cho em biết cụ thể chỗ nào … được không ạ?
+- 〜ので、〜やすいからです。 | ... node, ... yasui kara desu. | Vì … nên dễ … hơn.
+- 〜を〜にまとめたいと思います。 | ... o ... ni matometai to omoimasu. | Em muốn gom … lại thành …
+- ログを見ると、〜。 | Rogu o miru to, ... | Xem log thì thấy…
+- 〜の前と後で、〜を比べます。 | ... no mae to ato de, ... o kurabemasu. | Em so sánh … trước và sau …
+- 今回は〜だけ〜て、〜は次のリリースにするのは、どうでしょうか。 | Konkai wa ... dake ... te, ... wa tsugi no rirīsu ni suru no wa, dō deshō ka. | Lần này chỉ … thôi, còn … để đợt release sau thì thế nào ạ?
+- 〜はそのままにして、〜だけ変えます。 | ... wa sono mama ni shite, ... dake kaemasu. | Giữ nguyên …, chỉ đổi …
+- 〜だけではなく、〜も一緒に〜。 | ... dake de wa naku, ... mo issho ni ... | Không chỉ … mà cả … cũng …
+- 〜のほうが大切だと思います。 | ... no hō ga taisetsu da to omoimasu. | Em nghĩ … quan trọng hơn.
 
 ## Danh từ
 
@@ -226,6 +236,25 @@ Phần roleplay và hỏi đáp sau tự giới thiệu. Thầy đóng vai senpa
 - 食べ物 | tabemono | đồ ăn
 - 定例会議 | teirei kaigi | họp định kỳ
 - 日報 | nippō | báo cáo ngày
+- ユーアイ | yūai | UI, giao diện
+- ユーエックス | yūekkusu | UX, trải nghiệm người dùng
+- 予約画面 | yoyaku gamen | màn hình đặt lịch
+- ボタン | botan | nút
+- 手順 | tejun | các bước
+- 見た目 | mitame | vẻ ngoài
+- 使いやすさ | tsukaiyasusa | độ dễ dùng
+- ログ | rogu | log
+- 途中 | tochū | giữa chừng
+- 受付 | uketsuke | lễ tân, quầy tiếp nhận
+- 高齢 | kōrei | cao tuổi
+- 文字 | moji | chữ
+- アイコン | aikon | icon
+- エラー | erā | lỗi
+- デザイン | dezain | thiết kế
+- 体験 | taiken | trải nghiệm
+- 変更 | henkō | thay đổi
+- 位置 | ichi | vị trí
+- ロゴ | rogo | logo
 
 ## Động từ
 
@@ -267,6 +296,13 @@ Phần roleplay và hỏi đáp sau tự giới thiệu. Thầy đóng vai senpa
 - 準備する | junbi suru | chuẩn bị
 - メモする | memo suru | ghi chú
 - 緊張する | kinchō suru | hồi hộp
+- 使いにくい | tsukainikui | khó dùng
+- 置く | oku | đặt
+- 比べる | kuraberu | so sánh
+- 変える | kaeru | đổi
+- 並べる | naraberu | xếp cạnh nhau
+- 入力する | nyūryoku suru | nhập
+- 迷う | mayou | lúng túng, không biết đi đâu
 
 ## Kịch bản
 
@@ -360,3 +396,58 @@ Phần roleplay và hỏi đáp sau tự giới thiệu. Thầy đóng vai senpa
 - [自分] 会議の前に、話すことをメモしておくといいですよ。分からないことは、あとで私に聞いてください。 | Kaigi no mae ni, hanasu koto o memo shite oku to ii desu yo. Wakaranai koto wa, ato de watashi ni kiite kudasai. | Trước họp bạn nên ghi sẵn điều sẽ nói. Chỗ nào không hiểu thì hỏi lại mình sau nhé.
 - [新人] ありがとうございます。 | Arigatō gozaimasu. | (Người mới) Em cảm ơn anh.
 - [自分] お昼、一緒に食べに行きませんか。 | O-hiru, issho ni tabe ni ikimasen ka. | Trưa nay đi ăn cùng không?
+
+### 6. UIの改善 · Senpai báo màn hình đặt lịch khó dùng (確認 → 問題 → 提案 → 理由 → 対応)
+
+- [上司] 病院から、予約画面が使いにくいと言われました。ユーアイを改善してもらえますか。 | Byōin kara, yoyaku gamen ga tsukainikui to iwaremashita. Yūai o kaizen shite moraemasu ka. | (Senpai) Bệnh viện bảo màn hình đặt lịch khó dùng. Em cải thiện UI giúp anh được không?
+- [自分] 分かりました。どこが使いにくいか、具体的に教えてもらえますか。 | Wakarimashita. Doko ga tsukainikui ka, gutaiteki ni oshiete moraemasu ka. | Em hiểu rồi. Anh cho em biết cụ thể chỗ nào khó dùng được không ạ?
+- [上司] 予約ボタンが小さくて、どこにあるか分からないそうです。 | Yoyaku botan ga chiisakute, doko ni aru ka wakaranai sō desu. | (Senpai) Nghe nói nút đặt lịch nhỏ quá, không biết nó ở đâu.
+- [自分] では、ボタンを大きくして、画面の下に置くのは、どうでしょうか。 | Dewa, botan o ōkiku shite, gamen no shita ni oku no wa, dō deshō ka. | Vậy làm nút to hơn và đặt ở phía dưới màn hình thì thế nào ạ?
+- [上司] どうしてですか。 | Dōshite desu ka. | (Senpai) Sao lại thế?
+- [自分] スマホで予約する患者さんが多いので、指で押しやすいからです。 | Sumaho de yoyaku suru kanja-san ga ōi node, yubi de oshiyasui kara desu. | Vì nhiều bệnh nhân đặt lịch bằng điện thoại, nút ở dưới thì dễ bấm bằng ngón tay.
+- [上司] ほかに、改善できるところはありますか。 | Hoka ni, kaizen dekiru tokoro wa arimasu ka. | (Senpai) Còn chỗ nào cải thiện được nữa không?
+- [自分] 予約の手順が五つの画面に分かれているので、三つにまとめたいと思います。 | Yoyaku no tejun ga itsutsu no gamen ni wakarete iru node, mittsu ni matometai to omoimasu. | Các bước đặt lịch đang chia ra 5 màn hình, em muốn gom lại còn 3.
+- [上司] いいですね。いつまでにできますか。 | Ii desu ne. Itsu made ni dekimasu ka. | (Senpai) Được đấy. Bao giờ em làm xong?
+- [自分] まず、画面の案を作って、明日の午後までにお見せします。 | Mazu, gamen no an o tsukutte, ashita no gogo made ni o-mise shimasu. | Trước tiên em làm phương án màn hình, chiều mai em gửi anh xem.
+
+### 6. UIの改善 · Hỏi sâu ①: dựa vào đâu, đo kết quả thế nào (根拠 → 数字 → 確認方法 → 次の案)
+
+- [上司] 本当に、ボタンが原因だと思いますか。 | Hontō ni, botan ga gen'in da to omoimasu ka. | (Senpai) Em chắc nguyên nhân là cái nút không?
+- [自分] ログを見ると、予約の途中でやめる人が、四十パーセントぐらいいます。一番多いのは、ボタンがある画面です。 | Rogu o miru to, yoyaku no tochū de yameru hito ga, yonjuppāsento gurai imasu. Ichiban ōi no wa, botan ga aru gamen desu. | Xem log thì khoảng 40% người bỏ dở giữa chừng khi đặt lịch. Bỏ nhiều nhất ở màn hình có cái nút đó.
+- [上司] 患者さんの意見は、聞きましたか。 | Kanja-san no iken wa, kikimashita ka. | (Senpai) Em đã hỏi ý kiến bệnh nhân chưa?
+- [自分] まだです。病院の受付の人に、患者さんがよく聞くことを、聞いてみます。 | Mada desu. Byōin no uketsuke no hito ni, kanja-san ga yoku kiku koto o, kiite mimasu. | Chưa ạ. Em sẽ thử hỏi lễ tân bệnh viện xem bệnh nhân hay hỏi gì.
+- [上司] 改善できたかどうか、どうやって確認しますか。 | Kaizen dekita ka dō ka, dō yatte kakunin shimasu ka. | (Senpai) Làm sao em biết là đã cải thiện được?
+- [自分] リリースの前と後で、予約が終わった人の数を比べます。 | Rirīsu no mae to ato de, yoyaku ga owatta hito no kazu o kurabemasu. | Em so sánh số người đặt lịch xong trước và sau khi release.
+- [上司] 数字が良くならなかったら、どうしますか。 | Sūji ga yoku naranakattara, dō shimasu ka. | (Senpai) Nếu con số không tốt lên thì sao?
+- [自分] もう一度ログを見て、ほかの原因を調べます。それから、次の案を相談させてください。 | Mō ichido rogu o mite, hoka no gen'in o shirabemasu. Sorekara, tsugi no an o sōdan sasete kudasai. | Em xem lại log và tìm nguyên nhân khác. Sau đó cho em bàn với anh phương án tiếp theo.
+
+### 6. UIの改善 · Hỏi sâu ②: không đủ thời gian, khách thích thiết kế cũ (確かに → 代案 → 理由)
+
+- [上司] でも、来週はリリースがあるので、時間がありません。 | Demo, raishū wa rirīsu ga aru node, jikan ga arimasen. | (Senpai) Nhưng tuần sau có release, không có thời gian đâu.
+- [自分] では、今回はボタンの大きさと位置だけ変えて、手順の変更は次のリリースにするのは、どうでしょうか。 | Dewa, konkai wa botan no ōkisa to ichi dake kaete, tejun no henkō wa tsugi no rirīsu ni suru no wa, dō deshō ka. | Vậy lần này chỉ đổi kích thước và vị trí nút, còn thay đổi các bước để đợt release sau thì thế nào ạ?
+- [上司] お客様は、今のデザインが好きだと言っていますよ。 | Okyakusama wa, ima no dezain ga suki da to itte imasu yo. | (Senpai) Khách hàng nói là thích thiết kế hiện tại đấy.
+- [自分] 確かにそうですね。ですから、色やロゴはそのままにして、使いにくいところだけ変えます。 | Tashika ni sō desu ne. Desukara, iro ya rogo wa sono mama ni shite, tsukainikui tokoro dake kaemasu. | Đúng vậy ạ. Vì thế em giữ nguyên màu và logo, chỉ đổi những chỗ khó dùng.
+- [上司] 画面を変えると、テストが大変じゃないですか。 | Gamen o kaeru to, tesuto ga taihen ja nai desu ka. | (Senpai) Đổi màn hình thì test có vất vả không?
+- [自分] 変えるのは二つの画面だけなので、テストは一日で終わると思います。 | Kaeru no wa futatsu no gamen dake na node, tesuto wa ichinichi de owaru to omoimasu. | Chỉ đổi 2 màn hình nên em nghĩ test một ngày là xong.
+- [上司] お客様には、どう説明しますか。 | Okyakusama ni wa, dō setsumei shimasu ka. | (Senpai) Em sẽ giải thích với khách thế nào?
+- [自分] 前と後の画面を並べた資料を作って、見てもらいたいと思います。 | Mae to ato no gamen o narabeta shiryō o tsukutte, mite moraitai to omoimasu. | Em làm tài liệu đặt màn hình trước và sau cạnh nhau để khách xem.
+
+### 6. UIの改善 · Hỏi sâu ③: người cao tuổi, màu sắc, thông báo lỗi, điện thoại (相手 → 工夫 → 例)
+
+- [上司] 高齢の患者さんのために、ほかに何ができますか。 | Kōrei no kanja-san no tame ni, hoka ni nani ga dekimasu ka. | (Senpai) Vì bệnh nhân cao tuổi, em còn làm được gì nữa?
+- [自分] 文字を大きくして、説明をやさしい言葉に変えたらいいと思います。 | Moji o ōkiku shite, setsumei o yasashii kotoba ni kaetara ii to omoimasu. | Em nghĩ nên làm chữ to hơn và đổi phần giải thích sang từ ngữ dễ hiểu.
+- [上司] 色は、どうですか。 | Iro wa, dō desu ka. | (Senpai) Còn màu sắc thì sao?
+- [自分] 色が見えにくい人もいるので、色だけではなく、アイコンや文字も一緒に表示します。 | Iro ga mienikui hito mo iru node, iro dake de wa naku, aikon ya moji mo issho ni hyōji shimasu. | Có người khó nhìn màu nên em không chỉ dùng màu mà hiển thị kèm icon và chữ.
+- [上司] エラーのときは、どう表示しますか。 | Erā no toki wa, dō hyōji shimasu ka. | (Senpai) Khi có lỗi thì hiển thị thế nào?
+- [自分] 何をすればいいか、短く表示します。例えば、「電話番号を入力してください」です。 | Nani o sureba ii ka, mijikaku hyōji shimasu. Tatoeba, "denwa bangō o nyūryoku shite kudasai" desu. | Em hiển thị ngắn gọn là cần làm gì. Ví dụ: "Vui lòng nhập số điện thoại".
+- [上司] スマホとパソコンで、画面は同じですか。 | Sumaho to pasokon de, gamen wa onaji desu ka. | (Senpai) Trên điện thoại và máy tính, màn hình có giống nhau không?
+- [自分] いいえ、スマホでは一列にして、大事なボタンだけ大きく表示します。 | Iie, sumaho de wa ichiretsu ni shite, daiji na botan dake ōkiku hyōji shimasu. | Không ạ, trên điện thoại em xếp thành một cột, chỉ những nút quan trọng mới hiển thị to.
+
+### 6. UIの改善 · Hỏi sâu ④: UI và UX khác gì, ưu tiên cái nào (定義 → 例 → 優先)
+
+- [上司] ユーアイとユーエックスは、何が違いますか。 | Yūai to yūekkusu wa, nani ga chigaimasu ka. | (Senpai) UI và UX khác nhau ở đâu?
+- [自分] ユーアイは画面の見た目や操作で、ユーエックスは使ったときの体験のことです。 | Yūai wa gamen no mitame ya sōsa de, yūekkusu wa tsukatta toki no taiken no koto desu. | UI là vẻ ngoài và thao tác trên màn hình, còn UX là trải nghiệm khi sử dụng.
+- [上司] 例えば、どういうことですか。 | Tatoeba, dō iu koto desu ka. | (Senpai) Ví dụ là thế nào?
+- [自分] 例えば、画面がきれいでも、予約に時間がかかりすぎたら、ユーエックスは良くないと思います。 | Tatoeba, gamen ga kirei demo, yoyaku ni jikan ga kakarisugitara, yūekkusu wa yoku nai to omoimasu. | Ví dụ màn hình có đẹp nhưng đặt lịch mất quá nhiều thời gian thì em nghĩ UX không tốt.
+- [上司] 見た目と使いやすさ、どちらが大切ですか。 | Mitame to tsukaiyasusa, dochira ga taisetsu desu ka. | (Senpai) Vẻ ngoài và độ dễ dùng, cái nào quan trọng hơn?
+- [自分] 病院のシステムなので、使いやすさのほうが大切だと思います。患者さんが迷わないことが一番です。 | Byōin no shisutemu na node, tsukaiyasusa no hō ga taisetsu da to omoimasu. Kanja-san ga mayowanai koto ga ichiban desu. | Vì là hệ thống bệnh viện nên em nghĩ độ dễ dùng quan trọng hơn. Bệnh nhân không bị lúng túng là quan trọng nhất.

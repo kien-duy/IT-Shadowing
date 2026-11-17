@@ -55,6 +55,7 @@ Các tình huống trong tab ② シナリオ:
 3. **仕様の確認**: spec chưa rõ, hỏi lại và đề xuất cách làm.
 4. **意見**: nêu ý kiến về họp và liên lạc quá nhiều, trả lời câu hỏi vặn.
 5. **新人のサポート**: (a) thầy hỏi có người mới thì làm gì, (b) thầy đóng vai người mới.
+6. **UIの改善**: senpai báo màn hình đặt lịch khó dùng, mình hỏi lại rồi đề xuất; sau đó bốn lượt hỏi sâu: dựa vào đâu và đo kết quả thế nào, không đủ thời gian hoặc khách thích thiết kế cũ, người cao tuổi · màu · thông báo lỗi · điện thoại, UI khác UX thế nào.
 
 Thầy đóng vai senpai (ミンさん) nên câu của mình ở mức です・ます; chỉ câu xin lỗi dùng
 申し訳ございません. Dòng `上司` / `先生` / `新人` là câu thầy nói, kèm câu đáp của mình ngay sau.
