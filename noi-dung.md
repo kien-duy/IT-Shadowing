@@ -114,7 +114,7 @@ id: kb
 
 ## Giới thiệu
 
-Các tình huống roleplay theo thứ tự luyện: trễ hạn → báo sự cố gấp cho senpai → spec chưa rõ → nêu ý kiến → hỗ trợ người mới → đề xuất cải thiện UI và trả lời câu hỏi sâu. Mỗi dòng tiêu đề ghi tên tình huống và khung câu; nghe hoặc luyện Nhớ lại từ đầu đến cuối là đủ.
+Các tình huống roleplay theo thứ tự luyện: trễ hạn → báo tiến độ task trong họp → báo sự cố gấp cho senpai → spec chưa rõ → nêu ý kiến → hỗ trợ người mới → đề xuất cải thiện UI và trả lời câu hỏi sâu. Mỗi dòng tiêu đề ghi tên tình huống và khung câu; nghe hoặc luyện Nhớ lại từ đầu đến cuối là đủ.
 
 ## Dùng khi
 
@@ -124,6 +124,7 @@ Phần roleplay và hỏi đáp sau tự giới thiệu. Thầy đóng vai senpa
 
 <!-- tên bước | romaji | nghĩa Việt | giải thích -->
 - 納期の相談 | nōki no sōdan | Sắp trễ hạn | 問題 → 原因 → 影響 → 提案
+- 進捗報告 | shinchoku hōkoku | Báo cáo tiến độ trong họp | 前置き → 結論 → 終わったこと → 今やっていること → 問題 → 相談 → 予定 → 締め
 - トラブル対応 | toraburu taiō | Báo sự cố gấp cho senpai | 声かけ → 結論 → 状況 → 原因 → 相談 → 連絡 → 謝罪
 - 仕様の確認 | shiyō no kakunin | Spec chưa rõ | 確認 → 問題 → 提案
 - 意見 | iken | Nêu ý kiến | 意見 → 理由 → 改善案 → まとめ
@@ -138,6 +139,14 @@ Phần roleplay và hỏi đáp sau tự giới thiệu. Thầy đóng vai senpa
 - 〜の対応が多くて、〜はまだ〜しか終わっていません。 | ... no taiō ga ōkute, ... wa mada ... shika owatte imasen. | Vì phải xử lý nhiều … nên … mới xong được …
 - 〜を次のリリースに延ばしてもいいですか。 | ... o tsugi no rirīsu ni nobashite mo ii desu ka. | Em lùi … sang đợt release sau được không ạ?
 - 〜までに〜を報告します。 | ... made ni ... o hōkoku shimasu. | Trước … em sẽ báo cáo …
+- 〜の進捗について報告します。 | ... no shinchoku ni tsuite hōkoku shimasu. | Em xin báo cáo tiến độ …
+- 結論から言うと、〜。 | Ketsuron kara iu to, ... | Nói kết luận trước thì…
+- 予定通り進んでいます。 | Yotei dōri susunde imasu. | Đang đúng tiến độ.
+- 予定より〜遅れています。 | Yotei yori ... okurete imasu. | Chậm … so với kế hoạch.
+- 遅れている原因は、〜ことです。 | Okurete iru gen'in wa, ... koto desu. | Nguyên nhân chậm là…
+- 〜までに、〜予定です。 | ... made ni, ... yotei desu. | Dự kiến … trước …
+- 〜ていただけると、助かります。 | ... te itadakeru to, tasukarimasu. | Nếu anh … giúp thì em đỡ được nhiều ạ.
+- 以上です。何か質問はありますか。 | Ijō desu. Nani ka shitsumon wa arimasu ka. | Em xin hết. Mọi người có câu hỏi gì không ạ?
 - ミンさん、今ちょっといいですか。 | Min-san, ima chotto ii desu ka. | Anh Minh, giờ anh có rảnh chút không ạ?
 - 急ぎで報告したいことがあります。 | Isogi de hōkoku shitai koto ga arimasu. | Em có việc gấp cần báo ạ.
 - 〜時ごろから、〜が使えなくなっています。 | ... ji goro kara, ... ga tsukaenaku natte imasu. | Từ khoảng … giờ, … không dùng được nữa.
@@ -197,6 +206,16 @@ Phần roleplay và hỏi đáp sau tự giới thiệu. Thầy đóng vai senpa
 - セキュリティのバグ | sekyuriti no bagu | lỗi bảo mật
 - 次のリリース | tsugi no rirīsu | đợt release sau
 - パーセント | pāsento | phần trăm
+- 進捗 | shinchoku | tiến độ
+- 結論 | ketsuron | kết luận
+- 予約変更機能 | yoyaku henkō kinō | chức năng đổi lịch khám
+- 単体テスト | tantai tesuto | unit test
+- 結合テスト | ketsugō tesuto | test tích hợp
+- エーピーアイ | ēpīai | API
+- 部分 | bubun | phần
+- 残り | nokori | phần còn lại
+- リスク | risuku | rủi ro
+- 状況 | jōkyō | tình hình
 - 急ぎ | isogi | gấp
 - トラブル | toraburu | sự cố
 - 原因 | gen'in | nguyên nhân
@@ -266,6 +285,10 @@ Phần roleplay và hỏi đáp sau tự giới thiệu. Thầy đóng vai senpa
 - 手伝う | tetsudau | giúp
 - 分ける | wakeru | chia
 - 進める | susumeru | tiến hành
+- つなぐ | tsunagu | kết nối
+- 終わらせる | owaraseru | làm cho xong
+- 足りる | tariru | đủ
+- 助かる | tasukaru | được giúp, đỡ vất vả
 - デプロイする | depuroi suru | deploy
 - 使えなくなる | tsukaenaku naru | không dùng được nữa
 - 止まる | tomaru | dừng
@@ -318,7 +341,31 @@ Phần roleplay và hỏi đáp sau tự giới thiệu. Thầy đóng vai senpa
 - [上司] 分かりました。次のリリースにしましょう。 | Wakarimashita. Tsugi no rirīsu ni shimashō. | (Senpai) Được, để đợt release sau nhé.
 - [自分] ありがとうございます。今日中に、新しいスケジュールを報告します。 | Arigatō gozaimasu. Kyōjū ni, atarashii sukejūru o hōkoku shimasu. | Cảm ơn anh. Trong hôm nay em sẽ báo lịch mới.
 
-### 2. トラブル対応 · Hệ thống đặt lịch dừng sau khi release (声かけ → 結論 → 状況 → 原因 → 相談 → 連絡 → 謝罪)
+### 2. 進捗報告 · Báo cáo tiến độ task trong họp: chậm 2 ngày (前置き → 結論 → 終わったこと → 今やっていること → 問題 → 相談 → 予定 → 締め)
+
+- [自分] 予約変更機能の進捗について報告します。 | Yoyaku henkō kinō no shinchoku ni tsuite hōkoku shimasu. | Em xin báo cáo tiến độ chức năng đổi lịch khám. | では、始めます。会議で、予約変更機能の進捗を報告してください。
+- [自分] 結論から言うと、予定より二日遅れています。 | Ketsuron kara iu to, yotei yori futsuka okurete imasu. | Nói kết luận trước: chậm 2 ngày so với kế hoạch. | 結論から言うと、どうですか。
+- [自分] 今週は、画面の実装と単体テストが終わりました。 | Konshū wa, gamen no jissō to tantai tesuto ga owarimashita. | Tuần này em đã xong phần code màn hình và unit test. | 今週は、何が終わりましたか。
+- [自分] 今は、エーピーアイとつなぐ部分を実装しています。七十パーセントぐらい終わっています。 | Ima wa, ēpīai to tsunagu bubun o jissō shite imasu. Nanajuppāsento gurai owatte imasu. | Hiện em đang code phần kết nối API, xong khoảng 70%. | 今は、何をしていますか。
+- [自分] 遅れている原因は、エラーのときの表示が、仕様書に書かれていないことです。 | Okurete iru gen'in wa, erā no toki no hyōji ga, shiyōsho ni kakarete inai koto desu. | Nguyên nhân chậm là spec không ghi cách hiển thị khi có lỗi. | どうして遅れていますか。
+- [自分] 決まるまで、ほかの部分を先に進めます。お客様に確認していただけますか。 | Kimaru made, hoka no bubun o saki ni susumemasu. Okyakusama ni kakunin shite itadakemasu ka. | Trong lúc chờ chốt, em làm trước phần khác. Anh hỏi lại khách giúp em được không ạ? | どう対応しますか。
+- [自分] 来週の水曜日までに、結合テストを終わらせる予定です。 | Raishū no suiyōbi made ni, ketsugō tesuto o owaraseru yotei desu. | Em dự kiến xong test tích hợp trước thứ Tư tuần sau. | 次の予定を教えてください。
+- [自分] 以上です。何か質問はありますか。 | Ijō desu. Nani ka shitsumon wa arimasu ka. | Em xin hết. Mọi người có câu hỏi gì không ạ? | ほかに報告はありますか。
+
+### 2. 進捗報告 · Hỏi sâu: có kịp không, cần giúp gì, rủi ro (結論 → 理由 → 代案)
+
+- [上司] 金曜日のリリースに、間に合いますか。 | Kin'yōbi no rirīsu ni, maniaimasu ka. | (Senpai) Có kịp release thứ Sáu không?
+- [自分] 水曜日までに結合テストが終われば、間に合うと思います。 | Suiyōbi made ni ketsugō tesuto ga owareba, maniau to omoimasu. | Nếu xong test tích hợp trước thứ Tư thì em nghĩ là kịp.
+- [上司] 間に合わなかったら、どうしますか。 | Maniawanakattara, dō shimasu ka. | (Senpai) Nếu không kịp thì sao?
+- [自分] 大切な機能だけ先にリリースして、残りは次のリリースにするのは、どうでしょうか。 | Taisetsu na kinō dake saki ni rirīsu shite, nokori wa tsugi no rirīsu ni suru no wa, dō deshō ka. | Release trước phần quan trọng, phần còn lại để đợt sau thì thế nào ạ?
+- [上司] 何か手伝えることはありますか。 | Nani ka tetsudaeru koto wa arimasu ka. | (Senpai) Có gì anh giúp được không?
+- [自分] テストのデータを準備していただけると、助かります。 | Tesuto no dēta o junbi shite itadakeru to, tasukarimasu. | Anh chuẩn bị giúp em dữ liệu test thì em đỡ được nhiều ạ.
+- [上司] リスクはありますか。 | Risuku wa arimasu ka. | (Senpai) Có rủi ro gì không?
+- [自分] 仕様が決まるのが遅いと、テストの時間が足りなくなるかもしれません。 | Shiyō ga kimaru no ga osoi to, tesuto no jikan ga tarinaku naru kamo shiremasen. | Nếu spec chốt muộn thì có thể thiếu thời gian test.
+- [上司] どうして、結論から話すんですか。 | Dōshite, ketsuron kara hanasu n desu ka. | (Senpai) Sao em lại nói kết luận trước?
+- [自分] 聞く人が、すぐに状況が分かるからです。会議の時間も短くなります。 | Kiku hito ga, sugu ni jōkyō ga wakaru kara desu. Kaigi no jikan mo mijikaku narimasu. | Vì người nghe nắm được tình hình ngay, cuộc họp cũng ngắn hơn.
+
+### 3. トラブル対応 · Hệ thống đặt lịch dừng sau khi release (声かけ → 結論 → 状況 → 原因 → 相談 → 連絡 → 謝罪)
 
 - [自分] ミンさん、今ちょっといいですか。急ぎで報告したいことがあります。 | Min-san, ima chotto ii desu ka. Isogi de hōkoku shitai koto ga arimasu. | Anh Minh, giờ anh rảnh chút không ạ? Em có việc gấp cần báo. | では、始めます。朝、予約システムが止まりました。私に報告してください。
 - [上司] どうしましたか。 | Dō shimashita ka. | (Senpai) Có chuyện gì vậy?
@@ -330,7 +377,7 @@ Phần roleplay và hỏi đáp sau tự giới thiệu. Thầy đóng vai senpa
 - [上司] はい、お願いします。 | Hai, onegai shimasu. | (Senpai) Được, làm đi.
 - [自分] 分かりました。十時までに、もう一度報告します。 | Wakarimashita. Jūji made ni, mō ichido hōkoku shimasu. | Em hiểu rồi. Trước 10 giờ em báo lại ạ.
 
-### 2. トラブル対応 · Bệnh viện báo AI trả lời sai (声かけ → 結論 → 状況 → 原因 → 相談 → 連絡 → 謝罪)
+### 3. トラブル対応 · Bệnh viện báo AI trả lời sai (声かけ → 結論 → 状況 → 原因 → 相談 → 連絡 → 謝罪)
 
 - [自分] ミンさん、今ちょっといいですか。病院から、AIの答えが間違っていたと連絡がありました。 | Min-san, ima chotto ii desu ka. Byōin kara, ēai no kotae ga machigatte ita to renraku ga arimashita. | Anh Minh, giờ anh rảnh chút không ạ? Bệnh viện vừa báo là AI trả lời sai. | 病院から、AIの答えが間違っていたと連絡がありました。私に報告してください。
 - [上司] 患者さんに影響はありましたか。 | Kanja-san ni eikyō wa arimashita ka. | (Senpai) Có ảnh hưởng đến bệnh nhân không?
@@ -340,7 +387,7 @@ Phần roleplay và hỏi đáp sau tự giới thiệu. Thầy đóng vai senpa
 - [上司] 分かりました。病院への説明は、私がします。 | Wakarimashita. Byōin e no setsumei wa, watashi ga shimasu. | (Senpai) Được. Việc giải thích với bệnh viện để anh lo.
 - [自分] ありがとうございます。原因が分かったら、すぐに連絡します。 | Arigatō gozaimasu. Gen'in ga wakattara, sugu ni renraku shimasu. | Cảm ơn anh. Biết nguyên nhân là em báo ngay.
 
-### 2. トラブル対応 · Lỗi của mình: lỡ xóa dữ liệu trên dev1 (声かけ → 結論 → 状況 → 原因 → 相談 → 連絡 → 謝罪)
+### 3. トラブル対応 · Lỗi của mình: lỡ xóa dữ liệu trên dev1 (声かけ → 結論 → 状況 → 原因 → 相談 → 連絡 → 謝罪)
 
 - [自分] ミンさん、申し訳ございません。私のミスで、デブワンのデータを消してしまいました。 | Min-san, mōshiwake gozaimasen. Watashi no misu de, debuwan no dēta o keshite shimaimashita. | Anh Minh, em xin lỗi. Do lỗi của em, dữ liệu trên dev1 đã bị xóa. | あなたは、間違えてテスト環境のデータを消しました。私に報告してください。
 - [上司] バックアップはありますか。 | Bakkuappu wa arimasu ka. | (Senpai) Có bản sao lưu không?
@@ -350,12 +397,12 @@ Phần roleplay và hỏi đáp sau tự giới thiệu. Thầy đóng vai senpa
 - [上司] 今後は、どうしますか。 | Kongo wa, dō shimasu ka. | (Senpai) Sau này em sẽ làm gì?
 - [自分] 今後は、データを消す前に、必ずほかの人に確認してもらいます。迷惑をかけて、申し訳ございません。 | Kongo wa, dēta o kesu mae ni, kanarazu hoka no hito ni kakunin shite moraimasu. Meiwaku o kakete, mōshiwake gozaimasen. | Từ nay trước khi xóa dữ liệu, em sẽ luôn nhờ người khác kiểm tra. Em xin lỗi vì đã gây phiền phức.
 
-### 2. トラブル対応 · Khi bị hỏi điều chưa biết (声かけ → 結論 → 状況 → 原因 → 相談 → 連絡 → 謝罪)
+### 3. トラブル対応 · Khi bị hỏi điều chưa biết (声かけ → 結論 → 状況 → 原因 → 相談 → 連絡 → 謝罪)
 
 - [自分] 申し訳ございません。それは、まだ確認できていません。確認して、すぐに連絡します。 | Mōshiwake gozaimasen. Sore wa, mada kakunin dekite imasen. Kakunin shite, sugu ni renraku shimasu. | Em xin lỗi, việc đó em chưa kiểm tra được. Em kiểm tra rồi báo lại ngay. | お客様は何人ぐらい困っていますか。
 - [自分] すみません、もう一度言ってもらえますか。 | Sumimasen, mō ichido itte moraemasu ka. | Xin lỗi, anh nói lại giúp em được không? | 影響範囲と復旧の見込みは、どうなっていますか。
 
-### 3. 仕様の確認 · Spec không ghi khi nhập sai mật khẩu 5 lần (声かけ → 問題 → 提案 → 対応)
+### 4. 仕様の確認 · Spec không ghi khi nhập sai mật khẩu 5 lần (声かけ → 問題 → 提案 → 対応)
 
 - [自分] ミンさん、今ちょっといいですか。ログイン機能の仕様について、確認したいことがあります。 | Min-san, ima chotto ii desu ka. Roguin kinō no shiyō ni tsuite, kakunin shitai koto ga arimasu. | Anh Minh, giờ anh rảnh chút không ạ? Em muốn hỏi lại về spec chức năng đăng nhập. | では、始めます。仕様書に、分からないところがあります。私に相談してください。
 - [上司] はい、何ですか。 | Hai, nan desu ka. | (Senpai) Ừ, chuyện gì?
@@ -365,7 +412,7 @@ Phần roleplay và hỏi đáp sau tự giới thiệu. Thầy đóng vai senpa
 - [上司] いいですね。でも、お客様に確認してみます。 | Ii desu ne. Demo, okyakusama ni kakunin shite mimasu. | (Senpai) Được đấy. Nhưng để anh hỏi lại khách hàng.
 - [自分] ありがとうございます。決まるまで、ほかの部分を先に進めます。 | Arigatō gozaimasu. Kimaru made, hoka no bubun o saki ni susumemasu. | Cảm ơn anh. Đến khi chốt, em làm trước phần khác.
 
-### 4. 意見 · Nêu ý kiến (意見 → 理由 → 改善案 → まとめ)
+### 5. 意見 · Nêu ý kiến (意見 → 理由 → 改善案 → まとめ)
 
 - [先生] 会議や連絡が多くて、作業時間が足りないとき、どう改善しますか。 | Kaigi ya renraku ga ōkute, sagyō jikan ga tarinai toki, dō kaizen shimasu ka. | (Thầy) Họp và liên lạc nhiều làm thiếu thời gian làm việc, em cải thiện thế nào?
 - [自分] 私は、会議を減らすべきだと思います。 | Watashi wa, kaigi o herasu beki da to omoimasu. | Em nghĩ nên giảm số cuộc họp.
@@ -376,7 +423,7 @@ Phần roleplay và hỏi đáp sau tự giới thiệu. Thầy đóng vai senpa
 - [先生] でも、チャットだけで大丈夫ですか。 | Demo, chatto dake de daijōbu desu ka. | (Thầy) Nhưng chỉ chat thôi có ổn không?
 - [自分] 大切なことだけ会議で話せば、大丈夫だと思います。そうすれば、作業時間が増えます。 | Taisetsu na koto dake kaigi de hanaseba, daijōbu da to omoimasu. Sō sureba, sagyō jikan ga fuemasu. | Chỉ việc quan trọng mới đưa ra họp thì em nghĩ là ổn. Làm vậy thời gian làm việc sẽ tăng.
 
-### 5. 新人のサポート · (a) Thầy hỏi: có người mới thì làm gì (意見 → 具体例 → まとめ)
+### 6. 新人のサポート · (a) Thầy hỏi: có người mới thì làm gì (意見 → 具体例 → まとめ)
 
 - [先生] 新しいメンバーが入ったら、何をしますか。 | Atarashii menbā ga haittara, nani o shimasu ka. | (Thầy) Khi có thành viên mới, em sẽ làm gì?
 - [自分] メンターとして、早く慣れるように手伝います。 | Mentā to shite, hayaku nareru yō ni tetsudaimasu. | Với vai trò mentor, em giúp bạn ấy sớm quen việc.
@@ -387,7 +434,7 @@ Phần roleplay và hỏi đáp sau tự giới thiệu. Thầy đóng vai senpa
 - [先生] 一番大切なことは、何だと思いますか。 | Ichiban taisetsu na koto wa, nan da to omoimasu ka. | (Thầy) Em nghĩ điều quan trọng nhất là gì?
 - [自分] 何でも聞ける雰囲気を作ることだと思います。 | Nan demo kikeru fun'iki o tsukuru koto da to omoimasu. | Em nghĩ là tạo không khí để bạn ấy hỏi gì cũng được.
 
-### 5. 新人のサポート · (b) Roleplay: thầy đóng vai người mới (挨拶 → 安心させる → アドバイス → 誘う)
+### 6. 新人のサポート · (b) Roleplay: thầy đóng vai người mới (挨拶 → 安心させる → アドバイス → 誘う)
 
 - [自分] はじめまして、キエンです。今日から、よろしくお願いします。 | Hajimemashite, Kien desu. Kyō kara, yoroshiku onegai shimasu. | Chào bạn, mình là Kiên. Từ hôm nay mong được làm việc cùng nhé. | では、私は新人です。今日から会社に来ました。話しかけてください。
 - [新人] よろしくお願いします。少し緊張しています。 | Yoroshiku onegai shimasu. Sukoshi kinchō shite imasu. | (Người mới) Mong anh giúp đỡ. Em hơi hồi hộp ạ.
@@ -397,7 +444,7 @@ Phần roleplay và hỏi đáp sau tự giới thiệu. Thầy đóng vai senpa
 - [新人] ありがとうございます。 | Arigatō gozaimasu. | (Người mới) Em cảm ơn anh.
 - [自分] お昼、一緒に食べに行きませんか。 | O-hiru, issho ni tabe ni ikimasen ka. | Trưa nay đi ăn cùng không?
 
-### 6. UIの改善 · Senpai báo màn hình đặt lịch khó dùng (確認 → 問題 → 提案 → 理由 → 対応)
+### 7. UIの改善 · Senpai báo màn hình đặt lịch khó dùng (確認 → 問題 → 提案 → 理由 → 対応)
 
 - [上司] 病院から、予約画面が使いにくいと言われました。ユーアイを改善してもらえますか。 | Byōin kara, yoyaku gamen ga tsukainikui to iwaremashita. Yūai o kaizen shite moraemasu ka. | (Senpai) Bệnh viện bảo màn hình đặt lịch khó dùng. Em cải thiện UI giúp anh được không?
 - [自分] 分かりました。どこが使いにくいか、具体的に教えてもらえますか。 | Wakarimashita. Doko ga tsukainikui ka, gutaiteki ni oshiete moraemasu ka. | Em hiểu rồi. Anh cho em biết cụ thể chỗ nào khó dùng được không ạ?
@@ -410,7 +457,7 @@ Phần roleplay và hỏi đáp sau tự giới thiệu. Thầy đóng vai senpa
 - [上司] いいですね。いつまでにできますか。 | Ii desu ne. Itsu made ni dekimasu ka. | (Senpai) Được đấy. Bao giờ em làm xong?
 - [自分] まず、画面の案を作って、明日の午後までにお見せします。 | Mazu, gamen no an o tsukutte, ashita no gogo made ni o-mise shimasu. | Trước tiên em làm phương án màn hình, chiều mai em gửi anh xem.
 
-### 6. UIの改善 · Hỏi sâu ①: dựa vào đâu, đo kết quả thế nào (根拠 → 数字 → 確認方法 → 次の案)
+### 7. UIの改善 · Hỏi sâu ①: dựa vào đâu, đo kết quả thế nào (根拠 → 数字 → 確認方法 → 次の案)
 
 - [上司] 本当に、ボタンが原因だと思いますか。 | Hontō ni, botan ga gen'in da to omoimasu ka. | (Senpai) Em chắc nguyên nhân là cái nút không?
 - [自分] ログを見ると、予約の途中でやめる人が、四十パーセントぐらいいます。一番多いのは、ボタンがある画面です。 | Rogu o miru to, yoyaku no tochū de yameru hito ga, yonjuppāsento gurai imasu. Ichiban ōi no wa, botan ga aru gamen desu. | Xem log thì khoảng 40% người bỏ dở giữa chừng khi đặt lịch. Bỏ nhiều nhất ở màn hình có cái nút đó.
@@ -421,7 +468,7 @@ Phần roleplay và hỏi đáp sau tự giới thiệu. Thầy đóng vai senpa
 - [上司] 数字が良くならなかったら、どうしますか。 | Sūji ga yoku naranakattara, dō shimasu ka. | (Senpai) Nếu con số không tốt lên thì sao?
 - [自分] もう一度ログを見て、ほかの原因を調べます。それから、次の案を相談させてください。 | Mō ichido rogu o mite, hoka no gen'in o shirabemasu. Sorekara, tsugi no an o sōdan sasete kudasai. | Em xem lại log và tìm nguyên nhân khác. Sau đó cho em bàn với anh phương án tiếp theo.
 
-### 6. UIの改善 · Hỏi sâu ②: không đủ thời gian, khách thích thiết kế cũ (確かに → 代案 → 理由)
+### 7. UIの改善 · Hỏi sâu ②: không đủ thời gian, khách thích thiết kế cũ (確かに → 代案 → 理由)
 
 - [上司] でも、来週はリリースがあるので、時間がありません。 | Demo, raishū wa rirīsu ga aru node, jikan ga arimasen. | (Senpai) Nhưng tuần sau có release, không có thời gian đâu.
 - [自分] では、今回はボタンの大きさと位置だけ変えて、手順の変更は次のリリースにするのは、どうでしょうか。 | Dewa, konkai wa botan no ōkisa to ichi dake kaete, tejun no henkō wa tsugi no rirīsu ni suru no wa, dō deshō ka. | Vậy lần này chỉ đổi kích thước và vị trí nút, còn thay đổi các bước để đợt release sau thì thế nào ạ?
@@ -432,7 +479,7 @@ Phần roleplay và hỏi đáp sau tự giới thiệu. Thầy đóng vai senpa
 - [上司] お客様には、どう説明しますか。 | Okyakusama ni wa, dō setsumei shimasu ka. | (Senpai) Em sẽ giải thích với khách thế nào?
 - [自分] 前と後の画面を並べた資料を作って、見てもらいたいと思います。 | Mae to ato no gamen o narabeta shiryō o tsukutte, mite moraitai to omoimasu. | Em làm tài liệu đặt màn hình trước và sau cạnh nhau để khách xem.
 
-### 6. UIの改善 · Hỏi sâu ③: người cao tuổi, màu sắc, thông báo lỗi, điện thoại (相手 → 工夫 → 例)
+### 7. UIの改善 · Hỏi sâu ③: người cao tuổi, màu sắc, thông báo lỗi, điện thoại (相手 → 工夫 → 例)
 
 - [上司] 高齢の患者さんのために、ほかに何ができますか。 | Kōrei no kanja-san no tame ni, hoka ni nani ga dekimasu ka. | (Senpai) Vì bệnh nhân cao tuổi, em còn làm được gì nữa?
 - [自分] 文字を大きくして、説明をやさしい言葉に変えたらいいと思います。 | Moji o ōkiku shite, setsumei o yasashii kotoba ni kaetara ii to omoimasu. | Em nghĩ nên làm chữ to hơn và đổi phần giải thích sang từ ngữ dễ hiểu.
@@ -443,7 +490,7 @@ Phần roleplay và hỏi đáp sau tự giới thiệu. Thầy đóng vai senpa
 - [上司] スマホとパソコンで、画面は同じですか。 | Sumaho to pasokon de, gamen wa onaji desu ka. | (Senpai) Trên điện thoại và máy tính, màn hình có giống nhau không?
 - [自分] いいえ、スマホでは一列にして、大事なボタンだけ大きく表示します。 | Iie, sumaho de wa ichiretsu ni shite, daiji na botan dake ōkiku hyōji shimasu. | Không ạ, trên điện thoại em xếp thành một cột, chỉ những nút quan trọng mới hiển thị to.
 
-### 6. UIの改善 · Hỏi sâu ④: UI và UX khác gì, ưu tiên cái nào (定義 → 例 → 優先)
+### 7. UIの改善 · Hỏi sâu ④: UI và UX khác gì, ưu tiên cái nào (定義 → 例 → 優先)
 
 - [上司] ユーアイとユーエックスは、何が違いますか。 | Yūai to yūekkusu wa, nani ga chigaimasu ka. | (Senpai) UI và UX khác nhau ở đâu?
 - [自分] ユーアイは画面の見た目や操作で、ユーエックスは使ったときの体験のことです。 | Yūai wa gamen no mitame ya sōsa de, yūekkusu wa tsukatta toki no taiken no koto desu. | UI là vẻ ngoài và thao tác trên màn hình, còn UX là trải nghiệm khi sử dụng.

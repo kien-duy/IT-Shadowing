@@ -51,11 +51,12 @@ ngữ pháp N3, từ vựng IT và văn phòng; bối cảnh là dự án hệ t
 Các tình huống trong tab ② シナリオ:
 
 1. **納期の相談**: báo senpai là sắp trễ hạn release vì lỗi bảo mật, xin lùi sang đợt sau.
-2. **トラブル対応**: báo sự cố gấp cho senpai: hệ thống dừng, AI trả lời sai, lỡ xóa dữ liệu, bị hỏi điều chưa biết.
-3. **仕様の確認**: spec chưa rõ, hỏi lại và đề xuất cách làm.
-4. **意見**: nêu ý kiến về họp và liên lạc quá nhiều, trả lời câu hỏi vặn.
-5. **新人のサポート**: (a) thầy hỏi có người mới thì làm gì, (b) thầy đóng vai người mới.
-6. **UIの改善**: senpai báo màn hình đặt lịch khó dùng, mình hỏi lại rồi đề xuất; sau đó bốn lượt hỏi sâu: dựa vào đâu và đo kết quả thế nào, không đủ thời gian hoặc khách thích thiết kế cũ, người cao tuổi · màu · thông báo lỗi · điện thoại, UI khác UX thế nào.
+2. **進捗報告**: báo cáo tiến độ task trong họp theo thứ tự kết luận trước (前置き → 結論 → 終わったこと → 今やっていること → 問題 → 相談 → 予定 → 締め), rồi trả lời câu hỏi sâu: có kịp không, không kịp thì sao, cần giúp gì, rủi ro.
+3. **トラブル対応**: báo sự cố gấp cho senpai: hệ thống dừng, AI trả lời sai, lỡ xóa dữ liệu, bị hỏi điều chưa biết.
+4. **仕様の確認**: spec chưa rõ, hỏi lại và đề xuất cách làm.
+5. **意見**: nêu ý kiến về họp và liên lạc quá nhiều, trả lời câu hỏi vặn.
+6. **新人のサポート**: (a) thầy hỏi có người mới thì làm gì, (b) thầy đóng vai người mới.
+7. **UIの改善**: senpai báo màn hình đặt lịch khó dùng, mình hỏi lại rồi đề xuất; sau đó bốn lượt hỏi sâu: dựa vào đâu và đo kết quả thế nào, không đủ thời gian hoặc khách thích thiết kế cũ, người cao tuổi · màu · thông báo lỗi · điện thoại, UI khác UX thế nào.
 
 Thầy đóng vai senpai (ミンさん) nên câu của mình ở mức です・ます; chỉ câu xin lỗi dùng
 申し訳ございません. Dòng `上司` / `先生` / `新人` là câu thầy nói, kèm câu đáp của mình ngay sau.
